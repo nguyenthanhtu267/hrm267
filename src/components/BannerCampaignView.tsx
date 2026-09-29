@@ -16,10 +16,21 @@ import {
   Settings,
   Image as ImageIcon
 } from 'lucide-react';
+import { CompanyPolicy } from '../types/hrm';
 
-export const BannerCampaignView: React.FC = () => {
+interface BannerCampaignViewProps {
+  policy: CompanyPolicy;
+  onSavePolicy: (policy: CompanyPolicy) => void;
+}
+
+export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, onSavePolicy }) => {
   const [activeTab, setActiveTab] = useState<'LIST' | 'CREATE'>('LIST');
+  const [formData, setFormData] = useState<CompanyPolicy>(policy);
 
+  const handleSaveFloatingBanner = () => {
+    onSavePolicy(formData);
+    alert('Đã lưu cấu hình Floating Banner thành công!');
+  };
   return (
     <div className="space-y-6 animate-in fade-in">
       {/* Stats Summary */}
@@ -106,6 +117,55 @@ export const BannerCampaignView: React.FC = () => {
             </div>
           </div>
 
+          {/* Floating Banner config panel */}
+          <div className="bg-gradient-to-r from-pink-50 to-rose-50 rounded-xl shadow-sm border border-pink-100 p-4 mt-6">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <Target className="w-4 h-4 text-pink-600" />
+                Thiết lập Nút Quảng cáo (Floating Banner)
+              </h2>
+              <button
+                onClick={handleSaveFloatingBanner}
+                className="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg shadow-sm transition-colors"
+              >
+                Lưu cấu hình Floating
+              </button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="flex items-center justify-between p-3 rounded-lg border border-pink-200 bg-white">
+                <span className="text-xs font-semibold text-slate-800">Trạng thái bật/tắt</span>
+                <label className="relative inline-flex items-center cursor-pointer">
+                  <input 
+                    type="checkbox"
+                    checked={formData.promoBannerEnabled ?? true}
+                    onChange={(e) => setFormData(prev => ({ ...prev, promoBannerEnabled: e.target.checked }))}
+                    className="sr-only peer"
+                  />
+                  <div className="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-pink-600"></div>
+                </label>
+              </div>
+              <div className="p-3 rounded-lg border border-pink-200 bg-white flex flex-col justify-center">
+                <label className="text-[10px] font-semibold text-slate-500 block mb-1">Nội dung nút</label>
+                <input
+                  type="text"
+                  value={formData.promoBannerText || 'Đăng Tuyển Dụng'}
+                  onChange={(e) => setFormData({ ...formData, promoBannerText: e.target.value })}
+                  className="w-full text-xs text-slate-800 font-bold focus:outline-none"
+                  placeholder="Đăng Tuyển Dụng"
+                />
+              </div>
+              <div className="p-3 rounded-lg border border-pink-200 bg-white flex flex-col justify-center">
+                <label className="text-[10px] font-semibold text-slate-500 block mb-1">Link đích đến</label>
+                <input
+                  type="url"
+                  value={formData.promoBannerLink || 'https://tuyendungvieclam.vercel.app/'}
+                  onChange={(e) => setFormData({ ...formData, promoBannerLink: e.target.value })}
+                  className="w-full text-xs text-indigo-600 focus:outline-none"
+                  placeholder="https://tuyendungvieclam.vercel.app/"
+                />
+              </div>
+            </div>
+          </div>
           {/* Banner Placements (Khu vực đặt banner) */}
           <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden mt-6">
             <div className="p-4 border-b border-slate-200 bg-slate-50">

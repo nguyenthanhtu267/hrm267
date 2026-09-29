@@ -268,6 +268,7 @@ export const App: React.FC = () => {
                   employees={employees}
                   currentRole={currentRole}
                   onAddEmployee={handleAddEmployee}
+                  onSavePolicy={handleSavePolicy}
                 />
               </ErrorBoundary>
             )}

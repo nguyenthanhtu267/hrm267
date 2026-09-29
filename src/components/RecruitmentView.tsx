@@ -39,6 +39,7 @@ interface RecruitmentViewProps {
   employees: Employee[];
   currentRole: UserRole;
   onAddEmployee: (emp: Employee) => void;
+  onSavePolicy: (policy: CompanyPolicy) => void;
 }
 
 interface AiAnalysisResult {
@@ -61,6 +62,7 @@ export const RecruitmentView: React.FC<RecruitmentViewProps> = ({
   employees,
   currentRole,
   onAddEmployee,
+  onSavePolicy,
 }) => {
   const [activeTab, setActiveTab] = useState<'PIPELINE' | 'CAMPAIGNS'>('PIPELINE');
   const [candidates, setCandidates] = useState<JobCandidate[]>(comprehensiveCandidates);
@@ -461,9 +463,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
           Quản lý Chiến dịch Banner
         </button>
       </div>
-
-      {activeTab === 'CAMPAIGNS' && <BannerCampaignView />}
-
+      {activeTab === 'CAMPAIGNS' && <BannerCampaignView policy={policy} onSavePolicy={onSavePolicy} />}
       {activeTab === 'PIPELINE' && (
         <>
       {/* KHU VỰC 1: HỘP CÔNG CỤ AI BÓC TÁCH & ĐỐI SOÁT CV THÔNG MINH */}

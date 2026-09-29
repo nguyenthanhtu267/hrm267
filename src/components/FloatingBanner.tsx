@@ -9,7 +9,7 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
   // If explicitly disabled in admin, don't show
   if (policy.promoBannerEnabled === false) return null;
 
-  const link = policy.promoBannerLink || 'https://tuyendung.hrm.com/post-job';
+  const link = policy.promoBannerLink || 'https://tuyendungvieclam.vercel.app/';
   const text = policy.promoBannerText || 'Đăng Tuyển Dụng';
 
   return (
