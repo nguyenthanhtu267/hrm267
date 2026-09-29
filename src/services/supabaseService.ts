@@ -47,10 +47,12 @@ export const parseSupabaseEmployee = (row: any): Employee => {
 };
 
 export const fetchEmployeesFromSupabase = async (): Promise<Employee[]> => {
+  // Override giới hạn 1000 dòng mặc định của Supabase để lấy toàn bộ 6789 dữ liệu
   const { data, error } = await supabase
     .from('employees')
     .select('*')
-    .order('created_at', { ascending: false });
+    .order('created_at', { ascending: false })
+    .limit(10000);
 
   if (error) {
     console.error('Lỗi tải nhân viên từ Supabase:', error);
