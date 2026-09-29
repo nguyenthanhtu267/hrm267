@@ -23,7 +23,7 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
             transform: translateY(-50%);
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 15px 10px;
+            padding: 12px 6px;
             border-radius: 8px 0 0 8px;
             text-decoration: none;
             box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
@@ -35,10 +35,11 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-right: none;
             transition: all 0.3s ease;
+            width: 32px;
           }
 
           .floating-promo-btn:hover {
-            padding-right: 15px;
+            padding-right: 10px;
             background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
           }
 
@@ -46,17 +47,17 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
             writing-mode: vertical-rl;
             text-orientation: mixed;
             font-weight: bold;
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin-top: 10px;
+            font-size: 11px;
+            letter-spacing: 0px;
+            margin-top: 8px;
           }
 
           .promo-free-badge {
             background-color: #ff3b30;
             color: white;
-            font-size: 11px;
+            font-size: 9px;
             font-weight: 900;
-            padding: 3px 6px;
+            padding: 2px 4px;
             border-radius: 4px;
             box-shadow: 0 0 8px rgba(255, 59, 48, 0.6);
             animation: pulse-red 1.5s infinite;
