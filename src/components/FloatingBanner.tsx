@@ -18,7 +18,7 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
         {`
           .floating-promo-btn {
             position: fixed;
-            top: 50%;
+            top: calc(50% + 80px);
             right: 0;
             transform: translateY(-50%);
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
