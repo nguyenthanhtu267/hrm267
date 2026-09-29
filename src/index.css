@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: var(--app-font-family, 'Inter', system-ui, -apple-system, sans-serif);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+
+  /* 🌙 Chế độ Tối (Dark Mode) */
+  html.dark body {
+    background-color: #0b0f19;
+    color: #f1f5f9;
+  }
+
+  html.dark .bg-white {
+    background-color: #131b2e !important;
+    color: #f1f5f9;
+  }
+
+  html.dark .bg-slate-50,
+  html.dark .bg-slate-50\/50 {
+    background-color: #0b0f19 !important;
+  }
+
+  html.dark .border-slate-200,
+  html.dark .border-slate-100 {
+    border-color: #1e293b !important;
+  }
+
+  html.dark .text-slate-900 {
+    color: #f8fafc !important;
+  }
+
+  html.dark .text-slate-700,
+  html.dark .text-slate-800 {
+    color: #cbd5e1 !important;
+  }
+
+  html.dark .text-slate-500,
+  html.dark .text-slate-600 {
+    color: #94a3b8 !important;
+  }
+
+  /* 🏢 Phong cách 1: Corporate Indigo (Mặc định) */
+  html.theme-indigo {
+    --primary-accent: #4f46e5;
+  }
+
+  /* 🌲 Phong cách 2: Emerald Nature */
+  html.theme-emerald {
+    --primary-accent: #059669;
+  }
+  html.theme-emerald .bg-indigo-600 { background-color: #059669 !important; }
+  html.theme-emerald .hover\:bg-indigo-700:hover { background-color: #047857 !important; }
+  html.theme-emerald .text-indigo-600 { color: #059669 !important; }
+  html.theme-emerald .bg-indigo-50 { background-color: #ecfdf5 !important; }
+  html.theme-emerald .border-indigo-200 { border-color: #a7f3d0 !important; }
+
+  /* 🌌 Phong cách 3: Midnight Executive */
+  html.theme-midnight {
+    --primary-accent: #0f172a;
+  }
+  html.theme-midnight .bg-indigo-600 { background-color: #0f172a !important; }
+  html.theme-midnight .hover\:bg-indigo-700:hover { background-color: #1e293b !important; }
+  html.theme-midnight .text-indigo-600 { color: #d97706 !important; }
+  html.theme-midnight .bg-indigo-50 { background-color: #fef3c7 !important; }
+  html.theme-midnight .border-indigo-200 { border-color: #fde68a !important; }
+
+  /* 🌅 Phong cách 4: Amber Sunset */
+  html.theme-amber {
+    --primary-accent: #d97706;
+  }
+  html.theme-amber .bg-indigo-600 { background-color: #d97706 !important; }
+  html.theme-amber .hover\:bg-indigo-700:hover { background-color: #b45309 !important; }
+  html.theme-amber .text-indigo-600 { color: #d97706 !important; }
+  html.theme-amber .bg-indigo-50 { background-color: #fffbeb !important; }
+  html.theme-amber .border-indigo-200 { border-color: #fde68a !important; }
+
+  /* 💎 Phong cách 5: Tech Cyan */
+  html.theme-cyan {
+    --primary-accent: #0891b2;
+  }
+  html.theme-cyan .bg-indigo-600 { background-color: #0891b2 !important; }
+  html.theme-cyan .hover\:bg-indigo-700:hover { background-color: #0e7490 !important; }
+  html.theme-cyan .text-indigo-600 { color: #0891b2 !important; }
+  html.theme-cyan .bg-indigo-50 { background-color: #ecfeff !important; }
+  html.theme-cyan .border-indigo-200 { border-color: #a5f3fc !important; }
+
+  /* =======================================================
+     --- 5 MẪU VECTOR & ĐƯỜNG SÓNG / LINE CÔNG NGHỆ ---
+     ======================================================= */
+
+  /* 6. VECTOR WAVE (Đường lượn sóng) */
+  html.theme-vector-wave {
+    --primary-accent: #4338ca;
+  }
+  html.theme-vector-wave body {
+    background-color: #f8faff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' fill='none' stroke='%234338ca' stroke-width='1' stroke-opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-vector-wave body {
+    background-color: #0b0f19;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='20' viewBox='0 0 100 20'%3E%3Cpath d='M0 10 Q 25 0 50 10 T 100 10' fill='none' stroke='%23818cf8' stroke-width='1' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  }
+  html.theme-vector-wave .bg-indigo-600 { background-color: #4338ca !important; }
+  html.theme-vector-wave .hover\:bg-indigo-700:hover { background-color: #3730a3 !important; }
+  html.theme-vector-wave .text-indigo-600 { color: #4338ca !important; }
+  html.theme-vector-wave .bg-indigo-50 { background-color: #eef2ff !important; }
+  html.theme-vector-wave .border-indigo-200 { border-color: #c7d2fe !important; }
+
+  /* 7. VECTOR GRID (Lưới line kỹ thuật số) */
+  html.theme-vector-grid {
+    --primary-accent: #2563eb;
+  }
+  html.theme-vector-grid body {
+    background-color: #f8fbff;
+    background-image: linear-gradient(to right, rgba(37,99,235,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(37,99,235,0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  html.dark.theme-vector-grid body {
+    background-color: #0b1120;
+    background-image: linear-gradient(to right, rgba(96,165,250,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(96,165,250,0.07) 1px, transparent 1px);
+  }
+  html.theme-vector-grid .bg-indigo-600 { background-color: #2563eb !important; }
+  html.theme-vector-grid .hover\:bg-indigo-700:hover { background-color: #1d4ed8 !important; }
+  html.theme-vector-grid .text-indigo-600 { color: #2563eb !important; }
+  html.theme-vector-grid .bg-indigo-50 { background-color: #eff6ff !important; }
+  html.theme-vector-grid .border-indigo-200 { border-color: #bfdbfe !important; }
+
+  /* 8. VECTOR HEXAGON (Lục giác đa chiều) */
+  html.theme-vector-hexagon {
+    --primary-accent: #0d9488;
+  }
+  html.theme-vector-hexagon body {
+    background-color: #f7fdfd;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg stroke='%230d9488' stroke-width='1' stroke-opacity='0.08' fill='none'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM0 49l14-8 14 8M0 0l14 8 14-8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-vector-hexagon body {
+    background-color: #041b1b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg stroke='%232dd4bf' stroke-width='1' stroke-opacity='0.08' fill='none'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM0 49l14-8 14 8M0 0l14 8 14-8'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  html.theme-vector-hexagon .bg-indigo-600 { background-color: #0d9488 !important; }
+  html.theme-vector-hexagon .hover\:bg-indigo-700:hover { background-color: #0f766e !important; }
+  html.theme-vector-hexagon .text-indigo-600 { color: #0d9488 !important; }
+  html.theme-vector-hexagon .bg-indigo-50 { background-color: #f0fdfa !important; }
+  html.theme-vector-hexagon .border-indigo-200 { border-color: #99f6e4 !important; }
+
+  /* 9. VECTOR CIRCUIT (Vi mạch điện tử) */
+  html.theme-vector-circuit {
+    --primary-accent: #7c3aed;
+  }
+  html.theme-vector-circuit body {
+    background-color: #faf8ff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%237c3aed' stroke-width='1' stroke-opacity='0.07'%3E%3Cpath d='M0 20h15l5-5h10l5 5h5'/%3E%3Ccircle cx='20' cy='15' r='2' fill='%237c3aed' fill-opacity='0.12'/%3E%3Ccircle cx='30' cy='15' r='2' fill='%237c3aed' fill-opacity='0.12'/%3E%3Cpath d='M20 40v-15l-5-5'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-vector-circuit body {
+    background-color: #120924;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill='none' stroke='%23a78bfa' stroke-width='1' stroke-opacity='0.08'%3E%3Cpath d='M0 20h15l5-5h10l5 5h5'/%3E%3Ccircle cx='20' cy='15' r='2' fill='%23a78bfa' fill-opacity='0.15'/%3E%3Ccircle cx='30' cy='15' r='2' fill='%23a78bfa' fill-opacity='0.15'/%3E%3Cpath d='M20 40v-15l-5-5'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  html.theme-vector-circuit .bg-indigo-600 { background-color: #7c3aed !important; }
+  html.theme-vector-circuit .hover\:bg-indigo-700:hover { background-color: #6d28d9 !important; }
+  html.theme-vector-circuit .text-indigo-600 { color: #7c3aed !important; }
+  html.theme-vector-circuit .bg-indigo-50 { background-color: #f5f3ff !important; }
+  html.theme-vector-circuit .border-indigo-200 { border-color: #ddd6fe !important; }
+
+  /* 10. VECTOR GEOMETRIC (Đường cong trừu tượng) */
+  html.theme-vector-geometric {
+    --primary-accent: #db2777;
+  }
+  html.theme-vector-geometric body {
+    background-color: #fdf8fb;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0c30 0 30 30 60 30s30-30 60-30' fill='none' stroke='%23db2777' stroke-width='1' stroke-opacity='0.06'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='%23db2777' stroke-width='1' stroke-opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-vector-geometric body {
+    background-color: #1f0b18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M0 0c30 0 30 30 60 30s30-30 60-30' fill='none' stroke='%23f472b6' stroke-width='1' stroke-opacity='0.08'/%3E%3Ccircle cx='30' cy='30' r='10' fill='none' stroke='%23f472b6' stroke-width='1' stroke-opacity='0.06'/%3E%3C/svg%3E");
+  }
+  html.theme-vector-geometric .bg-indigo-600 { background-color: #db2777 !important; }
+  html.theme-vector-geometric .hover\:bg-indigo-700:hover { background-color: #be185d !important; }
+  html.theme-vector-geometric .text-indigo-600 { color: #db2777 !important; }
+  html.theme-vector-geometric .bg-indigo-50 { background-color: #fdf2f8 !important; }
+  html.theme-vector-geometric .border-indigo-200 { border-color: #fbcfe8 !important; }
+
+  /* =======================================================
+     --- 5 MẪU THIÊN NHIÊN MỜ DỊU MẮT ---
+     ======================================================= */
+
+  /* 11. NATURE MEADOW (Đồng cỏ thảo nguyên) */
+  html.theme-nature-meadow {
+    --primary-accent: #16a34a;
+  }
+  html.theme-nature-meadow body {
+    background-color: #f6fcf7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 40 C 15 25, 20 15, 25 40 M23 40 C 27 20, 32 10, 37 40 M50 40 C 55 22, 60 12, 65 40 M63 40 C 67 28, 72 20, 77 40' fill='none' stroke='%2316a34a' stroke-width='1.2' stroke-linecap='round' stroke-opacity='0.08'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-nature-meadow body {
+    background-color: #06180d;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='40' viewBox='0 0 80 40'%3E%3Cpath d='M10 40 C 15 25, 20 15, 25 40 M23 40 C 27 20, 32 10, 37 40 M50 40 C 55 22, 60 12, 65 40 M63 40 C 67 28, 72 20, 77 40' fill='none' stroke='%234ade80' stroke-width='1.2' stroke-linecap='round' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  }
+  html.theme-nature-meadow .bg-indigo-600 { background-color: #16a34a !important; }
+  html.theme-nature-meadow .hover\:bg-indigo-700:hover { background-color: #15803d !important; }
+  html.theme-nature-meadow .text-indigo-600 { color: #16a34a !important; }
+  html.theme-nature-meadow .bg-indigo-50 { background-color: #f0fdf4 !important; }
+  html.theme-nature-meadow .border-indigo-200 { border-color: #bbf7d0 !important; }
+
+  /* 12. NATURE WILDLIFE (Muôn thú tự nhiên) */
+  html.theme-nature-wildlife {
+    --primary-accent: #b45309;
+  }
+  html.theme-nature-wildlife body {
+    background-color: #fdfbf6;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='60' viewBox='0 0 90 60'%3E%3Cpath d='M15 30 Q22 22 30 26 Q38 22 45 30 Q38 27 30 30 Q22 27 15 30 Z M55 18 Q60 12 66 15 Q72 12 77 18 Q72 16 66 18 Q60 16 55 18 Z' fill='%23b45309' fill-opacity='0.06'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-nature-wildlife body {
+    background-color: #1a1205;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='60' viewBox='0 0 90 60'%3E%3Cpath d='M15 30 Q22 22 30 26 Q38 22 45 30 Q38 27 30 30 Q22 27 15 30 Z M55 18 Q60 12 66 15 Q72 12 77 18 Q72 16 66 18 Q60 16 55 18 Z' fill='%23fde047' fill-opacity='0.07'/%3E%3C/svg%3E");
+  }
+  html.theme-nature-wildlife .bg-indigo-600 { background-color: #b45309 !important; }
+  html.theme-nature-wildlife .hover\:bg-indigo-700:hover { background-color: #92400e !important; }
+  html.theme-nature-wildlife .text-indigo-600 { color: #b45309 !important; }
+  html.theme-nature-wildlife .bg-indigo-50 { background-color: #fefce8 !important; }
+  html.theme-nature-wildlife .border-indigo-200 { border-color: #fef08a !important; }
+
+  /* 13. NATURE OCEAN (Đại dương biển sâu) */
+  html.theme-nature-ocean {
+    --primary-accent: #0284c7;
+  }
+  html.theme-nature-ocean body {
+    background-color: #f6fbfe;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30' viewBox='0 0 120 30'%3E%3Cpath d='M0 15 C 20 5, 40 25, 60 15 C 80 5, 100 25, 120 15' fill='none' stroke='%230284c7' stroke-width='1.2' stroke-opacity='0.08'/%3E%3Cpath d='M0 25 C 20 18, 40 32, 60 25 C 80 18, 100 32, 120 25' fill='none' stroke='%230284c7' stroke-width='0.8' stroke-opacity='0.05'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-nature-ocean body {
+    background-color: #041421;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='30' viewBox='0 0 120 30'%3E%3Cpath d='M0 15 C 20 5, 40 25, 60 15 C 80 5, 100 25, 120 15' fill='none' stroke='%2338bdf8' stroke-width='1.2' stroke-opacity='0.08'/%3E%3Cpath d='M0 25 C 20 18, 40 32, 60 25 C 80 18, 100 32, 120 25' fill='none' stroke='%2338bdf8' stroke-width='0.8' stroke-opacity='0.05'/%3E%3C/svg%3E");
+  }
+  html.theme-nature-ocean .bg-indigo-600 { background-color: #0284c7 !important; }
+  html.theme-nature-ocean .hover\:bg-indigo-700:hover { background-color: #0369a1 !important; }
+  html.theme-nature-ocean .text-indigo-600 { color: #0284c7 !important; }
+  html.theme-nature-ocean .bg-indigo-50 { background-color: #f0f9ff !important; }
+  html.theme-nature-ocean .border-indigo-200 { border-color: #bae6fd !important; }
+
+  /* 14. NATURE FOREST (Rừng cây đại ngàn) */
+  html.theme-nature-forest {
+    --primary-accent: #15803d;
+  }
+  html.theme-nature-forest body {
+    background-color: #f7fcf7;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='60' viewBox='0 0 70 60'%3E%3Cpath d='M25 55 L35 15 L45 55 Z M10 58 L18 30 L26 58 Z M45 58 L52 32 L59 58 Z' fill='none' stroke='%2315803d' stroke-width='1' stroke-opacity='0.07'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-nature-forest body {
+    background-color: #04170b;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='60' viewBox='0 0 70 60'%3E%3Cpath d='M25 55 L35 15 L45 55 Z M10 58 L18 30 L26 58 Z M45 58 L52 32 L59 58 Z' fill='none' stroke='%2322c55e' stroke-width='1' stroke-opacity='0.08'/%3E%3C/svg%3E");
+  }
+  html.theme-nature-forest .bg-indigo-600 { background-color: #15803d !important; }
+  html.theme-nature-forest .hover\:bg-indigo-700:hover { background-color: #166534 !important; }
+  html.theme-nature-forest .text-indigo-600 { color: #15803d !important; }
+  html.theme-nature-forest .bg-indigo-50 { background-color: #f0fdf4 !important; }
+  html.theme-nature-forest .border-indigo-200 { border-color: #bbf7d0 !important; }
+
+  /* 15. NATURE FLORAL (Vườn hoa hương sắc) */
+  html.theme-nature-floral {
+    --primary-accent: #e11d48;
+  }
+  html.theme-nature-floral body {
+    background-color: #fdf8f9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23e11d48' fill-opacity='0.06'%3E%3Ccircle cx='30' cy='25' r='5'/%3E%3Ccircle cx='30' cy='35' r='5'/%3E%3Ccircle cx='25' cy='30' r='5'/%3E%3Ccircle cx='35' cy='30' r='5'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23fb7185' fill-opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+  html.dark.theme-nature-floral body {
+    background-color: #1f060c;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='%23fb7185' fill-opacity='0.07'%3E%3Ccircle cx='30' cy='25' r='5'/%3E%3Ccircle cx='30' cy='35' r='5'/%3E%3Ccircle cx='25' cy='30' r='5'/%3E%3Ccircle cx='35' cy='30' r='5'/%3E%3Ccircle cx='30' cy='30' r='3' fill='%23fda4af' fill-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  html.theme-nature-floral .bg-indigo-600 { background-color: #e11d48 !important; }
+  html.theme-nature-floral .hover\:bg-indigo-700:hover { background-color: #be123c !important; }
+  html.theme-nature-floral .text-indigo-600 { color: #e11d48 !important; }
+  html.theme-nature-floral .bg-indigo-50 { background-color: #fff1f2 !important; }
+  html.theme-nature-floral .border-indigo-200 { border-color: #fecdd3 !important; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.dark ::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+html.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Utility classes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 📜 Thanh cuộn ngang trực quan, dễ kéo, màu sắc nổi bật (Thanh rule ngang) */
+.scrollable-tabs {
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  scrollbar-width: thin !important;
+  scrollbar-color: #94a3b8 #e2e8f0;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollable-tabs::-webkit-scrollbar {
+  height: 8px !important;
+  display: block !important;
+}
+.scrollable-tabs::-webkit-scrollbar-track {
+  background: #e2e8f0 !important;
+  border-radius: 9999px;
+  margin: 0 4px;
+}
+html.dark .scrollable-tabs::-webkit-scrollbar-track {
+  background: #1e293b !important;
+}
+.scrollable-tabs::-webkit-scrollbar-thumb {
+  background: #94a3b8 !important;
+  border-radius: 9999px;
+  border: 1.5px solid #f8fafc;
+}
+html.dark .scrollable-tabs::-webkit-scrollbar-thumb {
+  background: #64748b !important;
+  border: 1.5px solid #0f172a;
+}
+.scrollable-tabs::-webkit-scrollbar-thumb:hover {
+  background: #64748b !important;
+}
+
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
+
