@@ -8,6 +8,7 @@ import { initialTrainingCommitments, initialEmployeeProgress } from '../services
 import { generateZaloBadgeQR } from '../services/smartBadgeService';
 import { ExportDropdown } from './ExportDropdown';
 import { printTableToPdf } from '../utils/exportUtils';
+import { insertMultipleEmployees } from '../services/supabaseService';
 import { 
   Users, 
   Search, 
@@ -28,7 +29,8 @@ import {
   X,
   Check,
   Clock,
-  GraduationCap
+  GraduationCap,
+  Cloud
 } from 'lucide-react';
 
 interface EmployeeListViewProps {
@@ -161,6 +163,17 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
       e.status === 'OFFICIAL' ? 'Chính thức' : e.status === 'PROBATION' ? 'Thử việc' : 'Đã nghỉ'
     ]);
     printTableToPdf(`DANH SÁCH HỒ SƠ NHÂN SỰ — ${policy.companyName}`, `Tổng số: ${filteredEmployees.length.toLocaleString('vi-VN')} nhân sự`, headers, rows);
+  };
+
+  const handleSyncToCloud = async () => {
+    if (window.confirm(`Đồng bộ ${currentTenantEmployees.length} nhân sự lên CSDL thật (Supabase)?`)) {
+      const success = await insertMultipleEmployees(currentTenantEmployees);
+      if (success) {
+        alert("Thành công! Toàn bộ nhân sự mẫu đã được đẩy lên CSDL.");
+      } else {
+        alert("Có lỗi xảy ra khi đẩy dữ liệu lên CSDL.");
+      }
+    }
   };
 
   // Nhập Excel
@@ -305,6 +318,14 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
             <span>Nhập Excel</span>
             <input type="file" accept=".xlsx, .xls" onChange={handleImportExcel} className="hidden" />
           </label>
+
+          <button
+            onClick={handleSyncToCloud}
+            className="flex items-center space-x-1.5 px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-700 text-xs font-semibold rounded-xl shadow-sm cursor-pointer transition-colors"
+          >
+            <Cloud className="w-3.5 h-3.5" />
+            <span>Đẩy lên Cloud</span>
+          </button>
 
           <button
             onClick={() => setShowAddModal(true)}

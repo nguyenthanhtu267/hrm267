@@ -91,3 +91,28 @@ export const insertEmployeeToSupabase = async (emp: Employee): Promise<Employee 
 
   return parseSupabaseEmployee(data);
 };
+
+export const insertMultipleEmployees = async (emps: Employee[]): Promise<boolean> => {
+  const payload = emps.map(emp => ({
+    code: emp.code,
+    full_name: emp.fullName,
+    gender: emp.gender,
+    dob: emp.dob || null,
+    phone: emp.phone,
+    email: emp.email,
+    cccd: emp.cccd,
+    address: emp.address,
+    department_name: emp.departmentName,
+    position: emp.position,
+    status: emp.status,
+    contract_type: emp.contractType,
+    base_salary: emp.baseSalary
+  }));
+
+  const { error } = await supabase.from('employees').insert(payload);
+  if (error) {
+    console.error('Lỗi đẩy dữ liệu hàng loạt:', error);
+    return false;
+  }
+  return true;
+};
