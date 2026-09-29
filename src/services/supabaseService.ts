@@ -127,7 +127,7 @@ export const insertMultipleEmployees = async (emps: Employee[]): Promise<boolean
   const chunkSize = 1000;
   for (let i = 0; i < payload.length; i += chunkSize) {
     const chunk = payload.slice(i, i + chunkSize);
-    const { error } = await supabase.from('employees').insert(chunk);
+    const { error } = await supabase.from('employees').upsert(chunk, { onConflict: 'code' });
     if (error) {
       console.error(`Lỗi đẩy dữ liệu hàng loạt ở chunk ${i}:`, error);
       return false;
