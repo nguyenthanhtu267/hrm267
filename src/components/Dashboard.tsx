@@ -119,8 +119,8 @@ export const Dashboard: React.FC<DashboardProps> = ({
   }, [currentTenantEmployees]);
 
   return (
-    <div className="space-y-2.5">
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 rounded-2xl px-4 py-2.5 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
+    <div className="space-y-3 animate-fade-in-up">
+      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 rounded-2xl px-5 py-3 text-white shadow-lg hover-lift flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
         <div>
           <div className="flex items-center space-x-2">
             <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
@@ -594,7 +594,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
       {activeDashboardTab === 'ANALYTICS' && (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-2.5">
           {/* Biểu đồ Giới tính & Độ tuổi */}
-          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-xs space-y-2">
+          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-md glass hover-lift transition-all space-y-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
               <h3 className="font-bold text-xs text-slate-900 uppercase">Cơ Cấu Giới Tính & Độ Tuổi</h3>
               <span className="text-[10px] font-mono text-indigo-600 font-bold">{activeEmployees.length.toLocaleString('vi-VN')} NS</span>
@@ -620,7 +620,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </div>
 
           {/* Hiệu suất định biên 3 Cơ sở */}
-          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-xs space-y-2">
+          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-md glass hover-lift transition-all space-y-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
               <h3 className="font-bold text-xs text-slate-900 uppercase">Định Biên Cơ Sở</h3>
               <span className="text-[10px] font-mono text-emerald-600 font-bold">TB: 94.2%</span>
@@ -660,7 +660,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
           </div>
 
           {/* Phân bổ quỹ lương TK 622/627/641/642 */}
-          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-xs space-y-2">
+          <div className="bg-white rounded-xl border border-slate-200 p-3 shadow-md glass hover-lift transition-all space-y-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-1.5">
               <h3 className="font-bold text-xs text-slate-900 uppercase">Phân Bổ Chi Phí Lương</h3>
               <span className="text-[10px] font-mono text-indigo-600 font-bold">TT 200</span>
@@ -695,7 +695,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       {/* TAB 3: ĐƠN TỪ & TUÂN THỦ CHI TIẾT */}
       {activeDashboardTab === 'COMPLIANCE' && (
-        <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+        <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-md glass hover-lift transition-all space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100">
             <h3 className="font-bold text-xs text-slate-900 uppercase">Tất Cả Yêu Cầu Chờ Xử Lý ({pendingRequests.length.toLocaleString('vi-VN')})</h3>
             <button

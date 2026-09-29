@@ -8,16 +8,13 @@ interface LoginViewProps {
 }
 
 export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
-  const [loginId, setLoginId] = useState('');
+  const [loginId, setLoginId] = useState('AF-001');
   const [errorMsg, setErrorMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!loginId.trim()) {
-      setErrorMsg('Vui lòng nhập Mã nhân viên (VD: AF-001)');
-      return;
-    }
+    const finalLoginId = loginId.trim() || 'AF-001';
 
     setIsLoading(true);
     setErrorMsg('');
@@ -25,7 +22,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
     // Simulate network delay for effect
     setTimeout(() => {
       const found = employees.find(
-        emp => emp.code.toLowerCase() === loginId.trim().toLowerCase()
+        emp => emp.code.toLowerCase() === finalLoginId.toLowerCase()
       );
       
       if (found) {
@@ -97,38 +94,27 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
           </div>
 
           <form onSubmit={handleLogin} className="space-y-5">
-            <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 ml-1">Mã nhân viên / ID</label>
+            <div className="space-y-1.5 relative">
+              <label htmlFor="loginId" className="block text-sm font-semibold text-slate-700">Mã Số Nhân Viên</label>
               <div className="relative">
-                <User className="w-5 h-5 text-slate-400 absolute left-4 top-3.5" />
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <User className="h-5 w-5 text-slate-400" />
+                </div>
                 <input
+                  id="loginId"
                   type="text"
-                  placeholder="Ví dụ: AF-001"
                   value={loginId}
-                  onChange={(e) => {
-                    setLoginId(e.target.value);
-                    setErrorMsg('');
-                  }}
-                  className="w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl focus:bg-white focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all font-mono font-bold text-slate-800 placeholder:font-sans placeholder:font-normal uppercase"
-                  autoFocus
+                  onChange={(e) => setLoginId(e.target.value)}
+                  placeholder="VD: AF-001, AF-002, AF-004..."
+                  className="block w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 font-medium focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all shadow-inner outline-none uppercase"
+                  required
                 />
               </div>
             </div>
-
-            <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-700 ml-1">Mật khẩu</label>
-              <div className="relative">
-                <KeyRound className="w-5 h-5 text-slate-400 absolute left-4 top-3.5" />
-                <input
-                  type="password"
-                  value="DEMO-PASSWORD-IGNORE"
-                  readOnly
-                  className="w-full pl-11 pr-4 py-3.5 bg-slate-100 border border-slate-200 rounded-2xl text-slate-400 cursor-not-allowed outline-none font-mono"
-                />
-              </div>
-              <p className="text-xs text-slate-400 ml-1 mt-1 flex justify-between">
-                <span>(Mật khẩu đã được tự động điền trong bản Demo)</span>
-              </p>
+            
+            <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-xl mb-4 text-center">
+              <p className="text-indigo-800 font-medium text-sm">Chế độ Demo</p>
+              <p className="text-indigo-600 text-xs mt-1">Hãy đổi mã bên trên để đăng nhập với các vai trò khác nhau.</p>
             </div>
 
             {errorMsg && (
