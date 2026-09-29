@@ -135,6 +135,11 @@ export interface CompanyPolicy {
 
   decimalSeparator: ',' | '.'; // Dấu thập phân (mặc định ',' theo VN hoặc '.' quốc tế)
   defaultLanguage: 'vi' | 'en' | 'zh'; // Tiếng Việt, Tiếng Anh, Tiếng Trung
+
+  // 12. Cấu hình Marketing Banner
+  promoBannerEnabled?: boolean;
+  promoBannerLink?: string;
+  promoBannerText?: string;
 }
 
 // ----------------------------------------------------

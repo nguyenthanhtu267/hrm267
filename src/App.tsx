@@ -449,7 +449,7 @@ export const App: React.FC = () => {
       />
       
       {/* Nút Banner Quảng Cáo Góc Phải */}
-      <FloatingBanner />
+      <FloatingBanner policy={currentPolicy} />
     </div>
   );
 };

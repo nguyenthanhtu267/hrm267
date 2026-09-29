@@ -1,6 +1,17 @@
 import React from 'react';
+import { CompanyPolicy } from '../types/hrm';
 
-export const FloatingBanner: React.FC = () => {
+interface FloatingBannerProps {
+  policy: CompanyPolicy;
+}
+
+export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
+  // If explicitly disabled in admin, don't show
+  if (policy.promoBannerEnabled === false) return null;
+
+  const link = policy.promoBannerLink || 'https://tuyendung.hrm.com/post-job';
+  const text = policy.promoBannerText || 'Đăng Tuyển Dụng';
+
   return (
     <>
       <style>
@@ -68,14 +79,14 @@ export const FloatingBanner: React.FC = () => {
         `}
       </style>
       <a
-        href="https://tuyendung.hrm.com/post-job"
+        href={link}
         target="_blank"
         rel="noopener noreferrer"
         className="floating-promo-btn"
-        title="Đăng Tuyển Dụng"
+        title={text}
       >
         <span className="promo-free-badge">FREE</span>
-        <span className="promo-text">Đăng Tuyển Dụng</span>
+        <span className="promo-text">{text}</span>
       </a>
     </>
   );
