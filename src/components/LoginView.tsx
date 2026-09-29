@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Employee } from '../types/hrm';
 import { Fingerprint, LogIn, Building2, User, KeyRound, ArrowRight } from 'lucide-react';
 
@@ -8,13 +8,24 @@ interface LoginViewProps {
 }
 
 export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
-  const [loginId, setLoginId] = useState('AF-001');
+  const [loginId, setLoginId] = useState('AF-002');
   const [errorMsg, setErrorMsg] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        document.getElementById('login-btn')?.click();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    const finalLoginId = loginId.trim() || 'AF-001';
+    const finalLoginId = loginId.trim() || 'AF-002';
 
     setIsLoading(true);
     setErrorMsg('');
@@ -94,27 +105,10 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
           </div>
 
           <form onSubmit={handleLogin} className="space-y-5">
-            <div className="space-y-1.5 relative">
-              <label htmlFor="loginId" className="block text-sm font-semibold text-slate-700">Mã Số Nhân Viên</label>
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-slate-400" />
-                </div>
-                <input
-                  id="loginId"
-                  type="text"
-                  value={loginId}
-                  onChange={(e) => setLoginId(e.target.value)}
-                  placeholder="VD: AF-001, AF-002, AF-004..."
-                  className="block w-full pl-11 pr-4 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-slate-900 font-medium focus:ring-4 focus:ring-indigo-500/20 focus:border-indigo-500 focus:bg-white transition-all shadow-inner outline-none uppercase"
-                  required
-                />
-              </div>
-            </div>
-            
             <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-xl mb-4 text-center">
-              <p className="text-indigo-800 font-medium text-sm">Chế độ Demo</p>
-              <p className="text-indigo-600 text-xs mt-1">Hãy đổi mã bên trên để đăng nhập với các vai trò khác nhau.</p>
+              <p className="text-indigo-800 font-medium text-sm">Đăng nhập nhanh</p>
+              <p className="text-indigo-600 text-xs mt-1">Tài khoản mặc định: Trưởng phòng Nhân sự (AF-002)</p>
+              <p className="text-indigo-500 text-[10px] mt-1">Ấn <strong>Enter</strong> hoặc click Đăng Nhập</p>
             </div>
 
             {errorMsg && (
@@ -125,6 +119,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
             )}
 
             <button
+              id="login-btn"
               type="submit"
               disabled={isLoading}
               className="w-full mt-4 bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4 rounded-2xl shadow-lg hover:shadow-indigo-500/30 transition-all flex justify-center items-center group relative overflow-hidden disabled:opacity-70 disabled:cursor-wait"
