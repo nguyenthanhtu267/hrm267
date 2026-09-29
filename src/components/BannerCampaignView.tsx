@@ -23,33 +23,87 @@ interface BannerCampaignViewProps {
   onSavePolicy: (policy: CompanyPolicy) => void;
 }
 
+interface BannerCampaign {
+  id: string;
+  name: string;
+  target: string;
+  status: 'ACTIVE' | 'INACTIVE';
+  views: number;
+  clicks: number;
+}
+
+const initialCampaigns: BannerCampaign[] = [
+  { id: '1', name: 'Ưu đãi gói tin nổi bật', target: 'Tất cả khu vực • Khách, ứng viên • Ưu tiên 10', status: 'ACTIVE', views: 845, clicks: 62 },
+  { id: '2', name: 'Kêu gọi ứng tuyển Kỹ sư', target: 'Trang chủ, Chi tiết tin • Ứng viên • Ưu tiên 8', status: 'ACTIVE', views: 403, clicks: 24 }
+];
+
 export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, onSavePolicy }) => {
   const [activeTab, setActiveTab] = useState<'LIST' | 'CREATE'>('LIST');
   const [formData, setFormData] = useState<CompanyPolicy>(policy);
+  const [campaigns, setCampaigns] = useState<BannerCampaign[]>(initialCampaigns);
+  const [editingCampaign, setEditingCampaign] = useState<BannerCampaign | null>(null);
+  const [campaignForm, setCampaignForm] = useState<Partial<BannerCampaign>>({});
 
   const handleSaveFloatingBanner = () => {
     onSavePolicy(formData);
     alert('Đã lưu cấu hình Floating Banner thành công!');
   };
+
+  const toggleCampaignStatus = (id: string) => {
+    setCampaigns(campaigns.map(c => 
+      c.id === id ? { ...c, status: c.status === 'ACTIVE' ? 'INACTIVE' : 'ACTIVE' } : c
+    ));
+  };
+
+  const handleEditCampaign = (camp: BannerCampaign) => {
+    setEditingCampaign(camp);
+    setCampaignForm(camp);
+    setActiveTab('CREATE');
+  };
+
+  const handleCreateNew = () => {
+    setEditingCampaign(null);
+    setCampaignForm({ name: '', target: 'Tất cả khu vực', status: 'ACTIVE', views: 0, clicks: 0 });
+    setActiveTab('CREATE');
+  };
+
+  const handleSaveCampaign = () => {
+    if (!campaignForm.name) {
+      alert('Vui lòng nhập tên chiến dịch');
+      return;
+    }
+    if (editingCampaign) {
+      setCampaigns(campaigns.map(c => c.id === editingCampaign.id ? { ...c, ...campaignForm } as BannerCampaign : c));
+    } else {
+      setCampaigns([...campaigns, { ...campaignForm, id: Date.now().toString() } as BannerCampaign]);
+    }
+    setActiveTab('LIST');
+  };
+
+  const activeCount = campaigns.filter(c => c.status === 'ACTIVE').length;
+  const totalViews = campaigns.reduce((sum, c) => sum + c.views, 0);
+  const totalClicks = campaigns.reduce((sum, c) => sum + c.clicks, 0);
+  const ctr = totalViews > 0 ? ((totalClicks / totalViews) * 100).toFixed(1) : '0.0';
+
   return (
     <div className="space-y-6 animate-in fade-in">
       {/* Stats Summary */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <p className="text-xs text-slate-500 font-semibold mb-1">Đang chạy</p>
-          <p className="text-2xl font-bold text-slate-900">2<span className="text-sm text-slate-400 font-normal">/2</span></p>
+          <p className="text-2xl font-bold text-slate-900">{activeCount}<span className="text-sm text-slate-400 font-normal">/{campaigns.length}</span></p>
         </div>
         <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <p className="text-xs text-slate-500 font-semibold mb-1">Lượt hiển thị (30 ngày)</p>
-          <p className="text-2xl font-bold text-slate-900">1,248</p>
+          <p className="text-2xl font-bold text-slate-900">{totalViews.toLocaleString('vi-VN')}</p>
         </div>
         <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <p className="text-xs text-slate-500 font-semibold mb-1">Lượt bấm (30 ngày)</p>
-          <p className="text-2xl font-bold text-slate-900">86</p>
+          <p className="text-2xl font-bold text-slate-900">{totalClicks.toLocaleString('vi-VN')}</p>
         </div>
         <div className="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <p className="text-xs text-slate-500 font-semibold mb-1">Tỷ lệ bấm (CTR)</p>
-          <p className="text-2xl font-bold text-emerald-600">6.8%</p>
+          <p className="text-2xl font-bold text-emerald-600">{ctr}%</p>
         </div>
       </div>
 
@@ -60,10 +114,10 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
             <div className="p-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
               <h2 className="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <Target className="w-4 h-4 text-indigo-600" />
-                Quản lý Chiến dịch (2)
+                Quản lý Chiến dịch ({campaigns.length})
               </h2>
               <button 
-                onClick={() => setActiveTab('CREATE')}
+                onClick={handleCreateNew}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold rounded-lg transition-colors cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
@@ -71,49 +125,36 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
               </button>
             </div>
             <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Campaign Card 1 */}
-              <div className="border border-slate-200 rounded-xl p-4 hover:border-indigo-300 transition-colors bg-white shadow-sm">
-                <div className="flex justify-between items-start mb-3">
+              {campaigns.map(camp => (
+                <div key={camp.id} className="border border-slate-200 rounded-xl p-4 hover:border-indigo-300 transition-colors bg-white shadow-sm flex flex-col justify-between">
                   <div>
-                    <h3 className="font-bold text-slate-900 text-sm">Ưu đãi gói tin nổi bật</h3>
-                    <p className="text-xs text-slate-500 mt-1">Tất cả khu vực • Khách, ứng viên • Ưu tiên 10</p>
+                    <div className="flex justify-between items-start mb-3">
+                      <div>
+                        <h3 className="font-bold text-slate-900 text-sm">{camp.name}</h3>
+                        <p className="text-xs text-slate-500 mt-1">{camp.target}</p>
+                      </div>
+                      <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${camp.status === 'ACTIVE' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-600'}`}>
+                        {camp.status === 'ACTIVE' ? 'Đang chạy' : 'Đã tắt'}
+                      </span>
+                    </div>
                   </div>
-                  <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Đang chạy</span>
-                </div>
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100">
-                  <div className="flex gap-4 text-xs text-slate-600 font-medium">
-                    <span className="flex items-center gap-1"><Eye className="w-3.5 h-3.5 text-slate-400" /> 845</span>
-                    <span className="flex items-center gap-1"><MousePointerClick className="w-3.5 h-3.5 text-slate-400" /> 62</span>
-                    <span className="text-emerald-600">CTR 7.3%</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <button className="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100">Sửa</button>
-                    <button className="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded hover:bg-slate-200">Tắt</button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Campaign Card 2 */}
-              <div className="border border-slate-200 rounded-xl p-4 hover:border-indigo-300 transition-colors bg-white shadow-sm">
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <h3 className="font-bold text-slate-900 text-sm">Kêu gọi ứng tuyển Kỹ sư</h3>
-                    <p className="text-xs text-slate-500 mt-1">Trang chủ, Chi tiết tin • Ứng viên • Ưu tiên 8</p>
-                  </div>
-                  <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold">Đang chạy</span>
-                </div>
-                <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100">
-                  <div className="flex gap-4 text-xs text-slate-600 font-medium">
-                    <span className="flex items-center gap-1"><Eye className="w-3.5 h-3.5 text-slate-400" /> 403</span>
-                    <span className="flex items-center gap-1"><MousePointerClick className="w-3.5 h-3.5 text-slate-400" /> 24</span>
-                    <span className="text-emerald-600">CTR 5.9%</span>
-                  </div>
-                  <div className="flex gap-2">
-                    <button className="text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100">Sửa</button>
-                    <button className="text-[11px] font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded hover:bg-slate-200">Tắt</button>
+                  <div className="flex items-center justify-between mt-4 pt-3 border-t border-slate-100">
+                    <div className="flex gap-4 text-xs text-slate-600 font-medium">
+                      <span className="flex items-center gap-1"><Eye className="w-3.5 h-3.5 text-slate-400" /> {camp.views}</span>
+                      <span className="flex items-center gap-1"><MousePointerClick className="w-3.5 h-3.5 text-slate-400" /> {camp.clicks}</span>
+                      <span className="text-emerald-600">CTR {camp.views > 0 ? ((camp.clicks / camp.views) * 100).toFixed(1) : 0}%</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <button onClick={() => handleEditCampaign(camp)} className="cursor-pointer text-[11px] font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded hover:bg-indigo-100">
+                        Sửa
+                      </button>
+                      <button onClick={() => toggleCampaignStatus(camp.id)} className="cursor-pointer text-[11px] font-semibold text-slate-600 bg-slate-100 px-2 py-1 rounded hover:bg-slate-200">
+                        {camp.status === 'ACTIVE' ? 'Tắt' : 'Bật'}
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
 
@@ -232,7 +273,7 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
           <div className="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
             <h2 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <Sparkles className="w-5 h-5 text-indigo-600" />
-              Tạo chiến dịch banner AI
+              {editingCampaign ? 'Sửa chiến dịch banner' : 'Tạo chiến dịch banner AI'}
             </h2>
             <button onClick={() => setActiveTab('LIST')} className="text-slate-400 hover:text-slate-600 cursor-pointer">✕</button>
           </div>
@@ -245,7 +286,7 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
                 <div className="space-y-4">
                   <div>
                     <label className="text-xs font-semibold text-slate-700 block mb-1">Tên chiến dịch (chỉ Admin thấy)</label>
-                    <input type="text" placeholder="VD: Tuyển Kỹ sư phần mềm tháng 10" className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
+                    <input type="text" value={campaignForm.name || ''} onChange={e => setCampaignForm({...campaignForm, name: e.target.value})} placeholder="VD: Tuyển Kỹ sư phần mềm tháng 10" className="w-full text-xs p-2.5 rounded-lg border border-slate-300 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 outline-none" />
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
@@ -253,8 +294,8 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
                       <input type="text" placeholder="Hot, Mới ra mắt..." className="w-full text-xs p-2.5 rounded-lg border border-slate-300 outline-none" />
                     </div>
                     <div>
-                      <label className="text-xs font-semibold text-slate-700 block mb-1">Tiêu đề (0/90)</label>
-                      <input type="text" placeholder="Tìm đồng đội chinh phục thử thách" className="w-full text-xs p-2.5 rounded-lg border border-slate-300 outline-none" />
+                      <label className="text-xs font-semibold text-slate-700 block mb-1">Đối tượng hiển thị</label>
+                      <input type="text" value={campaignForm.target || ''} onChange={e => setCampaignForm({...campaignForm, target: e.target.value})} placeholder="Tất cả khu vực..." className="w-full text-xs p-2.5 rounded-lg border border-slate-300 outline-none" />
                     </div>
                   </div>
                   <div>
@@ -326,8 +367,8 @@ export const BannerCampaignView: React.FC<BannerCampaignViewProps> = ({ policy, 
 
           {/* Footer Actions */}
           <div className="px-6 py-4 bg-slate-50 border-t border-slate-200 flex justify-end gap-3">
-            <button onClick={() => setActiveTab('LIST')} className="px-4 py-2 bg-white border border-slate-300 text-slate-700 text-sm font-semibold rounded-lg hover:bg-slate-50 transition-colors">Hủy</button>
-            <button className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-sm">Tạo chiến dịch</button>
+            <button onClick={() => setActiveTab('LIST')} className="px-4 py-2 bg-white border border-slate-300 text-slate-700 text-sm font-semibold rounded-lg hover:bg-slate-50 transition-colors cursor-pointer">Hủy</button>
+            <button onClick={handleSaveCampaign} className="px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 transition-colors shadow-sm cursor-pointer">{editingCampaign ? 'Lưu cập nhật' : 'Tạo chiến dịch'}</button>
           </div>
         </div>
       )}
