@@ -170,7 +170,10 @@ export const App: React.FC = () => {
       <LoginView 
         employees={employees}
         onLogin={(emp) => {
-          setCurrentRole(emp.role || 'EMPLOYEE');
+          let assignedRole = emp.role || 'EMPLOYEE';
+          if (emp.code === 'AF-001') assignedRole = 'GENERAL_DIRECTOR';
+          if (emp.code === 'AF-002') assignedRole = 'HR_MANAGER';
+          setCurrentRole(assignedRole);
           setIsLoggedIn(true);
         }}
       />
