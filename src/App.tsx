@@ -31,6 +31,7 @@ import { CanteenMealPassModal } from './components/CanteenMealPassModal';
 import { Footer } from './components/Footer';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { FloatingBanner } from './components/FloatingBanner';
+import { LoginView } from './components/LoginView';
 import { storageService } from './services/storageService';
 import { themeService } from './services/themeService';
 import { languageService, AppLanguage } from './services/languageService';
@@ -49,6 +50,7 @@ export const App: React.FC = () => {
   const [showMealPassModal, setShowMealPassModal] = useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<AppLanguage>(() => languageService.getLanguage());
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
     const handleLangChange = (e: any) => {
@@ -162,6 +164,18 @@ export const App: React.FC = () => {
       console.log('Đã lưu nhân viên lên Supabase:', saved);
     }
   };
+
+  if (!isLoggedIn) {
+    return (
+      <LoginView 
+        employees={employees}
+        onLogin={(emp) => {
+          setCurrentRole(emp.role || 'EMPLOYEE');
+          setIsLoggedIn(true);
+        }}
+      />
+    );
+  }
 
   return (
     <div className="h-screen bg-slate-50 flex flex-col font-sans overflow-hidden">
