@@ -5,7 +5,7 @@ import { Employee } from '../types/hrm';
 export const parseSupabaseEmployee = (row: any): Employee => {
   return {
     id: row.id,
-    tenantId: 'TENANT_1', // Mặc định cho bản demo
+    tenantId: 'TENANT-ASIAFOODS', // Sửa lại đúng Tenant ID đang dùng
     code: row.code || '',
     fullName: row.full_name || '',
     gender: row.gender || 'OTHER',
