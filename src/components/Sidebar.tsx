@@ -126,7 +126,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const headerSubtitle = lang === 'en' ? 'HR Operations & Governance' : lang === 'zh' ? '人力资源治理与运营' : 'Quản Trị Và Vận Hành Nhân Sự';
 
   const renderNavList = (isMobileMode = false) => (
-    <nav className="flex-1 px-2.5 py-2 flex flex-col justify-between overflow-y-auto no-scrollbar">
+    <nav className="flex-1 px-2.5 py-2 flex flex-col space-y-1 overflow-y-auto no-scrollbar">
       {visibleItems.map((item, index) => {
         const Icon = item.icon;
         const isActive = activeTab === item.id || 

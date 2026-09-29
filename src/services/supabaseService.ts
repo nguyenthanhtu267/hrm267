@@ -24,7 +24,7 @@ export const parseSupabaseEmployee = (row: any): Employee => {
     branchId: 'B1',
     branchName: 'Chi nhánh chính',
     departmentId: 'D1',
-    role: 'EMPLOYEE',
+    role: row.role || (row.code === 'AF-001' ? 'GENERAL_DIRECTOR' : row.code === 'AF-002' ? 'HR_MANAGER' : 'EMPLOYEE'),
     contractNumber: '',
     joinDate: new Date().toISOString().split('T')[0],
     contractStartDate: new Date().toISOString().split('T')[0],
