@@ -1016,7 +1016,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ onNavigate }
       {/* NÚT NỬA HÌNH TRÒN CỐ ĐỊNH Ở MÉP PHẢI MÀN HÌNH - ĐỘ MỜ 40% (OPACITY-40 HOVER:OPACITY-100) */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-3 px-2 rounded-l-2xl shadow-2xl transition-all duration-300 opacity-40 hover:opacity-100 flex flex-col items-center space-y-1 group cursor-pointer border-y border-l border-indigo-400"
+        className="fixed right-0 top-[30%] -translate-y-1/2 z-40 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-3 px-2 rounded-l-2xl shadow-2xl transition-all duration-300 opacity-40 hover:opacity-100 flex flex-col items-center space-y-1 group cursor-pointer border-y border-l border-indigo-400"
         title="Trợ lý QA & Pháp Luật (Mờ 40%, rê chuột để sáng rõ)"
       >
         <Sparkles className="w-4 h-4 group-hover:scale-110 transition-transform" />

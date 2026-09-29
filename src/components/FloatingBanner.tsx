@@ -18,7 +18,7 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
         {`
           .floating-promo-btn {
             position: fixed;
-            top: calc(50% + 80px);
+            top: 55%;
             right: 0;
             transform: translateY(-50%);
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
@@ -74,6 +74,25 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
             100% {
               transform: scale(0.95);
               box-shadow: 0 0 0 0 rgba(255, 59, 48, 0);
+            }
+          }
+          
+          /* Responsive (Co giãn theo điện thoại/tablet) */
+          @media (max-width: 768px) {
+            .floating-promo-btn {
+              padding: 10px 6px;
+              top: 60%;
+            }
+            .floating-promo-btn:hover {
+              padding-right: 10px;
+            }
+            .floating-promo-btn .promo-text {
+              font-size: 12px;
+              margin-top: 6px;
+            }
+            .promo-free-badge {
+              font-size: 9px;
+              padding: 2px 4px;
             }
           }
         `}
