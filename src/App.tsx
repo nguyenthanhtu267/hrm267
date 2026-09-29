@@ -37,6 +37,7 @@ import { languageService, AppLanguage } from './services/languageService';
 import { govReportsService } from './services/govReportsService';
 import { getEmployeePayrollScenario } from './services/mockData';
 import { calculateEmployeePayroll } from './services/payrollEngine';
+import { fetchEmployeesFromSupabase, insertEmployeeToSupabase } from './services/supabaseService';
 import { CompanyPolicy, Employee, AttendanceRecord, WorkflowRequest, OffboardingRecord, FeedbackItem, UserRole, PayrollRecord, PersonnelChange, DailyWorkReportItem } from './types/hrm';
 
 export const App: React.FC = () => {
@@ -62,6 +63,17 @@ export const App: React.FC = () => {
   // Dữ liệu ứng dụng
   const [policies, setPolicies] = useState<CompanyPolicy[]>(() => storageService.getPolicies());
   const [employees, setEmployees] = useState<Employee[]>(() => storageService.getEmployees());
+
+  useEffect(() => {
+    // Tải dữ liệu từ CSDL Supabase khi khởi động
+    const loadEmployees = async () => {
+      const data = await fetchEmployeesFromSupabase();
+      if (data && data.length > 0) {
+        setEmployees(data);
+      }
+    };
+    loadEmployees();
+  }, []);
   const [attendance, setAttendance] = useState<AttendanceRecord[]>(() => storageService.getAttendance());
   const [requests, setRequests] = useState<WorkflowRequest[]>(() => storageService.getRequests());
   const [offboardings, setOffboardings] = useState<OffboardingRecord[]>(() => storageService.getOffboardings());
@@ -139,8 +151,16 @@ export const App: React.FC = () => {
     setFeedbacks([item, ...feedbacks]);
   };
 
-  const handleAddEmployee = (newEmp: Employee) => {
+  const handleAddEmployee = async (newEmp: Employee) => {
+    // Lưu tạm vào state để UI phản hồi nhanh (Optimistic Update)
     setEmployees([...employees, newEmp]);
+    
+    // Gửi lên CSDL Supabase
+    const saved = await insertEmployeeToSupabase(newEmp);
+    if (saved) {
+      // Có thể reload lại nếu cần, hoặc để nguyên vì đã Optimistic Update
+      console.log('Đã lưu nhân viên lên Supabase:', saved);
+    }
   };
 
   return (
