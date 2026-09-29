@@ -805,7 +805,64 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
               </div>
             </div>
 
-            {/* BẢNG 6: TỶ LỆ TRÍCH ĐÓNG BHXH & CHẾ ĐỘ NGHỈ PHÉP */}
+            {/* BẢNG 6: CHIẾN DỊCH QUẢNG CÁO BANNER */}
+            <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-2xs flex flex-col justify-between space-y-2.5">
+              <div>
+                <div className="flex items-center space-x-2 border-b border-slate-100 pb-2 mb-2">
+                  <div className="p-1.5 rounded-lg bg-pink-50 text-pink-600">
+                    <Target className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h2 className="font-bold text-xs text-slate-900">6. Chiến Dịch Quảng Cáo Banner</h2>
+                    <p className="text-[10px] text-slate-400">Nút nổi (Floating) bên phải màn hình</p>
+                  </div>
+                </div>
+
+                <div className="space-y-2.5 text-xs">
+                  <div className="flex items-center justify-between p-1.5 rounded-lg border border-slate-200 bg-slate-50/80">
+                    <span className="text-[11px] font-semibold text-slate-800">Trạng thái Banner</span>
+                    <label className="relative inline-flex items-center cursor-pointer">
+                      <input 
+                        type="checkbox"
+                        checked={formData.promoBannerEnabled ?? true}
+                        onChange={(e) => setFormData(prev => ({ ...prev, promoBannerEnabled: e.target.checked }))}
+                        className="sr-only peer"
+                      />
+                      <div className="w-8 h-4 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all peer-checked:bg-pink-600"></div>
+                    </label>
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-semibold text-slate-700 block mb-1">Nội dung hiển thị</label>
+                    <input
+                      type="text"
+                      value={formData.promoBannerText || 'Đăng Tuyển Dụng'}
+                      onChange={(e) => setFormData({ ...formData, promoBannerText: e.target.value })}
+                      placeholder="Ví dụ: Đăng Tuyển Dụng"
+                      className="w-full text-xs p-1.5 rounded-lg border border-slate-300 bg-white focus:ring-1 focus:ring-pink-500 outline-none"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="text-[10px] font-semibold text-slate-700 block mb-1">Đường dẫn đích (Link URL)</label>
+                    <input
+                      type="url"
+                      value={formData.promoBannerLink || 'https://antfood.vn/tuyen-dung'}
+                      onChange={(e) => setFormData({ ...formData, promoBannerLink: e.target.value })}
+                      placeholder="https://..."
+                      className="w-full text-xs p-1.5 rounded-lg border border-slate-300 bg-white focus:ring-1 focus:ring-pink-500 outline-none text-indigo-600"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-100 text-[10px] text-slate-500 flex items-center justify-between">
+                <span>Tuỳ chỉnh thời gian thực</span>
+                <span className="text-pink-700 font-semibold">Floating Widget</span>
+              </div>
+            </div>
+
+            {/* BẢNG 7: TỶ LỆ TRÍCH ĐÓNG BHXH & CHẾ ĐỘ NGHỈ PHÉP */}
             <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-2xs flex flex-col justify-between space-y-2.5">
               <div>
                 <div className="flex items-center space-x-2 border-b border-slate-100 pb-2 mb-2">
@@ -813,7 +870,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
                     <FileCheck2 className="w-3.5 h-3.5" />
                   </div>
                   <div>
-                    <h2 className="font-bold text-xs text-slate-900">6. Tỷ Lệ Đóng BHXH &amp; Phép Năm</h2>
+                    <h2 className="font-bold text-xs text-slate-900">7. Tỷ Lệ Đóng BHXH &amp; Phép Năm</h2>
                     <p className="text-[10px] text-slate-400">Luật BHXH và Điều 113 - 114 BLLĐ</p>
                   </div>
                 </div>
@@ -851,7 +908,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
               </div>
             </div>
 
-            {/* BẢNG 7: THIẾT LẬP BIỂU THUẾ TNCN (5 BẬC MỚI / 7 BẬC CŨ CÓ NGÀY ÁP DỤNG) */}
+            {/* BẢNG 8: THIẾT LẬP BIỂU THUẾ TNCN (5 BẬC MỚI / 7 BẬC CŨ CÓ NGÀY ÁP DỤNG) */}
             <div className="bg-white rounded-xl border border-indigo-200 p-3.5 shadow-2xs flex flex-col justify-between space-y-2.5 md:col-span-2 lg:col-span-3 bg-gradient-to-br from-white via-indigo-50/20 to-amber-50/20">
               <div>
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-indigo-100 pb-2 mb-2 gap-2">
@@ -861,7 +918,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
                     </div>
                     <div>
                       <h2 className="font-bold text-xs text-slate-900 flex items-center gap-1.5">
-                        <span>7. Thiết Lập Biểu Thuế TNCN (Biểu 5 Bậc Mới &amp; Biểu 7 Bậc Cũ Có Ngày Áp Dụng)</span>
+                        <span>8. Thiết Lập Biểu Thuế TNCN (Biểu 5 Bậc Mới &amp; Biểu 7 Bậc Cũ Có Ngày Áp Dụng)</span>
                         <span className="text-[9.5px] font-bold px-2 py-0.2 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-300">
                           Luật Thuế TNCN 109/2025/QH15
                         </span>
