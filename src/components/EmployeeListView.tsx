@@ -27,7 +27,8 @@ import {
   FileText,
   X,
   Check,
-  Clock
+  Clock,
+  GraduationCap
 } from 'lucide-react';
 
 interface EmployeeListViewProps {
