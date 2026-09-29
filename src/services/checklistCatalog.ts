@@ -1,4 +1,4 @@
-﻿// ========================================================
+// ========================================================
 // DANH Má»¤C 63 KHOáº¢N TIá»€N LÆ¯Æ NG, PHá»¤ Cáº¤P, THÆ¯á»žNG & PHÃšC Lá»¢I
 // TrÃ­ch xuáº¥t tá»« tÃ i liá»‡u chuáº©n HRM Viá»‡t (CK01 - CK63)
 // Äáº§y Ä‘á»§ phÃ¢n loáº¡i: ÄÃ³ng BHXH, Chá»‹u Thuáº¿ TNCN, Chi PhÃ­ ÄÆ°á»£c Trá»« TNDN & CÄƒn Cá»© PhÃ¡p LÃ½
@@ -112,7 +112,7 @@ export const checklistCatalog: ChecklistItem[] = [
   {
     code: 'CK09',
     name: 'Tiá»n Äƒn giá»¯a ca / Phá»¥ cáº¥p Äƒn trÆ°a',
-    category: 'MEAL_ALLOWANCE',
+    category: 'PHU_CAP',
     subjectToBhxh: false, // Tiá»n Äƒn giá»¯a ca KHÃ”NG pháº£i Ä‘Ã³ng BHXH theo TT 06/2021/TT-BLÄTBXH
     subjectToTncn: false, // Miá»…n thuáº¿ tá»‘i Ä‘a 1.200.000 Ä‘/thÃ¡ng (náº¿u chi tiá»n máº·t) hoáº·c toÃ n bá»™ náº¿u tá»• chá»©c náº¥u Äƒn
     deductibleTndn: true, // Chi phÃ­ há»£p lÃ½ Ä‘Æ°á»£c trá»« khi tÃ­nh thuáº¿ TNDN
@@ -243,8 +243,9 @@ export const checklistCatalog: ChecklistItem[] = [
     inKindOnly: false,
     legalBasis: 'Nghá»‹ Ä‘á»‹nh 191/2013/NÄ-CP',
     notes: '2% tÃ­nh trÃªn tá»•ng quá»¹ lÆ°Æ¡ng Ä‘Ã³ng BHXH báº¯t buá»™c cá»§a ngÆ°á»i lao Ä‘á»™ng trong ká»³.',
-  }
-  // CÁC KHOẢN BỔ SUNG (CK21 - CK63)  {
+  },
+  // CÁC KHOẢN BỔ SUNG (CK21 - CK63)
+  {
     code: 'CK21',
     name: 'Khoản phụ cấp / trợ cấp / chi trả khác CK21',
     category: 'PHU_CAP',
