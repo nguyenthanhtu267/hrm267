@@ -47,20 +47,32 @@ export const parseSupabaseEmployee = (row: any): Employee => {
 };
 
 export const fetchEmployeesFromSupabase = async (): Promise<Employee[]> => {
-  // Override giới hạn 1000 dòng mặc định của Supabase để lấy toàn bộ 6789 dữ liệu
-  const { data, error } = await supabase
-    .from('employees')
-    .select('*')
-    .order('created_at', { ascending: false })
-    .limit(10000);
+  let allData: any[] = [];
+  let from = 0;
+  const step = 1000;
+  
+  while (true) {
+    const { data, error } = await supabase
+      .from('employees')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .range(from, from + step - 1);
 
-  if (error) {
-    console.error('Lỗi tải nhân viên từ Supabase:', error);
-    return [];
+    if (error) {
+      console.error('Lỗi tải nhân viên từ Supabase:', error);
+      break;
+    }
+    if (!data || data.length === 0) {
+      break;
+    }
+    allData = allData.concat(data);
+    if (data.length < step) {
+      break;
+    }
+    from += step;
   }
 
-  if (!data) return [];
-  return data.map(parseSupabaseEmployee);
+  return allData.map(parseSupabaseEmployee);
 };
 
 export const insertEmployeeToSupabase = async (emp: Employee): Promise<Employee | null> => {
@@ -111,10 +123,16 @@ export const insertMultipleEmployees = async (emps: Employee[]): Promise<boolean
     base_salary: emp.baseSalary
   }));
 
-  const { error } = await supabase.from('employees').insert(payload);
-  if (error) {
-    console.error('Lỗi đẩy dữ liệu hàng loạt:', error);
-    return false;
+  // Chia nhỏ thành các chunk 1000 dòng để không vượt quá giới hạn payload/insert của PostgREST
+  const chunkSize = 1000;
+  for (let i = 0; i < payload.length; i += chunkSize) {
+    const chunk = payload.slice(i, i + chunkSize);
+    const { error } = await supabase.from('employees').insert(chunk);
+    if (error) {
+      console.error(`Lỗi đẩy dữ liệu hàng loạt ở chunk ${i}:`, error);
+      return false;
+    }
   }
+  
   return true;
 };

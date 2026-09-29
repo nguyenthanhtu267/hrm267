@@ -30,7 +30,8 @@ import {
   Check,
   Clock,
   GraduationCap,
-  Cloud
+  Cloud,
+  Calendar
 } from 'lucide-react';
 
 interface EmployeeListViewProps {
