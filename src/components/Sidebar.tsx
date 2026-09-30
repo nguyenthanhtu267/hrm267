@@ -145,11 +145,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
             className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-medium transition-all cursor-pointer ${
               isActive
                 ? 'bg-indigo-600 text-white shadow-xs'
-                : 'hover:bg-slate-800 hover:text-white text-slate-300'
+                : 'hover:bg-indigo-50 hover:text-indigo-700 text-slate-600'
             }`}
           >
             <div className="flex items-center space-x-2.5 truncate">
-              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-400'}`} />
+              <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-indigo-600'}`} />
               <span className="truncate">{displayLabel}</span>
             </div>
             {item.badge !== undefined && item.badge > 0 && (
@@ -165,9 +165,9 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <>
-      <aside className="hidden md:flex w-64 min-w-[16rem] max-w-[16rem] shrink-0 h-full bg-slate-900/95 backdrop-blur-2xl text-slate-300 shadow-2xl flex-col border-r border-slate-800 no-print select-none z-20 transition-none overflow-hidden">
-        <div className="px-3.5 py-2.5 border-b border-slate-800 shrink-0">
-          <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{headerTitle}</p>
+      <aside className="hidden md:flex w-64 min-w-[16rem] max-w-[16rem] shrink-0 h-full bg-white/95 backdrop-blur-2xl text-slate-700 shadow-2xl flex-col border-r border-slate-200 no-print select-none z-20 transition-none overflow-hidden">
+        <div className="px-3.5 py-2.5 border-b border-slate-100 shrink-0">
+          <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{headerTitle}</p>
           <p className="text-xs text-slate-500 mt-0.5">{headerSubtitle}</p>
         </div>
         {renderNavList(false)}
@@ -180,15 +180,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
             onClick={onCloseMobile}
           />
 
-          <aside className="fixed inset-y-0 left-0 w-72 max-w-[85vw] bg-slate-900/95 backdrop-blur-2xl text-slate-300 shadow-2xl flex flex-col shadow-2xl z-10 border-r border-slate-800 animate-in slide-in-from-left duration-200">
-            <div className="px-3.5 py-2.5 border-b border-slate-800 flex items-center justify-between">
+          <aside className="fixed inset-y-0 left-0 w-72 max-w-[85vw] bg-white/95 backdrop-blur-2xl text-slate-700 shadow-2xl flex flex-col z-10 border-r border-slate-200 animate-in slide-in-from-left duration-200">
+            <div className="px-3.5 py-2.5 border-b border-slate-100 flex items-center justify-between">
               <div>
-                <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">{headerTitle}</p>
+                <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">{headerTitle}</p>
                 <p className="text-xs text-slate-500 mt-0.5">{headerSubtitle}</p>
               </div>
               <button
                 onClick={onCloseMobile}
-                className="p-1.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 cursor-pointer"
+                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-800 hover:bg-slate-100 cursor-pointer"
                 title="Đóng menu"
               >
                 <X className="w-5 h-5" />

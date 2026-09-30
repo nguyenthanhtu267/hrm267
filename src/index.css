@@ -62,15 +62,15 @@
   html.theme-emerald .bg-indigo-50 { background-color: #ecfdf5 !important; }
   html.theme-emerald .border-indigo-200 { border-color: #a7f3d0 !important; }
 
-  /* 🌌 Phong cách 3: Midnight Executive */
-  html.theme-midnight {
-    --primary-accent: #0f172a;
+  /* 🌌 Phong cách 3: Pearl Luxury */
+  html.theme-pearl {
+    --primary-accent: #eab308;
   }
-  html.theme-midnight .bg-indigo-600 { background-color: #0f172a !important; }
-  html.theme-midnight .hover\:bg-indigo-700:hover { background-color: #1e293b !important; }
-  html.theme-midnight .text-indigo-600 { color: #d97706 !important; }
-  html.theme-midnight .bg-indigo-50 { background-color: #fef3c7 !important; }
-  html.theme-midnight .border-indigo-200 { border-color: #fde68a !important; }
+  html.theme-pearl .bg-indigo-600 { background-color: #fef08a !important; color: #713f12 !important; }
+  html.theme-pearl .hover\:bg-indigo-700:hover { background-color: #fde047 !important; color: #713f12 !important; }
+  html.theme-pearl .text-indigo-600 { color: #854d0e !important; }
+  html.theme-pearl .bg-indigo-50 { background-color: #fefce8 !important; }
+  html.theme-pearl .border-indigo-200 { border-color: #fef08a !important; }
 
   /* 🌅 Phong cách 4: Amber Sunset */
   html.theme-amber {

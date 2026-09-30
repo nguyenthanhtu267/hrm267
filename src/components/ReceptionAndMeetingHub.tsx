@@ -924,30 +924,30 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
   return (
     <div className="space-y-4 animate-in fade-in text-slate-800">
       {/* ════════════════════ BANNER TỔNG QUAN NGOẠI GIAO & PHÒNG HỌP THÔNG MINH ════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
+      <div className="bg-gradient-to-r from-indigo-50 via-white to-blue-50 rounded-2xl p-4 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-100">
         <div className="flex items-center space-x-3">
-          <div className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-300">
+          <div className="p-3 rounded-2xl bg-indigo-100 border border-indigo-200 text-indigo-700">
             <Users className="w-7 h-7" />
           </div>
           <div>
             <div className="flex items-center space-x-2 flex-wrap">
-              <h2 className="text-base sm:text-lg font-black tracking-tight uppercase">
+              <h2 className="text-base sm:text-lg font-black tracking-tight uppercase text-indigo-950">
                 Tiếp Khách Ngoại Giao, Khánh Tiết &amp; Điều Phối Phòng Họp Thông Minh (Smart Reception Suite)
               </h2>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-400 text-slate-950">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-600 text-white shadow-sm">
                 6 Phân Hệ Chuẩn Doanh Nghiệp
               </span>
             </div>
-            <p className="text-xs text-indigo-200/80 mt-0.5">
+            <p className="text-xs text-slate-600 mt-0.5 font-medium">
               Sơ đồ IoT thời gian thực, ma trận timeline AI, banner LED đón tiếp khách VIP, kiểm soát cổng an toàn HSE &amp; kho quà tặng ngoại giao
             </p>
           </div>
         </div>
 
         <div className="flex items-center space-x-2 flex-wrap gap-y-2">
-          <div className="text-right bg-white/10 px-3 py-1.5 rounded-xl border border-white/15 shrink-0">
-            <span className="text-[10px] text-indigo-200 block uppercase font-bold">Khách Trong Nhà Máy:</span>
-            <span className="text-base font-black text-emerald-300 font-mono">
+          <div className="text-right bg-white px-3 py-1.5 rounded-xl border border-slate-200 shadow-sm shrink-0">
+            <span className="text-[10px] text-slate-500 block uppercase font-bold">Khách Trong Nhà Máy:</span>
+            <span className="text-base font-black text-emerald-600 font-mono">
               {visitorGateLogs.filter(v => v.status === 'IN_PREMISES').length} Khách
             </span>
           </div>
@@ -1223,34 +1223,34 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
                     )}
 
                     {/* Khối Chỉ Số IoT Thời Gian Thực */}
-                    <div className="p-2.5 rounded-xl bg-slate-900 text-slate-200 mb-3 space-y-2 text-xs">
-                      <div className="flex items-center justify-between border-b border-slate-800 pb-1.5">
-                        <span className="text-[10px] font-black uppercase text-indigo-400 tracking-wider flex items-center gap-1">
-                          <Sliders className="w-3 h-3 text-indigo-400" />
+                    <div className="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100 text-slate-700 mb-3 space-y-2 text-xs shadow-sm">
+                      <div className="flex items-center justify-between border-b border-indigo-200 pb-1.5">
+                        <span className="text-[10px] font-black uppercase text-indigo-700 tracking-wider flex items-center gap-1">
+                          <Sliders className="w-3 h-3 text-indigo-600" />
                           Hệ Thống IoT &amp; Cảm Biến Phòng Họp
                         </span>
-                        <span className="text-[9.5px] font-bold text-emerald-400 flex items-center gap-1">
-                          <Wifi className="w-3 h-3 text-emerald-400" />
+                        <span className="text-[9.5px] font-bold text-emerald-600 flex items-center gap-1">
+                          <Wifi className="w-3 h-3 text-emerald-500" />
                           Online
                         </span>
                       </div>
                       <div className="grid grid-cols-3 gap-1 text-center">
-                        <div className="p-1 rounded bg-slate-800/80">
-                          <span className="text-[9.5px] text-slate-400 block">Nhiệt độ A/C</span>
-                          <span className="font-bold font-mono text-amber-300 text-xs flex items-center justify-center gap-0.5">
-                            <Thermometer className="w-3 h-3 text-amber-400" />
+                        <div className="p-1 rounded bg-white border border-indigo-50">
+                          <span className="text-[9.5px] text-slate-500 block">Nhiệt độ A/C</span>
+                          <span className="font-bold font-mono text-amber-600 text-xs flex items-center justify-center gap-0.5">
+                            <Thermometer className="w-3 h-3 text-amber-500" />
                             {room.iot.acTemp}°C
                           </span>
                         </div>
-                        <div className="p-1 rounded bg-slate-800/80">
-                          <span className="text-[9.5px] text-slate-400 block">Polycom 4K</span>
-                          <span className={`font-bold text-[10.5px] ${room.iot.polycom4kOnline ? 'text-emerald-400' : 'text-slate-500'}`}>
+                        <div className="p-1 rounded bg-white border border-indigo-50">
+                          <span className="text-[9.5px] text-slate-500 block">Polycom 4K</span>
+                          <span className={`font-bold text-[10.5px] ${room.iot.polycom4kOnline ? 'text-emerald-600' : 'text-slate-400'}`}>
                             {room.iot.polycom4kOnline ? '✓ Sẵn sàng' : 'Chưa bật'}
                           </span>
                         </div>
-                        <div className="p-1 rounded bg-slate-800/80">
-                          <span className="text-[9.5px] text-slate-400 block">Cảm biến người</span>
-                          <span className={`font-bold text-[10.5px] ${room.iot.motionDetected ? 'text-rose-400' : 'text-emerald-400'}`}>
+                        <div className="p-1 rounded bg-white border border-indigo-50">
+                          <span className="text-[9.5px] text-slate-500 block">Cảm biến người</span>
+                          <span className={`font-bold text-[10.5px] ${room.iot.motionDetected ? 'text-rose-600' : 'text-emerald-600'}`}>
                             {room.iot.motionDetected ? 'Có người' : 'Không có'}
                           </span>
                         </div>

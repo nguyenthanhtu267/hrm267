@@ -76,6 +76,17 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
     themeService.applyToDOM(updated);
   };
 
+  const handleSelectFontSize = (size: 'NORMAL' | 'LARGE' | 'MAX') => {
+    const updated: ThemeConfig = { ...previewConfig, fontSize: size };
+    setPreviewConfig(updated);
+    themeService.applyToDOM(updated);
+  };
+
+  const handleToggleAutoRotate = () => {
+    const updated: ThemeConfig = { ...previewConfig, autoRotate: !previewConfig.autoRotate };
+    setPreviewConfig(updated);
+  };
+
   const handleSaveAndApply = () => {
     themeService.saveConfig(previewConfig);
     setCurrentConfig(previewConfig);
@@ -221,14 +232,63 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
                 })}
               </div>
             </div>
+
+            {/* Kích thước chữ (Font Size) */}
+            <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 space-y-2">
+              <div className="flex items-center justify-between">
+                <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5 text-xs">
+                  <Type className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+                  3. Kích Thước Chữ (Độ Thu Phóng)
+                </span>
+                <span className="text-[10px] text-slate-400">Ưu tiên to rõ</span>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {[
+                  { id: 'NORMAL', label: 'Bình Thường' },
+                  { id: 'LARGE', label: 'Lớn (Mặc định)' },
+                  { id: 'MAX', label: 'Rất Lớn' }
+                ].map(size => (
+                  <button
+                    key={size.id}
+                    type="button"
+                    onClick={() => handleSelectFontSize(size.id as any)}
+                    className={`py-2 px-2.5 rounded-lg border text-center transition-all cursor-pointer ${
+                      previewConfig.fontSize === size.id
+                        ? 'border-indigo-600 bg-white dark:bg-slate-800 shadow-xs ring-2 ring-indigo-500/20 text-indigo-700 dark:text-indigo-400 font-bold'
+                        : 'border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 hover:border-slate-300'
+                    }`}
+                  >
+                    <span className="text-[11px]">{size.label}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Tự Động Chuyển Giao Diện */}
+            <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 flex items-center justify-between">
+              <div>
+                <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5 text-xs">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  4. Đổi Nền Tự Động Mỗi Ngày
+                </span>
+                <p className="text-[10px] text-slate-500 mt-1">Tránh nhàm chán bằng cách ngẫu nhiên đổi 15 mẫu nền</p>
+              </div>
+              <button
+                type="button"
+                onClick={handleToggleAutoRotate}
+                className={`w-12 h-6 rounded-full transition-colors relative cursor-pointer ${previewConfig.autoRotate ? 'bg-indigo-600' : 'bg-slate-300 dark:bg-slate-700'}`}
+              >
+                <div className={`absolute top-1 left-1 bg-white w-4 h-4 rounded-full transition-transform ${previewConfig.autoRotate ? 'translate-x-6' : 'translate-x-0'}`}></div>
+              </button>
+            </div>
           </div>
 
           {/* HÀNG 2: 15 MẪU PHONG CÁCH GIAO DIỆN (CHIA THEO 3 TAB THÔNG MINH) */}
           <div className="space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
               <span className="font-bold text-slate-900 dark:text-white flex items-center gap-2 text-xs">
-                <Sparkles className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-                <span>3. Chọn Mẫu Phong Cách & Họa Tiết Nền (15 Mẫu Sắc Nét)</span>
+                <Palette className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                <span>5. Chọn Mẫu Phong Cách & Họa Tiết Nền (15 Mẫu Sắc Nét)</span>
               </span>
 
               {/* 3 Tabs thông minh tiết kiệm diện tích */}

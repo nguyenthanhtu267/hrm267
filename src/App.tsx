@@ -108,6 +108,7 @@ export const App: React.FC = () => {
 
   // Khởi tạo và lắng nghe thay đổi theme / chế độ Ngày Đêm hệ điều hành
   useEffect(() => {
+    themeService.checkAndApplyAutoRotate();
     const config = themeService.getConfig();
     themeService.applyToDOM(config);
     const unlisten = themeService.initListener(() => {

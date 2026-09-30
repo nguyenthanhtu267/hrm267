@@ -9,7 +9,7 @@ export type ThemePreset =
   // 5 Mẫu Doanh Nghiệp Chuẩn Mực
   | 'CORPORATE_INDIGO'
   | 'EMERALD_NATURE'
-  | 'MIDNIGHT_LUXURY'
+  | 'PEARL_LUXURY'
   | 'AMBER_SUNSET'
   | 'TECH_CYAN'
   // 5 Mẫu Nền Hình Vector & Đường Line / Sóng
@@ -41,6 +41,8 @@ export interface ThemeConfig {
   preset: ThemePreset;
   mode: ColorMode;
   font: FontFamilyId;
+  fontSize: 'NORMAL' | 'LARGE' | 'MAX';
+  autoRotate: boolean;
 }
 
 export interface ThemePresetInfo {
@@ -82,13 +84,13 @@ export const THEME_PRESETS: ThemePresetInfo[] = [
     tagline: 'Tươi mới · Bền vững'
   },
   {
-    id: 'MIDNIGHT_LUXURY',
-    name: 'Đẳng Cấp Lãnh Đạo',
+    id: 'PEARL_LUXURY' as ThemePreset,
+    name: 'Ngọc Trai Hoàng Gia',
     group: 'CORE',
-    description: 'Tone than đá kết hợp vàng ánh kim sang trọng, tối ưu quyền uy cho Ban Giám Đốc.',
-    previewColors: ['#0f172a', '#eab308', '#020617'],
-    primaryClass: 'theme-midnight',
-    tagline: 'Uy quyền · Sang trọng'
+    description: 'Tone trắng kem ngọc trai kết hợp vàng ánh kim sang trọng, tạo không gian làm việc rộng rãi.',
+    previewColors: ['#f8fafc', '#eab308', '#ffffff'],
+    primaryClass: 'theme-pearl',
+    tagline: 'Sáng rực · Sang trọng'
   },
   {
     id: 'AMBER_SUNSET',
@@ -266,18 +268,25 @@ export const FONT_OPTIONS: FontOptionInfo[] = [
 const STORAGE_KEYS = {
   PRESET: 'omnihrm_theme_preset_v2',
   MODE: 'omnihrm_color_mode_v2',
-  FONT: 'omnihrm_theme_font_v2'
+  FONT: 'omnihrm_theme_font_v2',
+  FONT_SIZE: 'omnihrm_theme_font_size_v2',
+  AUTO_ROTATE: 'omnihrm_theme_auto_rotate_v2'
 };
 
 export const themeService = {
   getConfig(): ThemeConfig {
     const savedPreset = (localStorage.getItem(STORAGE_KEYS.PRESET) as ThemePreset) || 'CORPORATE_INDIGO';
-    const savedMode = (localStorage.getItem(STORAGE_KEYS.MODE) as ColorMode) || 'SYSTEM';
+    const savedMode = (localStorage.getItem(STORAGE_KEYS.MODE) as ColorMode) || 'LIGHT'; // Ưu tiên sáng theo yêu cầu
     const savedFont = (localStorage.getItem(STORAGE_KEYS.FONT) as FontFamilyId) || 'DEFAULT';
+    const savedFontSize = (localStorage.getItem(STORAGE_KEYS.FONT_SIZE) as 'NORMAL' | 'LARGE' | 'MAX') || 'LARGE'; // Mặc định to
+    const savedAutoRotate = localStorage.getItem(STORAGE_KEYS.AUTO_ROTATE) === 'true';
+
     return {
       preset: savedPreset,
       mode: savedMode,
-      font: savedFont
+      font: savedFont,
+      fontSize: savedFontSize,
+      autoRotate: savedAutoRotate
     };
   },
 
@@ -286,6 +295,8 @@ export const themeService = {
       localStorage.setItem(STORAGE_KEYS.PRESET, config.preset);
       localStorage.setItem(STORAGE_KEYS.MODE, config.mode);
       localStorage.setItem(STORAGE_KEYS.FONT, config.font);
+      localStorage.setItem(STORAGE_KEYS.FONT_SIZE, config.fontSize);
+      localStorage.setItem(STORAGE_KEYS.AUTO_ROTATE, config.autoRotate.toString());
       this.applyToDOM(config);
     } catch (e) {
       console.warn('Cannot save theme to localStorage:', e);
@@ -322,6 +333,15 @@ export const themeService = {
     const currentFont = FONT_OPTIONS.find(f => f.id === config.font) || FONT_OPTIONS[0];
     root.style.setProperty('--app-font-family', currentFont.fontFamily);
     document.body.style.fontFamily = currentFont.fontFamily;
+
+    // 4. Áp dụng Font Size (Thu phóng giao diện)
+    if (config.fontSize === 'MAX') {
+      root.style.fontSize = '125%';
+    } else if (config.fontSize === 'LARGE') {
+      root.style.fontSize = '112.5%';
+    } else {
+      root.style.fontSize = '100%';
+    }
   },
 
   initListener(onThemeChange: () => void): () => void {
@@ -335,5 +355,22 @@ export const themeService = {
     };
     mediaQuery.addEventListener('change', handler);
     return () => mediaQuery.removeEventListener('change', handler);
+  },
+
+  checkAndApplyAutoRotate() {
+    const config = this.getConfig();
+    if (!config.autoRotate) return;
+
+    const today = new Date().toDateString();
+    const lastRotatedDay = localStorage.getItem('omnihrm_theme_last_rotated');
+    
+    if (lastRotatedDay !== today) {
+      // Pick a random preset
+      const randomPreset = THEME_PRESETS[Math.floor(Math.random() * THEME_PRESETS.length)].id;
+      const updatedConfig = { ...config, preset: randomPreset };
+      
+      this.saveConfig(updatedConfig);
+      localStorage.setItem('omnihrm_theme_last_rotated', today);
+    }
   }
 };
