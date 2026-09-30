@@ -28,6 +28,7 @@ import { CompanyNewsAndBulletinView } from './components/CompanyNewsAndBulletinV
 import { AIAssistantModal } from './components/AIAssistantModal';
 import { InternalMessengerModal } from './components/InternalMessengerModal';
 import { CanteenMealPassModal } from './components/CanteenMealPassModal';
+import { GlobalBannerArea } from './components/GlobalBannerArea';
 import { Footer } from './components/Footer';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { FloatingBanner } from './components/FloatingBanner';
@@ -219,8 +220,13 @@ export const App: React.FC = () => {
         />
 
         {/* Nội Dung Màn Hình Chính */}
-        <main className="flex-1 min-h-0 overflow-y-auto px-2.5 sm:px-4 md:px-5 lg:px-6 pt-1.5 pb-2 bg-slate-50/50">
+        <main className="flex-1 min-h-0 overflow-y-auto px-2.5 sm:px-4 md:px-5 lg:px-6 pt-2 pb-6 bg-slate-50/50">
           <div className="max-w-7xl mx-auto">
+            {/* Vùng Banner Chung Cho Toàn Bộ Các Tab */}
+            {currentPolicy.promoBannerEnabled !== false && (
+              <GlobalBannerArea currentTab={activeTab} policy={currentPolicy} />
+            )}
+
             {activeTab === 'COMPANY_NOTICES' && (
               <ErrorBoundary fallbackLabel="Thông Báo & Thông Tin Chung">
                 <CompanyNewsAndBulletinView
