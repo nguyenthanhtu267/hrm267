@@ -410,9 +410,9 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
   }, [filteredJds, jdPage, jdPageSize]);
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-200">
+    <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* HEADER PHÂN HỆ */}
-      <div className="bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="bg-white p-2 sm:p-2.5 rounded-2xl border border-slate-200 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
         <div>
           <div className="flex items-center space-x-2">
             <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100">
@@ -522,7 +522,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           TAB 1: BÁO CÁO CÔNG VIỆC HẰNG NGÀY (DAILY WORK LOG)
       ========================================================================= */}
       {activeTab === 'DAILY_WORK_LOG' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Thanh lọc & Minh bạch thông tin */}
           <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
             <div className="flex items-center space-x-2 flex-wrap gap-y-2">
@@ -619,7 +619,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
                 return (
                   <div 
                     key={rep.id}
-                    className={`p-4 rounded-xl border transition-all bg-white shadow-2xs hover:shadow-sm space-y-3 relative group ${
+                    className={`p-2 rounded-xl border transition-all bg-white shadow-2xs hover:shadow-sm space-y-3 relative group ${
                       isBlocked ? 'border-rose-300 bg-rose-50/20' : 'border-slate-200'
                     }`}
                   >
@@ -759,10 +759,10 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           TAB 2: GIAO BAN SÁNG & PHÂN TÍCH THÔNG MINH (DAILY STANDUP DASHBOARD)
       ========================================================================= */}
       {activeTab === 'DAILY_STANDUP' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ KPI Giao Ban Sáng */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
-            <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+            <div className="p-2 rounded-xl border border-slate-200 bg-white shadow-2xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Tổng Đầu Việc Ngày</span>
                 <div className="p-1.5 rounded-lg bg-indigo-50 text-indigo-600">
@@ -773,7 +773,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
               <p className="text-[10px] text-slate-400 mt-0.5">Tổng số giờ công: {standupStats.totalHours} giờ</p>
             </div>
 
-            <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+            <div className="p-2 rounded-xl border border-slate-200 bg-white shadow-2xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Tỷ Lệ Tập Trung KPI</span>
                 <div className="p-1.5 rounded-lg bg-emerald-50 text-emerald-600">
@@ -784,7 +784,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
               <p className="text-[10px] text-slate-400 mt-0.5">{standupStats.kpiHours}h dành cho mục tiêu chiến lược</p>
             </div>
 
-            <div className="p-4 rounded-xl border border-slate-200 bg-white shadow-2xs">
+            <div className="p-2 rounded-xl border border-slate-200 bg-white shadow-2xs">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-slate-500">Việc Đã Hoàn Thành</span>
                 <div className="p-1.5 rounded-lg bg-blue-50 text-blue-600">
@@ -795,7 +795,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
               <p className="text-[10px] text-slate-400 mt-0.5">Đạt tiến độ kế hoạch đề ra</p>
             </div>
 
-            <div className={`p-4 rounded-xl border shadow-2xs ${
+            <div className={`p-2 rounded-xl border shadow-2xs ${
               standupStats.blockedCount > 0 ? 'bg-rose-50 border-rose-200' : 'bg-white border-slate-200'
             }`}>
               <div className="flex items-center justify-between">
@@ -812,7 +812,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           </div>
 
           {/* CẢNH BÁO LỆCH MỤC TIÊU (TARGET DRIFT ALERT) */}
-          <div className="p-4 rounded-xl border border-amber-200 bg-amber-50/50 shadow-2xs space-y-2.5">
+          <div className="p-2 rounded-xl border border-amber-200 bg-amber-50/50 shadow-2xs space-y-2.5">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="p-1.5 rounded-lg bg-amber-500 text-white">
@@ -866,7 +866,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           </div>
 
           {/* AI Daily Task Summarizer: Bảng Tóm Tắt Họp Giao Ban */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs space-y-3">
+          <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-4 h-4 text-indigo-600" />
@@ -910,8 +910,8 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           TAB 3: BẢNG ĐIỂM & MỤC TIÊU KPI/OKR
       ========================================================================= */}
       {activeTab === 'KPI_EVALUATION' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div>
               <h3 className="font-bold text-xs sm:text-sm text-slate-900">
                 Thẻ Điểm KPI Cá Nhân &amp; Tiến Độ Tự Động Tích Lũy Từ Báo Cáo Ngày
@@ -1011,9 +1011,9 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           TAB 4: 3 NHÓM LƯƠNG & LIÊN KẾT THƯỞNG PHẠT BẢNG LƯƠNG
       ========================================================================= */}
       {activeTab === 'SALARY_GROUPS_PERFORMANCE' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Banner Điều Khiển Tỷ Lệ HQKD Doanh Nghiệp (Dynamic Live Sliders) */}
-          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-4 sm:p-5 rounded-2xl shadow-md border border-slate-800 space-y-4">
+          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-2 sm:p-2.5 rounded-2xl shadow-md border border-slate-800 space-y-1.5">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-indigo-900/60 pb-3">
               <div className="flex items-center space-x-2.5">
                 <div className="p-2 rounded-xl bg-indigo-600/40 text-indigo-300 border border-indigo-500/30">
@@ -1168,9 +1168,9 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           TAB 5: THƯ VIỆN BẢN MÔ TẢ CÔNG VIỆC (JD) & KHUNG NĂNG LỰC CHỨC DANH
       ========================================================================= */}
       {activeTab === 'JD_LIBRARY' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Header Banner & Tìm Kiếm JD */}
-          <div className="bg-white p-4 rounded-xl border border-slate-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
+          <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-2xs flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-xs">
             <div>
               <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
                 <BookOpen className="w-4 h-4 text-emerald-600" />
@@ -1216,11 +1216,11 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           </div>
 
           {/* Lưới Thẻ JD (Grid 2 cột) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
             {paginatedJds.map((jd, idx) => (
               <div
                 key={jd.id}
-                className="bg-white p-4 rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all space-y-3 flex flex-col justify-between"
+                className="bg-white p-2 rounded-xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all space-y-3 flex flex-col justify-between"
               >
                 <div className="space-y-2.5">
                   <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2.5">
@@ -1304,7 +1304,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
           {selectedJdDetail && (
             <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 overflow-y-auto">
               <div className="bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 my-6">
-                <div className="bg-gradient-to-r from-emerald-900 to-slate-900 text-white p-4 flex items-center justify-between">
+                <div className="bg-gradient-to-r from-emerald-900 to-slate-900 text-white p-2 flex items-center justify-between">
                   <div>
                     <span className="text-[10px] font-bold text-emerald-300 uppercase tracking-wider">
                       Bản Mô Tả Công Việc Chuẩn Chức Danh • {selectedJdDetail.id}
@@ -1319,7 +1319,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
                   </button>
                 </div>
 
-                <div className="p-5 space-y-4 text-xs">
+                <div className="p-2.5 space-y-1.5 text-xs">
                   <div className="grid grid-cols-2 gap-3 p-3 bg-slate-50 rounded-xl border border-slate-100">
                     <div>
                       <span className="text-slate-400 block text-[10px]">Phòng ban / Bộ phận:</span>
@@ -1398,7 +1398,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
       {showAddReportModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 overflow-y-auto">
           <div className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 my-6">
-            <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-4 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-2 flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <div className="p-1.5 rounded-lg bg-indigo-600 text-white">
                   <FileText className="w-4 h-4" />
@@ -1416,7 +1416,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateDailyReport} className="p-5 space-y-4 text-xs max-h-[80vh] overflow-y-auto">
+            <form onSubmit={handleCreateDailyReport} className="p-2.5 space-y-1.5 text-xs max-h-[80vh] overflow-y-auto">
               {formError && (
                 <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 font-semibold text-[11px] flex items-center gap-2">
                   <AlertTriangle className="w-4 h-4 text-rose-600 shrink-0" />
@@ -1665,7 +1665,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
       {selectedReportForFeedback && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 overflow-y-auto">
           <div className="bg-white rounded-2xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 my-6">
-            <div className="bg-indigo-900 text-white p-4 flex items-center justify-between">
+            <div className="bg-indigo-900 text-white p-2 flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
                 <h3 className="font-bold text-sm">Phản Hồi &amp; Đánh Giá Của Quản Lý</h3>
@@ -1678,7 +1678,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs">
+            <div className="p-2.5 space-y-1.5 text-xs">
               <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                 <div className="flex items-center justify-between">
                   <strong className="text-slate-900">{selectedReportForFeedback.employeeName}</strong>

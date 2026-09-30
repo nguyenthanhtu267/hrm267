@@ -163,9 +163,9 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
   }, [selectedEmpDetail, currentTenantEmployees]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       {/* TIÊU ĐỀ VÀ THẺ METRIC */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
         <div>
           <div className="flex items-center space-x-2">
             <Network className="w-5 h-5 text-indigo-600" />
@@ -196,7 +196,7 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
       </div>
 
       {/* THANH ĐIỀU HƯỚNG VÀ BỘ LỌC CHI NHÁNH */}
-      <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+      <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm space-y-1.5">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3">
           {/* Tabs chính */}
           <div className="flex items-center space-x-1 p-1 bg-slate-100 rounded-xl text-xs font-semibold w-fit">
@@ -305,7 +305,7 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
 
       {/* ===================== TAB 1: CÂY PHÂN CẤP TỔ CHỨC ===================== */}
       {activeTab === 'ORG_TREE' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* CẤP ĐIỀU HÀNH CAO NHẤT: THIẾT KẾ THU GỌN */}
           {(selectedBranch === 'ALL' || selectedBranch.includes('Trụ Sở Chính')) && (
             <div className="bg-white rounded-xl p-3 border border-slate-200 shadow-xs">
@@ -542,7 +542,7 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
       {/* ===================== TAB 2: VỊ TRÍ CẦN TUYỂN BÙ ĐẮP ===================== */}
       {activeTab === 'VACANCIES' && (
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3">
-          <div className="p-4 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div className="p-2 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div>
               <div className="flex items-center space-x-2">
                 <UserPlus className="w-4 h-4 text-rose-600" />
@@ -671,10 +671,10 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
       )}
       {/* MODAL / DRAWER SƠ ĐỒ 3 CẤP NHÂN SỰ (CẤP TRÊN - ĐỒNG NGHIỆP - CẤP DƯỚI) */}
       {selectedEmpDetail && employeeRelations && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2">
           <div className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
             {/* Header Modal */}
-            <div className="p-4 bg-slate-900 text-white flex items-center justify-between">
+            <div className="p-2 bg-slate-900 text-white flex items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow">
                   {selectedEmpDetail.fullName.split(' ').pop()?.substring(0, 2).toUpperCase()}
@@ -698,7 +698,7 @@ export const OrgChartView: React.FC<OrgChartViewProps> = ({ policy, employees })
             </div>
 
             {/* Nội dung 3 tầng quan hệ */}
-            <div className="p-5 space-y-4 max-h-[75vh] overflow-y-auto">
+            <div className="p-2.5 space-y-1.5 max-h-[75vh] overflow-y-auto">
               {/* TẦNG 1: CẤP QUẢN LÝ TRỰC TIẾP (REPORTS TO) */}
               <div className="border border-slate-200 rounded-xl p-3 bg-amber-50/40">
                 <span className="text-[11px] font-bold text-amber-800 uppercase tracking-wider block mb-2">

@@ -716,7 +716,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* Tiêu đề, chọn ngày & Khóa kỳ lương */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
@@ -1168,7 +1168,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
           </div>
 
           {/* BỘ MÔ PHỎNG TIẾP NHẬN DỮ LIỆU */}
-          <div className="bg-gradient-to-tr from-slate-900 to-indigo-950 p-4 rounded-2xl text-white shadow-md">
+          <div className="bg-gradient-to-tr from-slate-900 to-indigo-950 p-2 rounded-2xl text-white shadow-md">
             <div className="flex items-center justify-between mb-2 border-b border-white/10 pb-2">
               <div className="flex items-center space-x-2">
                 <Fingerprint className="w-4 h-4 text-emerald-400" />
@@ -1237,7 +1237,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
 
       {/* TAB CON 2: LỊCH PHÂN CA HÀNG TUẦN THEO TỔ / CHUYỀN */}
       {activeSubTab === 'WEEKLY_SCHEDULE' && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3 p-4">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3 p-2">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-slate-100 pb-3">
             <div>
               <h3 className="font-bold text-sm text-slate-900">Ma Trận Phân Ca Hàng Tuần (Thứ 2 → Chủ Nhật)</h3>
@@ -1339,7 +1339,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
 
       {/* TAB CON 3: QUẢN LÝ HOÁN ĐỔI CA */}
       {activeSubTab === 'SHIFT_SWAP_MANAGEMENT' && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 space-y-3">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-2 space-y-3">
           <div className="flex items-center justify-between border-b border-slate-100 pb-2">
             <div>
               <h3 className="font-bold text-sm text-slate-900">Danh Sách Yêu Cầu Hoán Đổi Ca</h3>
@@ -1404,8 +1404,8 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
 
       {/* TAB CON 4: CẢNH BÁO LỆCH CA & VI PHẠM THỜI GIAN NGHỈ NGƠI */}
       {activeSubTab === 'SCHEDULE_ALERTS' && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white rounded-2xl border border-rose-200 p-4 shadow-sm space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
+          <div className="bg-white rounded-2xl border border-rose-200 p-2 shadow-sm space-y-3">
             <div className="flex items-center space-x-2 text-rose-700 border-b border-rose-100 pb-2">
               <AlertOctagon className="w-5 h-5" />
               <h3 className="font-bold text-sm">Vi Phạm Nghỉ Ngơi &lt; 12 Giờ (Điều 110 BLLĐ 2019)</h3>
@@ -1426,7 +1426,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-amber-200 p-4 shadow-sm space-y-3">
+          <div className="bg-white rounded-2xl border border-amber-200 p-2 shadow-sm space-y-3">
             <div className="flex items-center space-x-2 text-amber-700 border-b border-amber-100 pb-2">
               <AlertTriangle className="w-5 h-5" />
               <h3 className="font-bold text-sm">Cảnh Báo Chưa Phân Ca & Lệch Ca Chấm Công</h3>
@@ -1454,9 +1454,9 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
       
       {/* TAB 5: QUẢN LÝ CÁC LOẠI XIN NGHỈ & TỒN PHÉP NĂM CHI TIẾT */}
       {activeSubTab === 'LEAVE_QUOTA_MANAGEMENT' && (
-        <div className="space-y-4 animate-in fade-in duration-200">
+        <div className="space-y-1.5 animate-in fade-in duration-200">
           {/* THANH ĐIỀU KHIỂN THÁNG, PHÒNG BAN & XUẤT BÁO CÁO */}
-          <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="flex flex-wrap items-center gap-2.5">
               {/* Chọn tháng quản lý */}
               <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-xl bg-slate-50 border border-slate-200 text-xs">
@@ -1748,11 +1748,11 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
       {/* MODAL CHI TIẾT LỊCH SỬ NGHỈ PHÉP CỦA TỪNG NHÂN VIÊN */}
       {selectedEmpLeaveDetail && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => setSelectedEmpLeaveDetail(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-2xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
@@ -1823,7 +1823,7 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
                     </div>
                   ))
                 ) : (
-                  <div className="p-4 text-center text-slate-400 italic">
+                  <div className="p-2 text-center text-slate-400 italic">
                     Chưa phát sinh đợt nghỉ phép nào trong năm nay.
                   </div>
                 )}
@@ -1845,8 +1845,8 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
       
       {/* TAB CON: GIẢI TRÌNH QUÊN CHẤM CÔNG & PHÊ DUYỆT BÙ CÔNG */}
       {activeSubTab === 'REGULARIZATION' && (
-        <div className="space-y-4">
-          <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div className="space-y-1.5">
+          <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div>
               <div className="flex items-center space-x-2">
                 <FileSignature className="w-5 h-5 text-indigo-600" />
@@ -1965,11 +1965,11 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
       {/* MODAL NỘP ĐƠN GIẢI TRÌNH BÙ CÔNG (CHUẨN POKA-YOKE) */}
       {showRegModal && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => setShowRegModal(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Modal Header */}
@@ -2194,14 +2194,14 @@ export const AttendanceView: React.FC<AttendanceViewProps> = ({
       {showReminderPopup && reminderEmp && (
         <div 
           onClick={() => setShowReminderPopup(false)}
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in cursor-pointer"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in cursor-pointer"
         >
           <div 
             onClick={(e) => {
               // Bấm vào modal cũng có thể tắt hoặc xem chi tiết
               setShowReminderPopup(false);
             }}
-            className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl space-y-4 text-center border border-indigo-100"
+            className="bg-white rounded-3xl max-w-md w-full p-3 shadow-2xl space-y-1.5 text-center border border-indigo-100"
           >
             <div className={`w-16 h-16 mx-auto rounded-2xl flex items-center justify-center shadow-lg ${
               reminderType === 'BEFORE_SHIFT' ? 'bg-indigo-600 text-white shadow-indigo-200' :

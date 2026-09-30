@@ -209,11 +209,11 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
   const pendingReissueCount = reissueList.filter(r => r.status === 'PENDING_HR_CHECK').length;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 overflow-y-auto print:p-0 print:bg-white animate-in fade-in">
+    <div className="fixed inset-0 z-50 bg-slate-900/75 backdrop-blur-xs flex items-center justify-center p-2 sm:p-2 overflow-y-auto print:p-0 print:bg-white animate-in fade-in">
       <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-6xl max-h-[96vh] flex flex-col overflow-hidden relative print:max-h-none print:shadow-none print:border-none">
         
         {/* ===================== HEADER ===================== */}
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-4 sm:p-5 flex items-center justify-between border-b border-indigo-900 print:hidden">
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-2 sm:p-2.5 flex items-center justify-between border-b border-indigo-900 print:hidden">
           <div className="flex items-center space-x-3">
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 text-slate-950 font-black flex items-center justify-center shadow-lg">
               <Printer className="w-6 h-6" />
@@ -356,16 +356,16 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
         </div>
 
         {/* ===================== NỘI DUNG TỪNG TAB ===================== */}
-        <div className="p-4 sm:p-6 flex-1 overflow-y-auto space-y-4">
+        <div className="p-2 sm:p-3 flex-1 overflow-y-auto space-y-1.5">
           
           {/* ═════════════════════════════════════════════════════════════ */}
           {/* TAB 1: MỤC 1 - NHÂN VIÊN MỚI CHƯA TỪNG IN THẺ                  */}
           {/* ═════════════════════════════════════════════════════════════ */}
           {activeTab === 'NEW_EMPLOYEES' && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               
               {/* Banner hướng dẫn nghiệp vụ */}
-              <div className="p-4 rounded-2xl bg-indigo-50/80 border border-indigo-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+              <div className="p-2 rounded-2xl bg-indigo-50/80 border border-indigo-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                 <div className="space-y-1">
                   <div className="flex items-center space-x-2 text-indigo-950 font-black">
                     <UserPlus className="w-4 h-4 text-indigo-600" />
@@ -585,8 +585,8 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
           {/* TAB 2: MỤC 2 - ĐỀ NGHỊ CẤP LẠI THẺ (MẤT THẺ / HỎNG CHIP)       */}
           {/* ═════════════════════════════════════════════════════════════ */}
           {activeTab === 'REISSUE_REQUESTS' && (
-            <div className="space-y-4">
-              <div className="p-4 rounded-2xl bg-teal-50/80 border border-teal-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div className="space-y-1.5">
+              <div className="p-2 rounded-2xl bg-teal-50/80 border border-teal-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
                 <div className="space-y-1">
                   <div className="flex items-center space-x-2 text-teal-950 font-black">
                     <RefreshCw className="w-4 h-4 text-teal-600" />
@@ -607,7 +607,7 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
                   return (
                     <div 
                       key={req.id}
-                      className="p-4 bg-white rounded-2xl border-2 border-slate-200 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-4 hover:border-teal-300 transition-all"
+                      className="p-2 bg-white rounded-2xl border-2 border-slate-200 shadow-xs flex flex-col lg:flex-row lg:items-center justify-between gap-1.5 hover:border-teal-300 transition-all"
                     >
                       <div className="space-y-2 flex-1">
                         <div className="flex items-center space-x-2.5 flex-wrap">
@@ -688,7 +688,7 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
           {/* TAB 3: XEM & IN THẺ ĐƠN LẺ (CHUẨN PHÔI CR-80)                   */}
           {/* ═════════════════════════════════════════════════════════════ */}
           {activeTab === 'SINGLE_PREVIEW' && previewBadge && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               
               {/* Thanh điều khiển xem trước & in */}
               <div className="p-3.5 bg-slate-100 rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
@@ -746,13 +746,13 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
               </div>
 
               {/* KHU VỰC HIỂN THỊ PHÔI THẺ CHUẨN IN ẤN (CR-80) */}
-              <div className="bg-slate-900/90 rounded-3xl p-6 flex flex-col items-center justify-center min-h-[460px]">
+              <div className="bg-slate-900/90 rounded-3xl p-3 flex flex-col items-center justify-center min-h-[460px]">
                 
                 {/* 1. HIỂN THỊ THẺ ĐỨNG (VERTICAL: 54 x 86 mm) - CHUẨN 1 MẶT DUY NHẤT */}
                 {globalOrientation === 'VERTICAL' && (
                   <div className="flex items-center justify-center">
                     {/* THẺ ĐỨNG 1 MẶT DUY NHẤT: ĐẦY ĐỦ LOGO, ẢNH, HỌ TÊN, CHỨC VỤ, PHÒNG BAN, RFID & MÃ QR ZALO */}
-                    <div className="w-[270px] h-[430px] rounded-2xl shadow-2xl p-4 flex flex-col justify-between relative overflow-hidden bg-white text-slate-900 border-2 border-indigo-200 select-none">
+                    <div className="w-[270px] h-[430px] rounded-2xl shadow-2xl p-2 flex flex-col justify-between relative overflow-hidden bg-white text-slate-900 border-2 border-indigo-200 select-none">
                       {/* Dải nhận diện thương hiệu trên cùng */}
                       <div className="absolute top-0 left-0 right-0 h-2.5 bg-gradient-to-r from-blue-700 via-indigo-600 to-indigo-800" />
 
@@ -837,7 +837,7 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
                 {globalOrientation === 'HORIZONTAL' && (
                   <div className="flex items-center justify-center">
                     {/* THẺ NGANG 1 MẶT DUY NHẤT: BỐ CỤC ĐỒNG NHẤT KHÔNG PHÂN BIỆT VỚI THẺ ĐỨNG */}
-                    <div className="w-[420px] h-[265px] rounded-2xl shadow-2xl p-4 flex flex-col justify-between relative overflow-hidden bg-white text-slate-900 border-2 border-indigo-200 select-none">
+                    <div className="w-[420px] h-[265px] rounded-2xl shadow-2xl p-2 flex flex-col justify-between relative overflow-hidden bg-white text-slate-900 border-2 border-indigo-200 select-none">
                       {/* Dải nhận diện thương hiệu trên cùng */}
                       <div className="absolute top-0 left-0 right-0 h-2.5 bg-gradient-to-r from-blue-700 via-indigo-600 to-indigo-800" />
 
@@ -925,10 +925,10 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
           {/* TAB 4: DÀN TRANG IN HÀNG LOẠT KHỔ A4 (8 THẺ / TRANG)            */}
           {/* ═════════════════════════════════════════════════════════════ */}
           {activeTab === 'BATCH_PRINT_A4' && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               
               {/* Thanh điều khiển in A4 */}
-              <div className="p-4 bg-slate-100 rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs print:hidden">
+              <div className="p-2 bg-slate-100 rounded-2xl border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs print:hidden">
                 <div>
                   <h4 className="font-black text-slate-900 uppercase">
                     Dàn Trang In Hàng Loạt Khổ A4 (8 Thẻ / Trang)
@@ -972,7 +972,7 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
               </div>
 
               {/* KHU VỰC IN TỜ A4 CHUẨN (PRINT CONTAINER) */}
-              <div id="printable-a4-sheet" className="p-4 sm:p-6 bg-slate-200/60 rounded-3xl overflow-x-auto flex justify-center">
+              <div id="printable-a4-sheet" className="p-2 sm:p-3 bg-slate-200/60 rounded-3xl overflow-x-auto flex justify-center">
                 <div className="w-[210mm] min-h-[297mm] bg-white shadow-2xl p-[10mm] text-slate-900 border border-slate-300 print:w-full print:p-0 print:border-none print:shadow-none">
                   
                   {/* TIÊU ĐỀ TRANG IN */}
@@ -1063,8 +1063,8 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
           {/* TAB 5: SỔ ĐEN VÔ HIỆU HÓA THẺ CŨ (BLACKLIST)                    */}
           {/* ═════════════════════════════════════════════════════════════ */}
           {activeTab === 'BLACKLIST' && (
-            <div className="space-y-4">
-              <div className="p-4 bg-rose-50 rounded-2xl border border-rose-200 flex items-center justify-between">
+            <div className="space-y-1.5">
+              <div className="p-2 bg-rose-50 rounded-2xl border border-rose-200 flex items-center justify-between">
                 <div>
                   <h4 className="font-bold text-rose-950 uppercase text-xs flex items-center gap-1.5">
                     <ShieldCheck className="w-4 h-4 text-rose-600" />
@@ -1115,7 +1115,7 @@ export const SmartBadgePrintingHubModal: React.FC<SmartBadgePrintingHubModalProp
         </div>
 
         {/* ===================== FOOTER ===================== */}
-        <div className="bg-slate-50 border-t border-slate-200 p-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 print:hidden">
+        <div className="bg-slate-50 border-t border-slate-200 p-2 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 print:hidden">
           <div>
             Hệ thống in thẻ tự động đồng bộ mã QR Zalo thực tế &amp; phân quyền thẻ từ 4-trong-1.
           </div>

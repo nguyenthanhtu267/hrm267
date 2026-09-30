@@ -202,9 +202,9 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-2">
       {/* Header & Giải thích pháp lý */}
-      <div className="bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 rounded-3xl p-5 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="bg-gradient-to-r from-emerald-800 via-teal-900 to-slate-900 rounded-3xl p-2.5 text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-1.5">
         <div>
           <div className="flex items-center space-x-2">
             <span className="p-2 bg-emerald-500/20 text-emerald-200 rounded-xl border border-emerald-500/30">
@@ -265,7 +265,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
       </div>
 
       {/* KHỐI 1: BỘ MÁY TÍNH NHẬP TAY (INTERACTIVE MANUAL CALCULATOR) */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-5 shadow-sm space-y-4">
+      <div className="bg-white rounded-3xl border border-slate-200 p-2.5 shadow-sm space-y-1.5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
           <div className="flex items-center space-x-2">
             <Calculator className="w-5 h-5 text-teal-600" />
@@ -278,7 +278,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
           </span>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 items-center">
           {/* Cột nhập số tiền */}
           <div className="lg:col-span-4 space-y-2">
             <label className="text-xs font-bold text-slate-700 block">
@@ -320,7 +320,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
           </div>
 
           {/* Cột hiển thị kết quả các tờ tiền */}
-          <div className="lg:col-span-8 bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+          <div className="lg:col-span-8 bg-slate-50 p-2 rounded-2xl border border-slate-200 space-y-3">
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-slate-700">
                 Kết Quả Phân Bổ Mệnh Giá (Tổng: <span className="font-mono text-teal-800 text-sm">{manualAmount.toLocaleString('vi-VN')} đ</span>):
@@ -364,7 +364,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
       </div>
 
       {/* KHỐI 2: TỔNG HỢP RÚT TIỀN TẠI NGÂN HÀNG (BANK WITHDRAWAL SUMMARY) */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-5 shadow-sm space-y-4">
+      <div className="bg-white rounded-3xl border border-slate-200 p-2.5 shadow-sm space-y-1.5">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
           <div>
             <div className="flex items-center space-x-2">
@@ -416,7 +416,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
 
       {/* KHỐI 3: DANH SÁCH CHI TIẾT TỪNG NHÂN VIÊN & BẢNG KÝ NHẬN LƯƠNG TIỀN MẶT */}
       <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden">
-        <div className="p-4 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="p-2 bg-slate-50 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="flex items-center space-x-2">
             <Layers className="w-4 h-4 text-teal-600" />
             <h3 className="text-xs font-bold text-slate-800 uppercase tracking-wide">
@@ -529,9 +529,9 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
 
       {/* MODAL 1: IN PHIẾU KẸP PHONG BÌ TIỀN MẶT (MINI ENVELOPE SLIPS) */}
       {showEnvelopeModal && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
           <div className="bg-white rounded-3xl shadow-2xl max-w-4xl w-full border border-slate-200 overflow-hidden my-6 flex flex-col max-h-[92vh]">
-            <div className="bg-gradient-to-r from-amber-600 to-slate-900 text-white p-5 flex justify-between items-center no-print">
+            <div className="bg-gradient-to-r from-amber-600 to-slate-900 text-white p-2.5 flex justify-between items-center no-print">
               <div>
                 <h3 className="text-base font-bold flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-amber-300" />
@@ -558,12 +558,12 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
               </div>
             </div>
 
-            <div className="p-5 overflow-y-auto flex-1 bg-slate-50">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-2.5 overflow-y-auto flex-1 bg-slate-50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                 {employeeBreakdowns.map((emp) => (
                   <div 
                     key={emp.employeeId}
-                    className="p-4 bg-white rounded-2xl border-2 border-dashed border-amber-300 shadow-sm flex flex-col justify-between"
+                    className="p-2 bg-white rounded-2xl border-2 border-dashed border-amber-300 shadow-sm flex flex-col justify-between"
                   >
                     <div>
                       {/* Tiêu đề phong bì */}
@@ -635,7 +635,7 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
               </div>
             </div>
 
-            <div className="p-4 bg-white border-t flex justify-end no-print">
+            <div className="p-2 bg-white border-t flex justify-end no-print">
               <button
                 onClick={() => setShowEnvelopeModal(false)}
                 className="px-4 py-2 border rounded-xl font-bold text-xs text-slate-700 hover:bg-slate-100 cursor-pointer"
@@ -649,8 +649,8 @@ export const CashDenominationView: React.FC<CashDenominationViewProps> = ({
 
       {/* MODAL 2: THÔNG BÁO ĐỒNG BỘ BÚT TOÁN KẾ TOÁN THÀNH CÔNG */}
       {showSyncSuccessModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full border border-slate-200 overflow-hidden p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 animate-fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full border border-slate-200 overflow-hidden p-3 space-y-1.5">
             <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-6 h-6" />
             </div>

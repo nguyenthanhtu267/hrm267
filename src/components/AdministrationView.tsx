@@ -1580,7 +1580,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-200">
+    <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* 1. HEADER BANNER THU GỌN: VỪA VẶN TRONG TRANG 1 */}
       <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-xl p-3.5 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
         <div>
@@ -1811,9 +1811,9 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ TAB 8: DỊCH VỤ ĐỐI TÁC THUÊ NGOÀI (6 PHÂN HỆ CHUYÊN BIỆT) ════════════════════ */}
       {activeSubTab === 'PARTNER_SERVICES' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* BANNER TỔNG QUAN HỢP ĐỒNG ĐỐI TÁC DỊCH VỤ */}
-          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
+          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
             <div className="flex items-center space-x-3">
               <div className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-300">
                 <ShieldAlert className="w-7 h-7" />
@@ -1928,13 +1928,13 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 1: AN NINH & BẢO VỆ ════════════════════ */}
             {activePartnerServiceTab === 'SECURITY' && (
-              <div className="p-4 space-y-4">
+              <div className="p-2 space-y-1.5">
                 {/* Thẻ nhà thầu bảo vệ */}
                 {(() => {
                   const sec = partnerVendors.find(v => v.serviceCategory === 'SECURITY')!;
                   return (
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="space-y-1.5">
+                      <div className="p-2 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{sec.serviceName}</span>
@@ -1997,12 +1997,12 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 2: TẠP VỤ & RÁC THẢI ════════════════════ */}
             {activePartnerServiceTab === 'CLEANING' && (
-              <div className="p-4 space-y-4">
+              <div className="p-2 space-y-1.5">
                 {(() => {
                   const cln = partnerVendors.find(v => v.serviceCategory === 'CLEANING')!;
                   return (
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="space-y-1.5">
+                      <div className="p-2 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{cln.serviceName}</span>
@@ -2064,13 +2064,13 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 3: NHÀ ĂN CA & CƠM DOANH NGHIỆP (TÍCH HỢP TRỌN GÓI) ════════════════════ */}
             {activePartnerServiceTab === 'CANTEEN' && (
-              <div className="p-4 space-y-5 animate-in fade-in">
+              <div className="p-2 space-y-2 animate-in fade-in">
                 {(() => {
                   const can = partnerVendors.find(v => v.serviceCategory === 'CANTEEN')!;
                   return (
-                    <div className="space-y-4">
+                    <div className="space-y-1.5">
                       {/* KHỐI 1: THÔNG TIN NHÀ THẦU, HỢP ĐỒNG & NGÂN SÁCH THÁNG */}
-                      <div className="p-4 rounded-2xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-xs">
+                      <div className="p-2 rounded-2xl border-2 border-emerald-500/30 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-xs">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2 flex-wrap">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{can.serviceName}</span>
@@ -2202,7 +2202,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
                         {/* NỘI DUNG 1: DỰ BÁO NHU CẦU SUẤT ĂN AI */}
                         {canteenActiveView === 'FORECAST_AI' && (
-                          <div className="p-4 space-y-4">
+                          <div className="p-2 space-y-1.5">
                             <div className="p-3 bg-indigo-50/80 rounded-xl border border-indigo-200 text-xs flex flex-col md:flex-row md:items-center justify-between gap-3">
                               <div className="space-y-1">
                                 <div className="flex items-center space-x-2">
@@ -2343,7 +2343,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
                         {/* NỘI DUNG 2: PHÊ DUYỆT KHÁCH MỜI & LAO ĐỘNG DỊCH VỤ */}
                         {canteenActiveView === 'GUEST_PARTNER_APPROVAL' && (
-                          <div className="p-4 space-y-4">
+                          <div className="p-2 space-y-1.5">
                             <div className="flex items-center justify-between border-b pb-2">
                               <div>
                                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -2420,7 +2420,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
                         {/* NỘI DUNG 3: QUYẾT TOÁN TIỀN ĂN & PHẠT SLA */}
                         {canteenActiveView === 'BILLING_RECONCILIATION' && (
-                          <div className="p-4 space-y-4">
+                          <div className="p-2 space-y-1.5">
                             <div className="flex items-center justify-between border-b pb-2">
                               <div>
                                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -2537,7 +2537,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
                         {/* NỘI DUNG 4: SỔ LƯU MẪU THỰC PHẨM 24H */}
                         {canteenActiveView === 'FOOD_SAFETY_AUDIT' && (
-                          <div className="p-4 space-y-4">
+                          <div className="p-2 space-y-1.5">
                             <div className="flex items-center justify-between border-b pb-2">
                               <div>
                                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center gap-1.5">
@@ -2688,12 +2688,12 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 4: CẢNH QUAN & DIỆT CÔN TRÙNG ════════════════════ */}
             {activePartnerServiceTab === 'LANDSCAPE' && (
-              <div className="p-4 space-y-4">
+              <div className="p-2 space-y-1.5">
                 {(() => {
                   const lnd = partnerVendors.find(v => v.serviceCategory === 'LANDSCAPE')!;
                   return (
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="space-y-1.5">
+                      <div className="p-2 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{lnd.serviceName}</span>
@@ -2750,12 +2750,12 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 5: BẢO TRÌ CƠ ĐIỆN & PCCC ════════════════════ */}
             {activePartnerServiceTab === 'MEP_FACILITY' && (
-              <div className="p-4 space-y-4">
+              <div className="p-2 space-y-1.5">
                 {(() => {
                   const mep = partnerVendors.find(v => v.serviceCategory === 'MEP_FACILITY')!;
                   return (
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="space-y-1.5">
+                      <div className="p-2 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{mep.serviceName}</span>
@@ -2799,12 +2799,12 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
             {/* ════════════════════ PHÂN HỆ 6: THUÊ MÁY PHOTOCOPY & CNTT ════════════════════ */}
             {activePartnerServiceTab === 'OFFICE_EQUIP' && (
-              <div className="p-4 space-y-4">
+              <div className="p-2 space-y-1.5">
                 {(() => {
                   const xrx = partnerVendors.find(v => v.serviceCategory === 'OFFICE_EQUIP')!;
                   return (
-                    <div className="space-y-4">
-                      <div className="p-4 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                    <div className="space-y-1.5">
+                      <div className="p-2 rounded-2xl border border-slate-200 bg-slate-50/60 flex flex-col md:flex-row md:items-center justify-between gap-3">
                         <div className="space-y-1">
                           <div className="flex items-center space-x-2">
                             <span className="font-black text-slate-900 text-sm sm:text-base">{xrx.serviceName}</span>
@@ -2868,8 +2868,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL 1: ĐĂNG KÝ TIẾP KHÁCH / PHÒNG HỌP ════════════════════ */}
       {showMeetingModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-sm font-bold text-slate-900">Đăng Ký Tiếp Đón Đoàn Khách & Phòng Họp</h3>
               <button onClick={() => setShowMeetingModal(false)} className="text-slate-400 hover:text-slate-600">
@@ -2974,8 +2974,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL 2: TẠO YÊU CẦU HÀNH CHÍNH MỚI ════════════════════ */}
       {showRequestModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-sm font-bold text-slate-900">Đăng Ký Nhu Cầu Hành Chính (VPP, Vé Máy Bay, Khám SK...)</h3>
               <button onClick={() => setShowRequestModal(false)} className="text-slate-400 hover:text-slate-600">
@@ -3075,8 +3075,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL 3: VÀO SỔ CÔNG VĂN MỚI ════════════════════ */}
       {showDocModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-sm font-bold text-slate-900">Vào Sổ Lưu Trữ Văn Thư Mới</h3>
               <button onClick={() => setShowDocModal(false)} className="text-slate-400 hover:text-slate-600">
@@ -3172,8 +3172,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL A: KHÁCH VÀO CỔNG MỚI (CHECK-IN TỰ ĐỘNG) ════════════════════ */}
       {showGateCheckInModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3 animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3 animate-in fade-in">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <LogIn className="w-5 h-5 text-emerald-600" />
@@ -3382,8 +3382,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL B: MÃ QR KIỂM TRA AN TOÀN CHO KHÁCH (MOBILE) ════════════════════ */}
       {showSafetyQrModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 text-center space-y-3 animate-in zoom-in-95">
+        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-md w-full p-2.5 shadow-2xl border border-slate-200 text-center space-y-3 animate-in zoom-in-95">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
                 <QrCode className="w-4 h-4 text-purple-600" />
@@ -3443,8 +3443,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL C: IN BIỂU MẪU KIỂM TRA AN TOÀN BẰNG GIẤY (PAPER SAFETY TEST) ════════════════════ */}
       {showSafetyPaperModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl border border-slate-200 space-y-4 animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-xl w-full p-3 shadow-2xl border border-slate-200 space-y-1.5 animate-in fade-in">
             <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <div className="flex items-center space-x-2">
                 <Printer className="w-5 h-5 text-indigo-600" />
@@ -3458,7 +3458,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
             </div>
 
             {/* Khung tài liệu giấy chuẩn để in */}
-            <div className="border border-slate-300 p-4 rounded-xl bg-slate-50/50 space-y-3 text-xs leading-relaxed font-sans">
+            <div className="border border-slate-300 p-2 rounded-xl bg-slate-50/50 space-y-3 text-xs leading-relaxed font-sans">
               <div className="text-center border-b border-slate-300 pb-2">
                 <p className="font-bold uppercase text-[11px] text-slate-800">{policy.companyName}</p>
                 <h4 className="font-black text-sm text-slate-900 uppercase mt-0.5">BÀI KIỂM TRA AN TOÀN LAO ĐỘNG (SAFETY PASS)</h4>
@@ -3526,8 +3526,8 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
 
       {/* ════════════════════ MODAL D: GỬI ĐÁNH GIÁ SUẤT ĂN CA HẰNG NGÀY (CANTEEN MEAL FEEDBACK) ════════════════════ */}
       {showMealFeedbackModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3 animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3 animate-in fade-in">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <Utensils className="w-5 h-5 text-amber-600" />
@@ -3667,9 +3667,9 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
               </button>
             </div>
 
-            <div className="p-4 space-y-3 text-xs">
+            <div className="p-2 space-y-3 text-xs">
               {/* Mô phỏng màn hình camera cổng */}
-              <div className="relative rounded-xl overflow-hidden bg-slate-950 border-2 border-purple-500/50 p-4 text-white font-mono space-y-2">
+              <div className="relative rounded-xl overflow-hidden bg-slate-950 border-2 border-purple-500/50 p-2 text-white font-mono space-y-2">
                 <div className="flex items-center justify-between text-[11px] text-emerald-400">
                   <div className="flex items-center space-x-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -3781,7 +3781,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
                 setLostParkingReports(prev => [newReport, ...prev]);
                 setShowLostCardModal(false);
               }}
-              className="p-4 text-xs space-y-3 max-h-[85vh] overflow-y-auto"
+              className="p-2 text-xs space-y-3 max-h-[85vh] overflow-y-auto"
             >
               <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[11px] leading-relaxed">
                 Quy trình an ninh: Sau khi gửi khai báo, hệ thống sẽ gửi yêu cầu xác nhận tới người làm chứng (2 đồng nghiệp hoặc Trưởng phòng). Bảo vệ cổng chỉ mở barie khi đã có chữ ký xác nhận số.
@@ -3960,7 +3960,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleWitnessConfirmSubmit} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleWitnessConfirmSubmit} className="p-2 space-y-3 text-xs">
               <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900">
                 <p className="font-bold">Nhân viên cần xác nhận: {showWitnessConfirmModal.report.empName} ({showWitnessConfirmModal.report.dept})</p>
                 <p className="text-[11px] mt-0.5">Phương tiện: <b className="font-mono text-indigo-700">{showWitnessConfirmModal.report.licensePlate}</b> ({showWitnessConfirmModal.report.vehicleModel})</p>
@@ -4023,7 +4023,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
 
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="text-left">
@@ -4068,7 +4068,7 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
                 <p><b>4. Xử lý thẻ cũ:</b> Đội bảo vệ tiến hành khóa vĩnh viễn mã thẻ xe cũ trên hệ thống phần mềm, chống trường hợp kẻ gian nhặt được đưa xe ra ngoài.</p>
               </div>
 
-              <div className="grid grid-cols-3 gap-4 text-center pt-4 mt-4 border-t">
+              <div className="grid grid-cols-3 gap-1.5 text-center pt-4 mt-1.5 border-t">
                 <div>
                   <p className="font-bold uppercase text-[11px]">Người Làm Chứng</p>
                   <p className="text-[10px] italic text-slate-400 mt-12">(Ký và ghi rõ họ tên)</p>

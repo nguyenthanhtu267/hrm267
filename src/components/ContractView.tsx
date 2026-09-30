@@ -198,7 +198,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* Tiêu đề & Nút Thao Tác */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
@@ -556,7 +556,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
 
       {/* TAB 2: CHI TIẾT MẪU HỢP ĐỒNG LAO ĐỘNG (BLLĐ 2019) */}
       {activeSubTab === 'VIEW_CONTRACT' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           <div className="flex flex-col sm:flex-row items-center justify-between bg-indigo-50/70 p-3.5 rounded-xl border border-indigo-200 gap-3">
             <div className="flex items-center space-x-2">
               <ShieldCheck className="w-5 h-5 text-indigo-600 flex-shrink-0" />
@@ -590,7 +590,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
           </div>
 
           {selectedEmployee && (
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-6 text-xs text-slate-800 leading-relaxed print:p-0 print:border-none print:shadow-none">
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-3 text-xs text-slate-800 leading-relaxed print:p-0 print:border-none print:shadow-none">
               {/* Tiêu ngữ Quốc Gia */}
               <div className="text-center space-y-1">
                 <h3 className="font-bold text-sm tracking-wider uppercase">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h3>
@@ -696,7 +696,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
 
       {/* TAB 3: PHỤ LỤC HỢP ĐỒNG LAO ĐỘNG KÈM THEO */}
       {activeSubTab === 'VIEW_ANNEX' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           <div className="flex flex-col sm:flex-row items-center justify-between bg-emerald-50/70 p-3.5 rounded-xl border border-emerald-200 gap-3">
             <div className="flex items-center space-x-2">
               <FileCheck className="w-5 h-5 text-emerald-600 flex-shrink-0" />
@@ -726,7 +726,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
           </div>
 
           {selectedAnnex ? (
-            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-6 text-xs text-slate-800 leading-relaxed print:p-0 print:border-none print:shadow-none">
+            <div className="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm max-w-4xl mx-auto space-y-3 text-xs text-slate-800 leading-relaxed print:p-0 print:border-none print:shadow-none">
               <div className="text-center space-y-1">
                 <h3 className="font-bold text-sm tracking-wider uppercase">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</h3>
                 <p className="font-semibold underline underline-offset-4 text-xs">Độc lập - Tự do - Hạnh phúc</p>
@@ -741,7 +741,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
 
               <div className="space-y-3">
                 <h4 className="font-bold text-slate-900 uppercase text-xs">NỘI DUNG THAY ĐỔI, BỔ SUNG:</h4>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+                <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
                   <div>• <b>Lý do sửa đổi:</b> {selectedAnnex.reason}</div>
                   <div>• <b>Ngày bắt đầu có hiệu lực:</b> <span className="font-bold text-indigo-700">{selectedAnnex.effectiveDate}</span></div>
                   <div>• <b>Vị trí mới:</b> {selectedAnnex.newPosition} (trước đây: {selectedAnnex.oldPosition})</div>
@@ -783,8 +783,8 @@ export const ContractView: React.FC<ContractViewProps> = ({
 
       {/* MODAL NHẬP MÃ OTP KÝ SỐ */}
       {showSignModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center space-x-2">
                 <ShieldCheck className="w-5 h-5 text-indigo-600" />
@@ -799,7 +799,7 @@ export const ContractView: React.FC<ContractViewProps> = ({
               Mã xác thực gồm 6 chữ số đã được gửi mô phỏng đến số điện thoại <b>{selectedEmployee?.phone}</b> của nhân sự <b>{selectedEmployee?.fullName}</b>.
             </p>
 
-            <form onSubmit={handleVerifyOtp} className="space-y-4">
+            <form onSubmit={handleVerifyOtp} className="space-y-1.5">
               <div>
                 <label className="text-xs font-semibold text-slate-700 block mb-1">Nhập mã OTP (Thử nghiệm: 123456):</label>
                 <input

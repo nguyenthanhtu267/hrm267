@@ -293,7 +293,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
                 <div className="divide-y divide-slate-100 max-h-44 overflow-y-auto pr-1">
                   {pendingRequests.length === 0 ? (
-                    <div className="py-6 text-center text-slate-400 text-xs">
+                    <div className="py-3 text-center text-slate-400 text-xs">
                       <CheckCircle2 className="w-5 h-5 text-emerald-500 mx-auto mb-1" />
                       Không có đơn từ nào cần duyệt.
                     </div>
@@ -698,7 +698,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
       {/* TAB 3: ĐƠN TỪ & TUÂN THỦ CHI TIẾT */}
       {activeDashboardTab === 'COMPLIANCE' && (
-        <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-md glass hover-lift transition-all space-y-3">
+        <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-md glass hover-lift transition-all space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100">
             <h3 className="font-bold text-xs text-slate-900 uppercase">Tất Cả Yêu Cầu Chờ Xử Lý ({pendingRequests.length.toLocaleString('vi-VN')})</h3>
             <button

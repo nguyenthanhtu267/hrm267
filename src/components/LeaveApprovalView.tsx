@@ -619,9 +619,9 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in text-slate-800">
+    <div className="space-y-1.5 animate-in fade-in text-slate-800">
       {/* ════════════════════ BANNER TỔNG QUAN LUỒNG PHÊ DUYỆT THÔNG MINH ════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
         <div className="flex items-center space-x-3">
           <div className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-300">
             <FileCheck className="w-7 h-7" />
@@ -760,7 +760,7 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 2 EXTRA: BẢNG TRA CỨU QUỸ PHÉP NĂM (NẾU CHỌN TAB 2) ════════════════════ */}
       {activeSubCategory === 'LEAVE_MANAGEMENT' && (
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+        <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
             <div>
               <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
@@ -812,7 +812,7 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 3 EXTRA: GIÁM SÁT TRẦN GIỜ OT 40H/THÁNG (NẾU CHỌN TAB 3) ════════════════════ */}
       {activeSubCategory === 'OVERTIME_AND_SHIFTS' && (
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+        <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
             <div>
               <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
@@ -869,7 +869,7 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 6 EXTRA: CHECKLIST BÀN GIAO THÔI VIỆC (NẾU CHỌN TAB 6) ════════════════════ */}
       {activeSubCategory === 'RESIGNATION_HANDOVER' && (
-        <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+        <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
           <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
             <div>
               <h3 className="text-xs font-black uppercase tracking-wider text-slate-900 flex items-center gap-1.5">
@@ -908,7 +908,7 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
       )}
 
       {/* ════════════════════ KHỐI DANH SÁCH ĐƠN TỪ CHÍNH (TABLE & ACTIONS) ════════════════════ */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 space-y-3.5">
+      <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 space-y-3.5">
         {/* Tiêu đề & Công cụ hàng loạt */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 border-b border-slate-100 pb-3">
           <div>
@@ -1269,8 +1269,8 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ MODAL TẠO ĐƠN MỚI ════════════════════ */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3.5 my-8 text-xs">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3.5 my-8 text-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <Plus className="w-4 h-4 text-indigo-600" />
@@ -1476,8 +1476,8 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ MODAL GIẤY RA CỔNG & MÃ QR BẢO VỆ ════════════════════ */}
       {showGatePassModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 text-xs space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-md w-full p-2.5 shadow-2xl border border-slate-200 text-xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <DoorOpen className="w-5 h-5 text-teal-600" />
@@ -1532,15 +1532,15 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
 
       {/* ════════════════════ MODAL IN ĐƠN THÔI VIỆC ════════════════════ */}
       {showResignationPreviewModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 text-xs space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 text-xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-sm font-bold text-slate-900 uppercase">Mẫu Đơn Xin Thôi Việc Chuẩn Bản In</h3>
               <button onClick={() => setShowResignationPreviewModal(null)} className="text-slate-400 hover:text-slate-600 cursor-pointer">
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2 leading-relaxed">
+            <div className="p-2 bg-slate-50 rounded-xl border border-slate-200 space-y-2 leading-relaxed">
               <div className="text-center font-bold text-sm text-slate-900 uppercase">
                 CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM<br />
                 Độc lập - Tự do - Hạnh phúc

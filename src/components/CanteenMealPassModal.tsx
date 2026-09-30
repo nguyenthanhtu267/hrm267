@@ -712,7 +712,7 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
 
   return typeof document !== 'undefined' ? createPortal(
     <div 
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-3 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -883,12 +883,12 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
 
         {/* NỘI DUNG CHÍNH: TAB 1 (THẺ ĂN & ĐĂNG KÝ) HOẶC TAB 2 (ĐỐI SOÁT BẾP) */}
         {activeTab === 'MEAL_PASS' ? (
-          <div className={`flex-1 overflow-y-auto bg-slate-50/50 p-4 sm:p-5 select-none ${
-            deviceMode === 'LAPTOP_VIEW' ? 'grid grid-cols-1 lg:grid-cols-12 gap-5' : 'flex flex-col space-y-4'
+          <div className={`flex-1 overflow-y-auto bg-slate-50/50 p-2 sm:p-2.5 select-none ${
+            deviceMode === 'LAPTOP_VIEW' ? 'grid grid-cols-1 lg:grid-cols-12 gap-2' : 'flex flex-col space-y-1.5'
           }`}>
             
             {/* ════════════════ CỘT 1: THẺ E-MEAL PASS TRỌNG TÂM (LỚN VÀ RÕ RÀNG) ════════════════ */}
-            <div className={`bg-white rounded-3xl border border-slate-200 shadow-sm p-4 sm:p-6 flex flex-col justify-between ${
+            <div className={`bg-white rounded-3xl border border-slate-200 shadow-sm p-2 sm:p-3 flex flex-col justify-between ${
               deviceMode === 'LAPTOP_VIEW' ? 'lg:col-span-6 xl:col-span-6' : 'w-full'
             }`}>
               
@@ -901,7 +901,7 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
                   </div>
 
                   {/* THẺ SỐ LƯỢNG KHÁCH KÍCH THƯỚC CỰC ĐẠI THEO YÊU CẦU */}
-                  <div className="w-full py-4 px-3 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white rounded-3xl shadow-xl border-4 border-amber-300/80 animate-pulse">
+                  <div className="w-full py-2 px-3 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 text-white rounded-3xl shadow-xl border-4 border-amber-300/80 animate-pulse">
                     <span className="text-xs font-extrabold uppercase tracking-widest block text-amber-100">
                       SỐ LƯỢNG SUẤT LẤY HỘ CHO KHÁCH
                     </span>
@@ -966,7 +966,7 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
 
               ) : existingLogForActiveEmp && existingLogForActiveEmp.pickupType === 'PROXY' && screenMode !== 'PROXY_SEARCH' && screenMode !== 'PROXY_CONFIRM' && screenMode !== 'PROXY_COMPLETED' ? (
                 /* TRƯỜNG HỢP B: BỊ CHẶN VÌ ĐÃ CÓ NGƯỜI LẤY HỘ */
-                <div className="space-y-4 text-center my-auto p-6 rounded-3xl bg-rose-50/80 border-2 border-rose-300 animate-in zoom-in-95">
+                <div className="space-y-1.5 text-center my-auto p-3 rounded-3xl bg-rose-50/80 border-2 border-rose-300 animate-in zoom-in-95">
                   <div className="w-16 h-16 rounded-full bg-rose-100 border-4 border-rose-200 text-rose-600 flex items-center justify-center mx-auto">
                     <ShieldAlert className="w-8 h-8" />
                   </div>
@@ -1161,12 +1161,12 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
                 >
                   {/* CON DẤU XÁC THỰC SỐNG 1 CHẠM - CHIỀU CAO GẤP 4 LẦN ĐỂ DỄ BẤM */}
                   {touchVerifyActive ? (
-                    <div className="w-full min-h-[96px] py-6 px-4 bg-emerald-600 text-white rounded-2xl font-black text-sm uppercase flex items-center justify-center space-x-3 animate-bounce shadow-xl ring-2 ring-emerald-300">
+                    <div className="w-full min-h-[96px] py-3 px-4 bg-emerald-600 text-white rounded-2xl font-black text-sm uppercase flex items-center justify-center space-x-3 animate-bounce shadow-xl ring-2 ring-emerald-300">
                       <Fingerprint className="w-8 h-8 animate-spin" />
                       <span className="text-sm sm:text-base">✓ BẾP TRƯỞNG XÁC THỰC: ỨNG DỤNG SỐNG HỢP LỆ!</span>
                     </div>
                   ) : (
-                    <div className={`w-full min-h-[96px] py-6 px-5 rounded-2xl text-xs font-bold flex items-center justify-between bg-gradient-to-r ${securityColors[securityColorIndex]} shadow-md hover:shadow-lg transition-all ring-2 ring-white/40 cursor-pointer`}>
+                    <div className={`w-full min-h-[96px] py-3 px-5 rounded-2xl text-xs font-bold flex items-center justify-between bg-gradient-to-r ${securityColors[securityColorIndex]} shadow-md hover:shadow-lg transition-all ring-2 ring-white/40 cursor-pointer`}>
                       <div className="flex items-center space-x-3 text-left">
                         <span className="relative flex h-4 w-4">
                           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -1309,7 +1309,7 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
             </div>
 
             {/* ════════════════ CỘT 2: KHU VỰC ĐĂNG KÝ ĐA NĂNG (LAPTOP VIEW) ════════════════ */}
-            <div className={`bg-white rounded-3xl border border-slate-200 shadow-sm p-4 sm:p-5 flex flex-col space-y-4 ${
+            <div className={`bg-white rounded-3xl border border-slate-200 shadow-sm p-2 sm:p-2.5 flex flex-col space-y-1.5 ${
               deviceMode === 'LAPTOP_VIEW' ? 'lg:col-span-6 xl:col-span-6' : 'w-full'
             }`}>
               
@@ -1667,9 +1667,9 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
           </div>
         ) : (
           /* ════════════════════ VIEW 2: MÀN HÌNH ĐỐI SOÁT BẾP ĂN TOÀN DIỆN ════════════════════ */
-          <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 bg-slate-50 text-xs">
+          <div className="flex-1 overflow-y-auto p-2 sm:p-3 space-y-1.5 bg-slate-50 text-xs">
             {/* THẺ TỔNG HỢP SUẤT ĂN CA DÀNH CHO NHÀ ĂN */}
-            <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div className="p-2 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-3">
               <div className="flex items-center justify-between border-b pb-2">
                 <div className="flex items-center space-x-2">
                   <Utensils className="w-5 h-5 text-emerald-600" />
@@ -1721,7 +1721,7 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
             </div>
 
             {/* DÒNG SỰ KIỆN ĐỐI SOÁT THỰC NHẬN */}
-            <div className="p-4 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-2.5">
+            <div className="p-2 rounded-3xl bg-white border border-slate-200 shadow-xs space-y-2.5">
               <div className="flex items-center justify-between border-b pb-2">
                 <h3 className="font-bold text-slate-900 uppercase text-xs flex items-center gap-1.5">
                   <History className="w-4 h-4 text-emerald-600" />
@@ -1783,8 +1783,8 @@ export const CanteenMealPassModal: React.FC<CanteenMealPassModalProps> = ({
 
       {/* MODAL XÁC THỰC ỦY QUYỀN BẢO VỆ / TẠP VỤ (CHỐNG LÁCH LUẬT LẤY SUẤT ĂN LẦN 2) */}
       {partnerClaimConfirmTarget && (
-        <div className="fixed inset-0 z-60 bg-slate-900/80 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-3xl max-w-md w-full p-5 shadow-2xl space-y-4 border border-slate-200">
+        <div className="fixed inset-0 z-60 bg-slate-900/80 backdrop-blur-xs flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-3xl max-w-md w-full p-2.5 shadow-2xl space-y-1.5 border border-slate-200">
             <div className="flex items-center justify-between border-b pb-2">
               <div className="flex items-center space-x-2 text-purple-700">
                 <ShieldCheck className="w-5 h-5" />

@@ -30,7 +30,7 @@ export const BannerAd: React.FC<BannerAdProps> = ({
 
   if (variant === 'square') {
     return (
-      <div className={`relative w-full rounded-2xl overflow-hidden shadow-lg p-5 flex flex-col justify-between min-h-[260px] ${bgClass} ${className}`}>
+      <div className={`relative w-full rounded-2xl overflow-hidden shadow-lg p-2.5 flex flex-col justify-between min-h-[260px] ${bgClass} ${className}`}>
         {/* Nút đóng & Nhãn QC */}
         <div className="absolute top-3 right-3 flex items-center gap-2 z-20">
           <span className="text-[9px] font-medium text-white/70 uppercase tracking-wider bg-black/20 px-1.5 py-0.5 rounded">Quảng cáo</span>
@@ -45,7 +45,7 @@ export const BannerAd: React.FC<BannerAdProps> = ({
         {/* Background Overlay Decor */}
         <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent pointer-events-none"></div>
 
-        <div className="relative z-10 flex flex-col h-full mt-4">
+        <div className="relative z-10 flex flex-col h-full mt-1.5">
           {badge && (
             <span className="px-2 py-0.5 rounded bg-white/20 text-white text-[10px] font-bold w-fit mb-3 uppercase tracking-wide backdrop-blur-md border border-white/10">
               {badge}
@@ -56,7 +56,7 @@ export const BannerAd: React.FC<BannerAdProps> = ({
             {title}
           </h3>
           
-          <p className="text-xs text-white/80 leading-relaxed mb-6 flex-1 drop-shadow-sm">
+          <p className="text-xs text-white/80 leading-relaxed mb-3 flex-1 drop-shadow-sm">
             {subtitle}
           </p>
 
@@ -98,7 +98,7 @@ export const BannerAd: React.FC<BannerAdProps> = ({
       </div>
 
       {/* Phải: Nút Action & Nút Tắt */}
-      <div className="relative z-10 flex items-center shrink-0 gap-4 w-full sm:w-auto mt-2 sm:mt-0">
+      <div className="relative z-10 flex items-center shrink-0 gap-1.5 w-full sm:w-auto mt-2 sm:mt-0">
         <a 
           href={href}
           target="_blank"

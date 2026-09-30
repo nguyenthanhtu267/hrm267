@@ -45,8 +45,8 @@ export const FeedbackModal: React.FC<FeedbackModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-      <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-6 space-y-4">
+    <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+      <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-3 space-y-1.5">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
           <div className="flex items-center space-x-2">
             <MessageSquarePlus className="w-5 h-5 text-indigo-600" />
@@ -61,7 +61,7 @@ export const FeedbackModal: React.FC<FeedbackModalProps> = ({
           Gửi nhận xét của bạn hoặc bạn bè khi trải nghiệm thử nghiệm tính năng để chúng tôi hoàn thiện phần mềm tốt nhất.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4 text-xs">
+        <form onSubmit={handleSubmit} className="space-y-1.5 text-xs">
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="font-semibold text-slate-700 block mb-1">Tên người gửi</label>

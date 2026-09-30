@@ -290,7 +290,7 @@ export const OffboardingView: React.FC<OffboardingViewProps> = ({
 
       {/* WIDGET THỐNG KÊ TỶ LỆ NGHỈ VIỆC (TURNOVER RATE) NẾU MỞ */}
       {showTurnoverStats && (
-        <div className="bg-white rounded-2xl border border-purple-200 p-4 shadow-sm space-y-3 animate-fadeIn">
+        <div className="bg-white rounded-2xl border border-purple-200 p-2 shadow-sm space-y-3 animate-fadeIn">
           <div className="flex items-center justify-between border-b border-purple-100 pb-2">
             <div className="flex items-center space-x-2">
               <TrendingDown className="w-4 h-4 text-purple-600" />
@@ -588,11 +588,11 @@ export const OffboardingView: React.FC<OffboardingViewProps> = ({
       {/* MODAL XEM TRỰC TIẾP BIÊN BẢN QUYẾT TOÁN THÔI VIỆC */}
       {selectedRecordForDetail && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => setSelectedRecordForDetail(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-2xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
@@ -698,7 +698,7 @@ export const OffboardingView: React.FC<OffboardingViewProps> = ({
               })()}
 
               {/* Thực lĩnh quyết toán */}
-              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+              <div className="p-2 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
                 <div>
                   <span className="text-[10px] uppercase font-bold text-emerald-800 tracking-wider block">
                     TỔNG TIỀN QUYẾT TOÁN THỰC LĨNH (NET):

@@ -522,9 +522,9 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       {/* Tiêu đề & Công cụ điều khiển */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
         <div>
           <div className="flex items-center space-x-2">
             <BadgePercent className="w-5 h-5 text-indigo-600" />
@@ -694,31 +694,31 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
         <>
           {/* 5 Thẻ tổng hợp tài chính kỳ lương */}
           <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 text-xs">
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Tổng Thu Nhập (Gross)</span>
               <span className="text-lg font-bold text-slate-900 mt-1 block">{(totalGross).toLocaleString('vi-VN')} đ</span>
               <span className="text-[11px] text-slate-400 mt-0.5 block">{totalActivePaidCount} NS có ngày công</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Tổng Bảo Hiểm NLĐ</span>
               <span className="text-lg font-bold text-blue-600 mt-1 block">{(totalInsuranceEmp).toLocaleString('vi-VN')} đ</span>
               <span className="text-[11px] text-slate-400 mt-0.5 block">BHXH 8%, BHYT 1.5%, BHTN 1%</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Tổng Thuế TNCN</span>
               <span className="text-lg font-bold text-rose-600 mt-1 block">{(totalTax).toLocaleString('vi-VN')} đ</span>
               <span className="text-[11px] text-slate-400 mt-0.5 block">Lũy tiến 7 bậc & 10% khoán</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Khấu Trừ Nợ / Tạm Ứng</span>
               <span className="text-lg font-bold text-amber-600 mt-1 block">{(totalAdvanceDeduction).toLocaleString('vi-VN')} đ</span>
               <span className="text-[11px] text-slate-400 mt-0.5 block">Trích trừ công nợ tồn đọng</span>
             </div>
 
-            <div className="col-span-2 lg:col-span-1 bg-gradient-to-tr from-emerald-600 to-teal-700 text-white p-4 rounded-2xl shadow-md">
+            <div className="col-span-2 lg:col-span-1 bg-gradient-to-tr from-emerald-600 to-teal-700 text-white p-2 rounded-2xl shadow-md">
               <span className="text-emerald-100 font-semibold block">THỰC LĨNH CHUYỂN KHOẢN</span>
               <span className="text-lg font-bold mt-1 block">{(totalNet).toLocaleString('vi-VN')} đ</span>
               <span className="text-[11px] text-emerald-200 mt-0.5 block">Ngân hàng chi hộ</span>
@@ -728,7 +728,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
           {/* BẢNG LƯƠNG TỔNG HỢP CHI TIẾT */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3">
             {/* Thanh tìm kiếm & Bộ lọc */}
-            <div className="p-4 border-b border-slate-200 space-y-3 bg-slate-50/50">
+            <div className="p-2 border-b border-slate-200 space-y-3 bg-slate-50/50">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                 <div>
                   <h3 className="font-bold text-sm text-slate-900">
@@ -1029,21 +1029,21 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
         </>
       ) : (
         /* PHÂN HỆ QUẢN LÝ TẠM ỨNG & MƯỢN NỢ CÔNG TY (KIỂM SOÁT RIÊNG) */
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+        <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-1.5 text-xs">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Tổng Đã Tạm Ứng Trong Kỳ</span>
               <span className="text-xl font-bold text-amber-600 mt-1 block">5.000.000 đ</span>
               <span className="text-[11px] text-slate-400 mt-1 block">1 nhân sự đã nhận tiền giữa tháng (Trừ kỳ lương này)</span>
             </div>
 
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm">
               <span className="text-slate-500 font-semibold block">Các Khoản Mượn Nợ Trả Nhiều Kỳ</span>
               <span className="text-xl font-bold text-indigo-600 mt-1 block">18.000.000 đ</span>
               <span className="text-[11px] text-slate-400 mt-1 block">2 hợp đồng vay mượn / bồi hoàn tài sản đang khấu trừ dần</span>
             </div>
 
-            <div className="bg-rose-50 p-4 rounded-2xl border border-rose-200 shadow-sm">
+            <div className="bg-rose-50 p-2 rounded-2xl border border-rose-200 shadow-sm">
               <div className="flex items-center space-x-1.5 text-rose-800 font-bold">
                 <AlertTriangle className="w-4 h-4 text-rose-600" />
                 <span>Cảnh Báo Nhân Sự Sắp Nghỉ Việc Còn Nợ</span>
@@ -1057,7 +1057,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
 
           {/* BẢNG THEO DÕI TỔNG HỢP CÁC KHOẢN TẠM ỨNG & MƯỢN NỢ */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="p-4 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-slate-50/50">
+            <div className="p-2 border-b border-slate-200 flex flex-col md:flex-row md:items-center md:justify-between gap-3 bg-slate-50/50">
               <div>
                 <h3 className="font-bold text-sm text-slate-800 flex items-center space-x-2">
                   <HandCoins className="w-4 h-4 text-amber-500" />
@@ -1202,8 +1202,8 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
 
       {/* MODAL XEM PHIẾU LƯƠNG ĐIỆN TỬ (PAYSLIP) */}
       {selectedPayslip && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 space-y-5">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-3 space-y-2">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Phiếu Lương Điện Tử (Payslip)</span>
@@ -1216,7 +1216,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
             </div>
 
             {/* Chi tiết phiếu lương */}
-            <div className="space-y-4 text-xs">
+            <div className="space-y-1.5 text-xs">
               {/* Bảng thu nhập */}
               <div className="border border-slate-200 rounded-xl overflow-hidden">
                 <div className="bg-slate-50 px-3.5 py-2 font-bold text-slate-700 border-b border-slate-200">
@@ -1300,7 +1300,7 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
               </div>
 
               {/* Thực lĩnh chuyển khoản */}
-              <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
+              <div className="p-2 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-between">
                 <div>
                   <span className="text-[11px] font-bold uppercase text-emerald-800 tracking-wider block">THỰC LĨNH CHUYỂN KHOẢN (NET):</span>
                   <span className="text-xl font-extrabold text-emerald-700">{selectedPayslip.netSalary.toLocaleString('vi-VN')} VNĐ</span>
@@ -1367,11 +1367,11 @@ export const PayrollView: React.FC<PayrollViewProps> = ({ employees, policy, cur
       {/* MODAL GỬI EMAIL HÀNG LOẠT PHIẾU LƯƠNG ĐIỆN TỬ */}
       {showBulkEmailModal && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => !isSendingEmail && setShowBulkEmailModal(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-2xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}

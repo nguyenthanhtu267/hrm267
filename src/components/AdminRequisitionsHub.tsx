@@ -861,11 +861,11 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS ĐIỀU HÀNH 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 shadow-md border border-indigo-900/50">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -1230,9 +1230,9 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           TAB 2: ĐỊNH MỨC QUOTA VPP & VẬT TƯ TIÊU HAO
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'STATIONERY_QUOTA' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* BẢNG THEO DÕI QUOTA THEO PHÒNG BAN */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1291,7 +1291,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           </div>
 
           {/* KHO ĐỆM VẬT TƯ TIÊU HAO THIẾT YẾU TẠI CHỖ */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1355,7 +1355,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           TAB 3: VÉ MÁY BAY, KHÁCH SẠN & CÔNG TÁC PHÍ
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'BUSINESS_TRAVEL' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* CHÍNH SÁCH ĐỊNH MỨC CÔNG TÁC DOANH NGHIỆP */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="p-3.5 rounded-2xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-200 space-y-1.5 shadow-2xs">
@@ -1399,7 +1399,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           </div>
 
           {/* BẢNG QUẢN LÝ BOOKING CÔNG TÁC THỜI GIAN THỰC */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1464,8 +1464,8 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           TAB 4: KHÁM SỨC KHỎE ĐỊNH KỲ & BỆNH NGHỀ NGHIỆP
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'HEALTH_EXAMS' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1529,8 +1529,8 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           TAB 5: ĐỒNG PHỤC & BẢO HỘ LAO ĐỘNG (PPE)
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'PPE_UNIFORMS' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1590,8 +1590,8 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
           TAB 6: HUẤN LUYỆN ATVSLĐ & SỰ KIỆN DOANH NGHIỆP
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'HSE_TRAINING_EVENTS' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1645,7 +1645,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateNewRequest} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCreateNewRequest} className="p-2 space-y-3 text-xs">
               <div className="grid grid-cols-2 gap-2.5">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Danh Mục Yêu Cầu:</label>
@@ -1807,7 +1807,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
               </button>
             </div>
 
-            <div className="p-4 space-y-3 text-xs">
+            <div className="p-2 space-y-3 text-xs">
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5">
                 <p><b>Người lập đơn:</b> {selectedReqForAction.requesterName} ({selectedReqForAction.requesterEmpId})</p>
                 <p><b>Phòng ban:</b> {selectedReqForAction.department}</p>
@@ -1891,7 +1891,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="text-left">
                   <p className="font-bold text-sm uppercase">{policy.companyName}</p>
@@ -1921,7 +1921,7 @@ export const AdminRequisitionsHub: React.FC<AdminRequisitionsHubProps> = ({
                 <p><b>7. Thời hạn hoàn thành:</b> Ngày {showPrintReqModal.deadline}</p>
               </div>
 
-              <div className="grid grid-cols-4 gap-2 text-center pt-6 mt-6 border-t text-[10.5px]">
+              <div className="grid grid-cols-4 gap-2 text-center pt-6 mt-3 border-t text-[10.5px]">
                 <div>
                   <p className="font-bold uppercase">Người Lập Đơn</p>
                   <p className="italic text-slate-400 mt-12">{showPrintReqModal.requesterName}</p>

@@ -769,9 +769,9 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-300">
+    <div className="space-y-1.5 animate-in fade-in duration-300">
       {/* ════════════════════ BANNER CHỈ SỐ AN TOÀN LAO ĐỘNG LTI & OSHA ════════════════════ */}
-      <div className="bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-emerald-800/40">
+      <div className="bg-gradient-to-r from-emerald-950 via-teal-950 to-slate-950 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-emerald-800/40">
         <div className="flex items-center space-x-3">
           <div className="p-3 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 shadow-inner">
             <ShieldAlert className="w-7 h-7 text-emerald-400" />
@@ -956,7 +956,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 1: CHỈ SỐ LTI & MA TRẬN HIRA ════════════════════ */}
         {activeTab === 'LTI_AND_HIRA' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Thẻ hướng dẫn HIRA Matrix */}
             <div className="p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl flex items-start space-x-3 text-xs text-emerald-950">
               <Sparkles className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
@@ -1044,7 +1044,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 2: KIỂM ĐỊNH THIẾT BỊ NGHIÊM NGẶT ════════════════════ */}
         {activeTab === 'STRICT_EQUIPMENT' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Bộ lọc thiết bị */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <div className="relative w-full sm:w-80">
@@ -1146,11 +1146,11 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 3: HUẤN LUYỆN ATVSLĐ 6 NHÓM ════════════════════ */}
         {activeTab === 'SAFETY_TRAINING' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Grid 6 nhóm huấn luyện theo NĐ 44/2016/NĐ-CP */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {trainingGroups.map(group => (
-                <div key={group.groupId} className="bg-white rounded-xl border border-slate-200 p-4 space-y-3 shadow-xs flex flex-col justify-between">
+                <div key={group.groupId} className="bg-white rounded-xl border border-slate-200 p-2 space-y-3 shadow-xs flex flex-col justify-between">
                   <div className="space-y-2">
                     <div className="flex items-start justify-between">
                       <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
@@ -1201,11 +1201,11 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 4: PCCC & MÔI TRƯỜNG LAO ĐỘNG ════════════════════ */}
         {activeTab === 'FIRE_AND_ENV' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Grid PCCC & Môi trường */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-1.5">
               {fireAndEnvList.map(item => (
-                <div key={item.id} className="bg-white rounded-xl border border-slate-200 p-4 space-y-3 shadow-xs">
+                <div key={item.id} className="bg-white rounded-xl border border-slate-200 p-2 space-y-3 shadow-xs">
                   <div className="flex items-start justify-between border-b border-slate-100 pb-2">
                     <div className="flex items-center space-x-2">
                       <div className={`p-2 rounded-lg ${
@@ -1256,7 +1256,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 5: SỔ ĐIỀU TRA SỰ CỐ HIỆN TRƯỜNG & CAPA ════════════════════ */}
         {activeTab === 'INCIDENTS_CAPA' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Bộ lọc sự cố */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <div className="relative w-full sm:w-80">
@@ -1384,11 +1384,11 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
         {/* ════════════════════ TAB 6: BÁO CÁO HSE 360° & XUẤT EXCEL ════════════════════ */}
         {activeTab === 'HSE_REPORTS' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Thống kê xu hướng sự cố & Phân tích cơ cấu */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
               {/* Cơ cấu vi phạm */}
-              <div className="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+              <div className="bg-white rounded-xl border border-slate-200 p-2 space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                   <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider">
                     Phân Bổ Sự Cố / Vi Phạm Theo Khu Vực Phân Xưởng (YTD 2026)
@@ -1440,7 +1440,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
               </div>
 
               {/* Tỷ lệ hoàn thành CAPA & Báo cáo cơ quan quản lý */}
-              <div className="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+              <div className="bg-white rounded-xl border border-slate-200 p-2 space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                   <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider">
                     Tuân Thủ Báo Cáo Định Kỳ Sở LĐ-TB&amp;XH (TT 07/2016)
@@ -1475,7 +1475,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
             </div>
 
             {/* Banner xuất Excel 5 sheet */}
-            <div className="bg-gradient-to-r from-slate-950 to-emerald-950 p-4 rounded-xl text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-slate-950 to-emerald-950 p-2 rounded-xl text-white flex items-center justify-between">
               <div>
                 <h4 className="font-bold text-sm">Xuất Báo Cáo HSE &amp; Tuân Thủ Pháp Luật (Excel 5 Sheet)</h4>
                 <p className="text-xs text-slate-300 mt-0.5">
@@ -1498,9 +1498,9 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
       {/* ════════════════════ MODAL: GHI NHẬN SỰ CỐ / VI PHẠM MỚI ════════════════════ */}
       {showAddIncidentModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-xs p-2 overflow-y-auto animate-in fade-in">
           <div className="bg-white rounded-2xl max-w-xl w-full border border-slate-200 shadow-2xl overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-rose-900 to-slate-900 p-4 text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-rose-900 to-slate-900 p-2 text-white flex items-center justify-between">
               <div className="flex items-center space-x-2.5">
                 <AlertTriangle className="w-5 h-5 text-rose-300" />
                 <h3 className="font-bold text-sm">Lập Biên Bản Sự Cố Hiện Trường / Vi Phạm An Toàn Mới</h3>
@@ -1514,7 +1514,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
               </button>
             </div>
 
-            <form onSubmit={handleAddNewIncident} className="p-5 space-y-4 text-xs">
+            <form onSubmit={handleAddNewIncident} className="p-2.5 space-y-1.5 text-xs">
               <div>
                 <label className="block font-bold text-slate-700 mb-1">Tiêu Đề Vụ Việc / Sự Cố:</label>
                 <input
@@ -1735,7 +1735,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
 
       {/* ════════════════════ MODAL: IN BIÊN BẢN ĐIỀU TRA HIỆN TRƯỜNG A4 ════════════════════ */}
       {showPrintIncidentModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-2 overflow-y-auto animate-in fade-in">
           <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden my-8">
             <div className="bg-slate-900 p-3.5 text-white flex items-center justify-between no-print">
               <div className="flex items-center space-x-2">
@@ -1762,7 +1762,7 @@ export const HSEAndSafetyComplianceHub: React.FC<HSEAndSafetyComplianceHubProps>
             </div>
 
             {/* Khổ giấy A4 hiển thị */}
-            <div className="p-8 space-y-5 text-slate-900 bg-white font-serif text-xs leading-relaxed printable-a4">
+            <div className="p-8 space-y-2 text-slate-900 bg-white font-serif text-xs leading-relaxed printable-a4">
               {/* Tiêu ngữ & Mã QR xác thực */}
               <div className="flex justify-between items-start border-b border-slate-300 pb-3">
                 <div>

@@ -701,7 +701,7 @@ export const TaxYearlyView: React.FC<TaxYearlyViewProps> = ({ employees, policy 
   // RENDER
   // ============================================================
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
 
       {/* ── HEADER ── */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
@@ -956,7 +956,7 @@ export const TaxYearlyView: React.FC<TaxYearlyViewProps> = ({ employees, policy 
       {view === 'MONTHLY_DETAIL' && selectedEmployee && (
         <>
           {/* Thẻ thông tin nhân viên */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-4 flex flex-wrap gap-4 text-xs">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-2 flex flex-wrap gap-1.5 text-xs">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center font-bold text-indigo-700 text-base">
                 {selectedEmployee.fullName.split(' ').pop()?.charAt(0)}
@@ -1055,11 +1055,11 @@ export const TaxYearlyView: React.FC<TaxYearlyViewProps> = ({ employees, policy 
       {/* ════════════════════ MODAL XEM TRỰC TIẾP BẢNG QUYẾT TOÁN CÁ NHÂN ════════════════════ */}
       {selectedSettlementItem && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => setSelectedSettlementItem(null)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-3xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-3xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}
@@ -1089,7 +1089,7 @@ export const TaxYearlyView: React.FC<TaxYearlyViewProps> = ({ employees, policy 
             </div>
 
             {/* Thẻ trạng thái kết quả quyết toán */}
-            <div className={`p-4 rounded-2xl border flex items-center justify-between ${
+            <div className={`p-2 rounded-2xl border flex items-center justify-between ${
               selectedSettlementItem.netBalance < 0 
                 ? 'bg-emerald-50 border-emerald-200 text-emerald-900' 
                 : selectedSettlementItem.netBalance > 0 
@@ -1233,11 +1233,11 @@ export const TaxYearlyView: React.FC<TaxYearlyViewProps> = ({ employees, policy 
       {/* ════════════════════ MODAL GỬI EMAIL HÀNG LOẠT QUYẾT TOÁN THUẾ ════════════════════ */}
       {showBulkTaxEmailModal && (
         <div 
-          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in"
+          className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in"
           onClick={() => !isSendingTaxEmail && setShowBulkTaxEmailModal(false)}
         >
           <div 
-            className="bg-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl space-y-4 border border-slate-200 max-h-[90vh] overflow-y-auto"
+            className="bg-white rounded-3xl max-w-2xl w-full p-3 shadow-2xl space-y-1.5 border border-slate-200 max-h-[90vh] overflow-y-auto"
             onClick={e => e.stopPropagation()}
           >
             {/* Header */}

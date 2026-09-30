@@ -495,9 +495,9 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
   const warningCount = employeeProgress.filter(e => e.kpiStatus === 'WARNING_LOW_HOURS').length;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       {/* HEADER BANNER */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 p-5 rounded-2xl text-white shadow-lg">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 p-2.5 rounded-2xl text-white shadow-lg">
         <div className="space-y-1.5">
           <div className="flex items-center space-x-2.5">
             <div className="p-2 bg-white/10 backdrop-blur-md rounded-xl">
@@ -529,7 +529,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* 4 CORE KPI METRIC CARDS */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5">
         {/* Card 1: Giờ học TB */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-slate-500 text-xs font-medium">Giờ đào tạo trung bình / NV</span>
             <div className="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg">
@@ -550,7 +550,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
         </div>
 
         {/* Card 2: Tỷ lệ Nội bộ ≥ 70% */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-slate-500 text-xs font-medium">Tỷ lệ Đào tạo Nội bộ</span>
             <div className="p-1.5 bg-emerald-50 text-emerald-600 rounded-lg">
@@ -573,7 +573,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
         </div>
 
         {/* Card 3: Tiến độ đạt chuẩn KPI */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-slate-500 text-xs font-medium">Đạt chuẩn KPI giờ học</span>
             <div className="p-1.5 bg-amber-50 text-amber-600 rounded-lg">
@@ -600,7 +600,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
         </div>
 
         {/* Card 4: Ngân sách đào tạo */}
-        <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-xs space-y-2">
+        <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between">
             <span className="text-slate-500 text-xs font-medium">Ngân sách đào tạo 2026</span>
             <div className="p-1.5 bg-blue-50 text-blue-600 rounded-lg">
@@ -689,9 +689,9 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* TAB 1: THỐNG KÊ & GIÁM SÁT ĐỊNH MỨC GIỜ ĐÀO TẠO */}
       {/* ========================================================================================= */}
       {activeTab === 'QUOTAS' && (
-        <div className="space-y-6 animate-in fade-in">
+        <div className="space-y-3 animate-in fade-in">
           {/* Khối A: Bảng Quy Ước Chỉ Tiêu Định Mức 4 Nhóm Đối Tượng */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-xs space-y-1.5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
@@ -719,7 +719,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
               {quotas.map((q) => (
                 <div 
                   key={q.id} 
-                  className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-indigo-300 transition-all space-y-3"
+                  className="p-2 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-indigo-300 transition-all space-y-3"
                 >
                   <div className="flex items-center justify-between">
                     <span className={`px-2 py-0.5 rounded text-[10px] font-bold ${
@@ -755,7 +755,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
           </div>
 
           {/* Khối B: Thanh Cảnh Báo Pháp Chế & Tỷ Lệ Nội Bộ */}
-          <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-indigo-50 rounded-2xl border border-emerald-200 p-4 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-indigo-50 rounded-2xl border border-emerald-200 p-2 flex flex-col md:flex-row items-center justify-between gap-1.5">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm">
                 <CheckCircle2 className="w-6 h-6" />
@@ -780,7 +780,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
 
           {/* Khối C: Bảng Theo Dõi Tiến Độ Từng Nhân Sự & Đánh Giá Thi Đua KPI */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden space-y-3">
-            <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-2 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
                   <Users className="w-4 h-4 text-indigo-600" />
@@ -975,7 +975,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* TAB 2: CỔNG HỌC TẬP LMS & VIDEO BÀI GIẢNG (ĐÃ HOÀN THIỆN NÂNG CẤP) */}
       {/* ========================================================================================= */}
       {activeTab === 'LMS' && (
-        <div className="space-y-6 animate-in fade-in">
+        <div className="space-y-3 animate-in fade-in">
           {/* DANH SÁCH KHÓA HỌC LMS: 3 BẢNG 1 HÀNG, CỨ 2 HÀNG CẮT SANG TRANG (6 KHÓA / TRANG) */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
             {paginatedCourses.map((course) => {
@@ -1187,9 +1187,9 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* TAB 3: KẾ HOẠCH ĐÀO TẠO NGOÀI & CAM KẾT ĐIỀU 62 BLLĐ */}
       {/* ========================================================================================= */}
       {activeTab === 'EXTERNAL_BONDS' && (
-        <div className="space-y-6 animate-in fade-in">
+        <div className="space-y-3 animate-in fade-in">
           {/* Banner Căn Cứ Pháp Lý Điều 62 BLLĐ 2019 */}
-          <div className="bg-amber-50 rounded-2xl border border-amber-200 p-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div className="bg-amber-50 rounded-2xl border border-amber-200 p-2 flex flex-col md:flex-row items-start md:items-center justify-between gap-1.5">
             <div className="flex items-start space-x-3">
               <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
                 <Scale className="w-5 h-5" />
@@ -1216,7 +1216,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
 
           {/* Bảng Danh Mục Cam Kết Đào Tạo Ràng Buộc Phục Vụ */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden space-y-3">
-            <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-2 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
                   <FileText className="w-4 h-4 text-indigo-600" />
@@ -1326,7 +1326,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
           </div>
 
           {/* Bảng Kế Hoạch Đào Tạo Bên Ngoài Năm 2026 */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-xs space-y-1.5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
@@ -1345,7 +1345,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {externalCourses.map(course => (
-                <div key={course.id} className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white transition-all space-y-3">
+                <div key={course.id} className="p-2 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white transition-all space-y-3">
                   <div className="flex items-center justify-between">
                     <span className={`px-2 py-0.5 rounded text-[9px] font-bold ${
                       course.category === 'CERTIFICATION' ? 'bg-purple-100 text-purple-800' :
@@ -1401,9 +1401,9 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* TAB 4: MA TRẬN KỸ NĂNG & GIẢNG VIÊN NỘI BỘ */}
       {/* ========================================================================================= */}
       {activeTab === 'SKILL_MATRIX' && (
-        <div className="space-y-6 animate-in fade-in">
+        <div className="space-y-3 animate-in fade-in">
           {/* Khối 1: Đội Ngũ Cán Bộ Giảng Viên Nội Bộ (Internal Trainer Pool) */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2.5 shadow-xs space-y-1.5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
@@ -1426,7 +1426,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {trainers.map((trn) => (
-                <div key={trn.id} className="p-4 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white transition-all space-y-3">
+                <div key={trn.id} className="p-2 rounded-xl border border-slate-200 bg-slate-50/50 hover:border-indigo-300 hover:bg-white transition-all space-y-3">
                   <div className="flex items-center justify-between">
                     <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800">
                       {trn.trainerCode}
@@ -1471,7 +1471,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
 
           {/* Khối 2: Ma Trận Năng Lực & Khoảng Trống Kỹ Năng (Skill Matrix & Gap Analysis) */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden space-y-3">
-            <div className="p-4 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-2 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 flex items-center space-x-2">
                   <Layers className="w-4 h-4 text-indigo-600" />
@@ -1574,8 +1574,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL CẤU HÌNH ĐỊNH MỨC GIỜ ĐÀO TẠO 4 NHÓM ĐỐI TƯỢNG */}
       {/* ========================================================================================= */}
       {showQuotaModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Cấu Hình Chỉ Tiêu L&D</span>
@@ -1586,7 +1586,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
               </button>
             </div>
 
-            <div className="space-y-4 text-xs">
+            <div className="space-y-1.5 text-xs">
               <p className="text-slate-500">
                 Điều chỉnh số giờ đào tạo định mức năm và tỷ lệ đào tạo nội bộ (quy ước ≥ 70%) cho từng nhóm chức danh. Khi lưu, toàn bộ bảng theo dõi tiến độ nhân sự sẽ tự động tính lại tỷ lệ hoàn thành.
               </p>
@@ -1666,8 +1666,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL GHI NHẬN THÊM GIỜ ĐÀO TẠO CHO NHÂN SỰ */}
       {/* ========================================================================================= */}
       {selectedEmployeeForAddHours && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Cập Nhật Tiến Độ Học Tập</span>
@@ -1754,8 +1754,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL XEM CHI TIẾT BIÊN BẢN CAM KẾT ĐÀO TẠO ĐIỀU 62 BLLĐ */}
       {/* ========================================================================================= */}
       {viewingCommitmentModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-xl p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-xl p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Văn Bản Pháp Lý Nhân Sự</span>
@@ -1767,7 +1767,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
               </button>
             </div>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-3 font-mono leading-relaxed">
+            <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-3 font-mono leading-relaxed">
               <div className="text-center font-bold text-slate-800 text-xs pb-2 border-b border-slate-200">
                 CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM<br />
                 Độc lập - Tự do - Hạnh phúc<br />
@@ -1814,8 +1814,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL MÔ PHỎNG TÍNH TOÁN BỒI HOÀN CAM KẾT ĐÀO TẠO */}
       {/* ========================================================================================= */}
       {showBondSimulator && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-amber-600 uppercase tracking-wider">Công Cụ Pháp Chế Nhân Sự</span>
@@ -1866,7 +1866,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
               {(() => {
                 const res = calculateTrainingBondRefund(simForm.totalCost, simForm.commitmentMonths, simForm.servedMonths);
                 return (
-                  <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 space-y-2">
+                  <div className="p-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 space-y-2">
                     <div className="flex justify-between items-center">
                       <span className="font-semibold text-slate-700">Số tháng còn thiếu:</span>
                       <span className="font-black text-rose-600 text-sm">{res.remainingMonths} tháng ({res.refundPercentage}%)</span>
@@ -1899,8 +1899,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL GHI NHẬN BUỔI GIẢNG DẠY NỘI BỘ */}
       {/* ========================================================================================= */}
       {showAddTrainerSessionModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Giảng Viên Nội Bộ</span>
@@ -1985,9 +1985,9 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL PHÁT VIDEO BÀI GIẢNG YOUTUBE / GOOGLE DRIVE */}
       {/* ========================================================================================= */}
       {activeVideoCourse && (
-        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-3xl overflow-hidden space-y-4">
-            <div className="flex items-center justify-between p-4 border-b border-slate-100">
+        <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-3xl overflow-hidden space-y-1.5">
+            <div className="flex items-center justify-between p-2 border-b border-slate-100">
               <div className="flex items-center space-x-2">
                 <Video className="w-5 h-5 text-indigo-600" />
                 <div>
@@ -2039,7 +2039,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
               </p>
             </div>
 
-            <div className="p-4 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+            <div className="p-2 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
               <div className="space-y-1.5">
                 <div className="flex items-center space-x-2">
                   <span className="font-bold text-slate-800">
@@ -2094,8 +2094,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL LÀM BÀI TRẮC NGHIỆM ĐÁNH GIÁ NĂNG LỰC */}
       {/* ========================================================================================= */}
       {showQuizModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-xl p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-xl p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Bài Thi Kiểm Tra Đánh Giá</span>
@@ -2108,7 +2108,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
             </div>
 
             {!quizSubmitted ? (
-              <div className="space-y-4 text-xs">
+              <div className="space-y-1.5 text-xs">
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
                   <p className="font-bold text-slate-900">Câu 1: Theo quy định BLLĐ 2019, người lao động làm việc ca đêm từ mấy giờ đến mấy giờ?</p>
                   <label className="flex items-center space-x-2 cursor-pointer">
@@ -2172,7 +2172,7 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
                 </div>
               </div>
             ) : (
-              <div className="py-6 text-center space-y-3">
+              <div className="py-3 text-center space-y-3">
                 <div className="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto shadow-inner">
                   <Award className="w-8 h-8" />
                 </div>
@@ -2198,8 +2198,8 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
       {/* MODAL CẬP NHẬT LINK VIDEO ĐÀO TẠO & THỜI LƯỢNG */}
       {/* ========================================================================================= */}
       {editingCourse && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Cấu Hình Khóa Học</span>

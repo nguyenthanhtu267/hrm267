@@ -245,11 +245,11 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-2 sm:p-4 overflow-y-auto print:p-0 print:bg-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/70 backdrop-blur-xs p-2 sm:p-2 overflow-y-auto print:p-0 print:bg-white">
       <div className="relative w-full max-w-5xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[96vh] print:max-h-none print:shadow-none print:border-none">
         
         {/* ===================== HEADER ===================== */}
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-4 sm:p-5 flex items-center justify-between border-b border-indigo-900 print:bg-none print:text-black print:p-2">
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-2 sm:p-2.5 flex items-center justify-between border-b border-indigo-900 print:bg-none print:text-black print:p-2">
           <div className="flex items-center space-x-3">
             <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-400 to-amber-200 flex items-center justify-center shadow-lg text-slate-900 font-black">
               <Calculator className="w-6 h-6" />
@@ -300,7 +300,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
         </div>
 
         {/* ===================== BODY CHÍNH ===================== */}
-        <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5">
+        <div className="flex-1 overflow-y-auto p-2 sm:p-3 space-y-2">
           
           {/* THANH ĐIỀU HƯỚNG CHÍNH: CHIỀU QUY ĐỔI & ĐỐI TƯỢNG */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-3 print:grid-cols-2">
@@ -410,8 +410,8 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
           </div>
 
           {/* ===================== FORM NHẬP LIỆU ===================== */}
-          <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-4 sm:p-5 space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-slate-50/80 rounded-3xl border border-slate-200 p-2 sm:p-2.5 space-y-1.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1.5">
               
               {/* 1. Mức lương đầu vào */}
               <div className="space-y-1 sm:col-span-2">
@@ -515,7 +515,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
             </div>
 
             {/* HÀNG 2: NGƯỜI PHỤ THUỘC, MỨC ĐÓNG BẢO HIỂM, VÙNG LƯƠNG & TIỀN NHÀ (CHỈ EXPAT) */}
-            <div className={'grid grid-cols-1 sm:grid-cols-2 ' + (nationality === 'VIETNAMESE' ? 'lg:grid-cols-3' : 'lg:grid-cols-4') + ' gap-4 pt-2 border-t border-slate-200'}>
+            <div className={'grid grid-cols-1 sm:grid-cols-2 ' + (nationality === 'VIETNAMESE' ? 'lg:grid-cols-3' : 'lg:grid-cols-4') + ' gap-1.5 pt-2 border-t border-slate-200'}>
               
               {/* 4. Số người phụ thuộc */}
               <div className="space-y-1">
@@ -839,10 +839,10 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
           </div>
 
           {/* ===================== KẾT QUẢ ĐẮT GIÁ: THẺ TỔNG HỢP ===================== */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1.5">
             
             {/* THẺ 1: LƯƠNG GROSS */}
-            <div className="p-4 rounded-3xl bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 shadow-xs flex flex-col justify-between">
+            <div className="p-2 rounded-3xl bg-gradient-to-br from-indigo-50 to-blue-50 border-2 border-indigo-200 shadow-xs flex flex-col justify-between">
               <div>
                 <span className="text-[11px] font-extrabold text-indigo-700 uppercase tracking-wide block">
                   1. Lương GROSS Hợp Đồng
@@ -862,7 +862,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
             </div>
 
             {/* THẺ 2: LƯƠNG NET THỰC NHẬN */}
-            <div className="p-4 rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 shadow-xs flex flex-col justify-between">
+            <div className="p-2 rounded-3xl bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-200 shadow-xs flex flex-col justify-between">
               <div>
                 <span className="text-[11px] font-extrabold text-emerald-700 uppercase tracking-wide block">
                   2. Lương NET Về Tay Ứng Viên
@@ -882,7 +882,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
             </div>
 
             {/* THẺ 3: THUẾ TNCN & BẢO HIỂM */}
-            <div className="p-4 rounded-3xl bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-300 shadow-xs flex flex-col justify-between">
+            <div className="p-2 rounded-3xl bg-gradient-to-br from-slate-50 to-slate-100 border-2 border-slate-300 shadow-xs flex flex-col justify-between">
               <div className="space-y-1">
                 <span className="text-[11px] font-extrabold text-slate-700 uppercase tracking-wide block">
                   3. Khấu Trừ Thuế &amp; Bảo Hiểm
@@ -902,7 +902,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
             </div>
 
             {/* THẺ 4: TỔNG CHI PHÍ DOANH NGHIỆP CHI TRẢ */}
-            <div className="p-4 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950 text-white border-2 border-amber-400/80 shadow-xl flex flex-col justify-between relative overflow-hidden">
+            <div className="p-2 rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-purple-950 text-white border-2 border-amber-400/80 shadow-xl flex flex-col justify-between relative overflow-hidden">
               <div className="absolute right-0 top-0 translate-x-2 -translate-y-2 w-16 h-16 bg-amber-400/10 rounded-full blur-xs" />
               <div>
                 <div className="flex items-center justify-between">
@@ -930,10 +930,10 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
           </div>
 
           {/* ===================== HAI CỘT ĐỐI SOÁT CHI TIẾT ===================== */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-2">
             
             {/* CỘT A: BẢNG DIỄN GIẢI THUẾ TNCN & QUY ĐỊNH TIỀN NHÀ 15% */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-5 shadow-xs space-y-4">
+            <div className="bg-white rounded-3xl border border-slate-200 p-2 sm:p-2.5 shadow-xs space-y-1.5">
               <div className="flex items-center space-x-2 border-b border-slate-200 pb-2.5">
                 <FileText className="w-4 h-4 text-indigo-600" />
                 <h3 className="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight">
@@ -1029,7 +1029,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
             </div>
 
             {/* CỘT B: CHI TIẾT BẢO HIỂM VÀ TOÀN BỘ CHI PHÍ DOANH NGHIỆP */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-5 shadow-xs space-y-4">
+            <div className="bg-white rounded-3xl border border-slate-200 p-2 sm:p-2.5 shadow-xs space-y-1.5">
               <div className="flex items-center space-x-2 border-b border-slate-200 pb-2.5">
                 <Briefcase className="w-4 h-4 text-emerald-600" />
                 <h3 className="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-tight">
@@ -1135,7 +1135,7 @@ export const SalaryDealCalculatorModal: React.FC<SalaryDealCalculatorModalProps>
         </div>
 
         {/* ===================== FOOTER / ACTIONS ===================== */}
-        <div className="bg-slate-100 p-4 sm:p-5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 print:hidden">
+        <div className="bg-slate-100 p-2 sm:p-2.5 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 print:hidden">
           <div className="text-xs text-slate-500 text-center sm:text-left">
             <span>Áp dụng biểu thuế lũy tiến TT 111/2013/TT-BTC, chuẩn giảm trừ gia cảnh (Bản thân 15.5tr / NPT 6.2tr) &amp; LTT Vùng NĐ 293/2025/NĐ-CP.</span>
           </div>

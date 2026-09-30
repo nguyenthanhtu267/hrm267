@@ -106,7 +106,7 @@ export const ChecklistView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* Tiêu đề & Xuất Excel */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>

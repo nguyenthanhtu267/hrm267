@@ -670,11 +670,11 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS ĐIỀU HÀNH ĐI LẠI 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 shadow-md border border-indigo-900/50">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -864,9 +864,9 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 1: LỆNH ĐIỀU XE & ĐĂNG KÝ XE CÔNG TÁC
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'DISPATCH_BOOKING' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* LỊCH TRÌNH CA CHẠY XE TRONG NGÀY (DISPATCH TIMELINE) */}
-          <div className="bg-slate-900 text-white rounded-2xl p-4 space-y-3 shadow-md border border-indigo-900/50">
+          <div className="bg-slate-900 text-white rounded-2xl p-2 space-y-3 shadow-md border border-indigo-900/50">
             <div className="flex items-center justify-between border-b border-white/10 pb-2">
               <div>
                 <h4 className="text-xs font-black uppercase tracking-wider text-slate-200 flex items-center gap-1.5">
@@ -922,7 +922,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           </div>
 
           {/* DANH SÁCH LỆNH ĐIỀU XE CÔNG TÁC */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1009,12 +1009,12 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 2: TUYẾN XE ĐƯA ĐÓN CÁN BỘ CÔNG NHÂN VIÊN
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'SHUTTLE_BUS' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {shuttleRoutes.map(route => {
               const occupancyPct = Math.round((route.registeredEmployeesCount / route.vehicleCapacity) * 100);
               return (
-                <div key={route.id} className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3">
+                <div key={route.id} className="p-2 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-3">
                   <div className="flex items-start justify-between">
                     <div>
                       <span className="font-black text-slate-900 text-xs block leading-tight">
@@ -1067,7 +1067,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 3: THẺ GRAB / TAXI DOANH NGHIỆP
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'GRAB_TAXI_CORP' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* CẢNH BÁO AI TRAVEL FRAUD DETECTION */}
           <div className="p-3.5 rounded-2xl border border-amber-300 bg-gradient-to-r from-amber-50 to-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-1">
@@ -1094,7 +1094,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           </div>
 
           {/* DANH SÁCH ĐỐI SOÁT CHUYẾN ĐI GRAB/TAXI */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1170,8 +1170,8 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 4: VÉ MÁY BAY, KHÁCH SẠN & QUYẾT TOÁN CÔNG TÁC PHÍ
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'FLIGHTS_HOTELS_PERDIEM' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1256,7 +1256,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 5: ĐỊNH MỨC NHIÊN LIỆU, BẢO DƯỠNG & ĐĂNG KIỂM XE
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'FUEL_AND_MAINTENANCE' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* CẢNH BÁO ĐẾM NGƯỢC HẠN ĐĂNG KIỂM & BẢO HIỂM */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="p-3.5 rounded-2xl border-2 border-rose-300 bg-rose-50/50 space-y-1.5">
@@ -1291,7 +1291,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           </div>
 
           {/* DANH SÁCH 4 XE VỚI HỒ SƠ PHÁP LÝ CHI TIẾT */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1361,9 +1361,9 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
           TAB 6: BÁO CÁO PHÂN TÍCH CHI PHÍ ĐI LẠI 360°
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'TRAVEL_ANALYTICS' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* CƠ CẤU CHI PHÍ ĐI LẠI TOÀN DOANH NGHIỆP */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1447,7 +1447,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateBooking} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCreateBooking} className="p-2 space-y-3 text-xs">
               <div className="grid grid-cols-2 gap-2.5">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Người Đăng Ký:</label>
@@ -1584,7 +1584,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-xs uppercase">{policy.companyName}</p>
                 <h2 className="text-base font-bold uppercase mt-1 text-slate-900">
@@ -1607,7 +1607,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-4 gap-2 text-center pt-8 mt-6 border-t text-[10px]">
+              <div className="grid grid-cols-4 gap-2 text-center pt-8 mt-3 border-t text-[10px]">
                 <div>
                   <p className="font-bold uppercase">Người Đi Xe</p>
                   <p className="italic text-slate-400 mt-10">(Ký tên)</p>
@@ -1669,7 +1669,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-[10px] uppercase text-slate-500">CỤC ĐĂNG KIỂM VIỆT NAM</p>
                 <h2 className="text-sm font-bold uppercase mt-1 text-slate-900">
@@ -1688,7 +1688,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
                 <p><b>7. Thời hạn bảo hiểm TNDS &amp; Thân vỏ:</b> Đến ngày <b className="font-mono text-indigo-700">{selectedVehicleForInspection.insuranceExpiry}</b></p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-center pt-8 mt-6 border-t text-[11px]">
+              <div className="grid grid-cols-2 gap-1.5 text-center pt-8 mt-3 border-t text-[11px]">
                 <div>
                   <p className="font-bold uppercase">Lái Xe Phụ Trách</p>
                   <p className="italic text-slate-400 mt-10">{selectedVehicleForInspection.assignedDriver}</p>
@@ -1742,7 +1742,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-xs uppercase">{policy.companyName}</p>
                 <h2 className="text-base font-bold uppercase mt-1 text-slate-900">
@@ -1801,7 +1801,7 @@ export const VehicleAndTravelHub: React.FC<VehicleAndTravelHubProps> = ({
                 </table>
               </div>
 
-              <div className="grid grid-cols-3 gap-2 text-center pt-8 mt-6 border-t text-[10.5px]">
+              <div className="grid grid-cols-3 gap-2 text-center pt-8 mt-3 border-t text-[10.5px]">
                 <div>
                   <p className="font-bold uppercase">Người Thanh Toán</p>
                   <p className="italic text-slate-400 mt-10">{selectedClaimForModal.travelerName}</p>

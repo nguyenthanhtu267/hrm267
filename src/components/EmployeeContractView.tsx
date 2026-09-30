@@ -124,7 +124,7 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
   }, [contractStats.listWithRemaining, expirationFilter, alertSearchTerm]);
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* THANH ĐIỀU HƯỚNG TỔNG HỢP (SUB-TABS) */}
       <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs flex flex-wrap items-center justify-between gap-2">
         <div className="flex items-center space-x-1.5 overflow-x-auto">
@@ -217,7 +217,7 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
 
       {/* SUB-TAB 3: CẢNH BÁO HẾT HẠN & GIA HẠN HỢP ĐỒNG (QUY ĐỊNH 30-45 NGÀY) */}
       {activeSubTab === 'EXPIRATION_ALERT' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* BANNER HƯỚNG DẪN LUẬT LAO ĐỘNG */}
           <div className="bg-amber-50 border-l-4 border-amber-500 p-3.5 rounded-r-xl shadow-xs">
             <div className="flex items-start justify-between">
@@ -305,7 +305,7 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
           </div>
 
           {/* BẢNG DANH SÁCH HỢP ĐỒNG CẦN XỬ LÝ */}
-          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+          <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
             <div className="flex flex-wrap items-center justify-between gap-2 pb-2 border-b border-slate-100">
               <div className="flex items-center space-x-2">
                 <h3 className="font-bold text-xs text-slate-900 uppercase">
@@ -436,9 +436,9 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
 
       {/* SUB-TAB 4: THỐNG KÊ CƠ CẤU HỢP ĐỒNG & HỒ SƠ */}
       {activeSubTab === 'STATS' && (
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-1.5">
           {/* Cơ cấu loại Hợp đồng */}
-          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+          <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
             <h3 className="font-bold text-xs text-slate-900 uppercase pb-2 border-b border-slate-100 flex items-center justify-between">
               <span>Cơ Cấu Hợp Đồng Lao Động</span>
               <span className="font-mono text-indigo-600 font-bold">{currentTenantEmployees.length} Nhân Sự</span>
@@ -497,7 +497,7 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
           </div>
 
           {/* Tình trạng giấy tờ hồ sơ pháp lý */}
-          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+          <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
             <h3 className="font-bold text-xs text-slate-900 uppercase pb-2 border-b border-slate-100">
               Mức Độ Hoàn Thiện Hồ Sơ Pháp Lý
             </h3>
@@ -527,7 +527,7 @@ export const EmployeeContractView: React.FC<EmployeeContractViewProps> = ({
           </div>
 
           {/* Quy định thanh tra lao động */}
-          <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+          <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
             <h3 className="font-bold text-xs text-slate-900 uppercase pb-2 border-b border-slate-100">
               Sổ Quản Lý Lao Động (Điều 12 BLLĐ 2019)
             </h3>

@@ -15,7 +15,7 @@ export const Footer: React.FC = () => {
     <footer className="mt-3 border-t border-slate-200 bg-white/95 text-slate-600 text-xs shadow-xs print:hidden">
       {/* KHỐI NỘI DUNG CHÍNH: 3 CỘT GỌN GÀNG, ĐỘ CAO THẤP */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-2 items-start">
           {/* CỘT 1: THÔNG TIN DOANH NGHIỆP & PHẦN MỀM (5 CỘT) */}
           <div className="md:col-span-5 space-y-1.5">
             <div className="flex items-center space-x-2">

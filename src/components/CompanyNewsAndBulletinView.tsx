@@ -747,7 +747,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
   return (
     <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* 1. HEADER BANNER PHÂN HỆ */}
-      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
           <div className="flex items-center space-x-2">
             <div className="p-2 rounded-xl bg-amber-400 text-slate-950 font-bold shadow-xs">
@@ -1034,7 +1034,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               return (
                 <div
                   key={item.id}
-                  className={`bg-white rounded-2xl border p-4 shadow-xs transition-all hover:shadow-md flex flex-col justify-between relative group ${
+                  className={`bg-white rounded-2xl border p-2 shadow-xs transition-all hover:shadow-md flex flex-col justify-between relative group ${
                     item.isPinned ? 'border-indigo-300 ring-1 ring-indigo-200' : 'border-slate-200'
                   }`}
                 >
@@ -1073,7 +1073,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                   </div>
 
                   {/* Footer tương tác: Tải file & Nút "Đã đọc và hiểu rõ" */}
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                  <div className="mt-1.5 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center space-x-2 text-xs">
                       {item.hasAttachment && (
                         <button
@@ -1123,9 +1123,9 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 2: CHÀO ĐÓN THÀNH VIÊN MỚI (GIAO DIỆN CHUẨN MỰC, NỀN SÁNG) */}
       {/* ============================================================= */}
       {activeTab === 'NEW_HIRES' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Header Giới Thiệu Chuẩn Mực */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="flex items-center space-x-3">
               <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200">
                 <UserPlus className="w-5 h-5" />
@@ -1170,7 +1170,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
           {todayNewHires.filter(h => h.isManagerLevel).map(manager => (
             <div 
               key={manager.id}
-              className="bg-white rounded-2xl border-2 border-amber-300 p-5 shadow-xs space-y-3.5 relative overflow-hidden"
+              className="bg-white rounded-2xl border-2 border-amber-300 p-2.5 shadow-xs space-y-3.5 relative overflow-hidden"
             >
               <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-amber-100">
                 <div className="flex items-center space-x-2">
@@ -1200,7 +1200,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </div>
 
               {/* Thông tin lãnh đạo */}
-              <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-1.5 items-center">
                 <div className="lg:col-span-5 flex items-center space-x-3.5">
                   <div className="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-300 text-amber-800 font-bold text-xl flex items-center justify-center shrink-0">
                     {manager.avatarInitial}
@@ -1263,7 +1263,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             {todayNewHires.filter(h => !h.isManagerLevel).map(emp => (
               <div 
                 key={emp.id}
-                className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
+                className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs hover:border-slate-300 transition-all flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2 pb-2.5 border-b border-slate-100">
@@ -1335,7 +1335,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 2: CÔNG ĐOÀN CƠ SỞ & QUỸ TẤM LÒNG VÀNG */}
       {/* ============================================================= */}
       {activeTab === 'UNION_AND_CHARITY' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* ── DỰ BÁO CÂN ĐỐI TÀI CHÍNH QUỸ CÔNG ĐOÀN & QUỸ TẤM LÒNG VÀNG (AI CASHFLOW) ── */}
           <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 rounded-2xl p-3.5 border border-blue-800/40 text-white shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs">
             <div className="flex items-center space-x-2.5">
@@ -1367,10 +1367,10 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-1.5">
             {/* CỘT 1: CÔNG ĐOÀN CƠ SỞ */}
             <div className="space-y-3.5">
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                   <div className="flex items-center space-x-2">
                     <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
@@ -1416,7 +1416,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </div>
 
               {/* Bảng công khai tài chính thu chi công đoàn hàng tháng */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
                     <DollarSign className="w-4 h-4 text-emerald-600" />
@@ -1455,7 +1455,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
 
             
               {/* KHỐI TÁC VỤ & QUẢN LÝ QUYỀN LỢI CÔNG ĐOÀN */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
                   <div>
                     <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
@@ -1605,7 +1605,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
 
             {/* CỘT 2: QUỸ TẤM LÒNG VÀNG & THIỆN NGUYỆN CSR */}
             <div className="space-y-3.5">
-              <div className="bg-gradient-to-br from-amber-500 via-rose-500 to-pink-600 rounded-2xl p-4 text-white shadow-md">
+              <div className="bg-gradient-to-br from-amber-500 via-rose-500 to-pink-600 rounded-2xl p-2 text-white shadow-md">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider bg-white/20 px-2 py-0.5 rounded-full">
                     Quỹ Tương Thân Tương Ái
@@ -1634,7 +1634,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
 
               
               {/* KHỐI ĐỀ XUẤT CỨU TRỢ QUỸ TẤM LÒNG VÀNG (3 KÊNH) */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
                   <div>
                     <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
@@ -1716,7 +1716,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
 
 
               {/* Danh sách các ca đã hỗ trợ gần nhất */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
                 <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wide flex items-center gap-1.5 mb-3">
                   <Heart className="w-4 h-4 text-rose-500" />
                   <span>Nhật Ký Yêu Thương (Các Trường Hợp Đã Thăm Hỏi &amp; Trợ Cấp)</span>
@@ -1746,7 +1746,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                   ))}
                 </div>
 
-                <div className="mt-4 p-3 rounded-xl bg-indigo-50/80 border border-indigo-100 text-xs">
+                <div className="mt-1.5 p-3 rounded-xl bg-indigo-50/80 border border-indigo-100 text-xs">
                   <div className="flex items-center justify-between">
                     <span className="font-bold text-indigo-950 flex items-center gap-1">
                       <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
@@ -1767,8 +1767,8 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 3: KHEN THƯỞNG */}
       {/* ============================================================= */}
       {activeTab === 'RECOGNITION_AWARDS' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
               <div className="flex items-center space-x-2">
                 <div className="p-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200">
@@ -1789,7 +1789,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               {starOfTheMonth.map((star, idx) => (
                 <div
                   key={idx}
-                  className="bg-gradient-to-b from-slate-50 to-white rounded-2xl border border-amber-200/80 p-4 shadow-2xs hover:shadow-md transition-all relative overflow-hidden"
+                  className="bg-gradient-to-b from-slate-50 to-white rounded-2xl border border-amber-200/80 p-2 shadow-2xs hover:shadow-md transition-all relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-amber-400/20 to-transparent rounded-bl-full pointer-events-none" />
                   
@@ -1817,7 +1817,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
               <div className="flex items-center space-x-2">
                 <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200">
@@ -1865,8 +1865,8 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 4: CUỘC THI */}
       {/* ============================================================= */}
       {activeTab === 'SPORTS_AND_TALENTS' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
               <div className="flex items-center space-x-2">
                 <div className="p-2 rounded-xl bg-rose-50 text-rose-600 border border-rose-200">
@@ -1907,7 +1907,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
               <div className="flex items-center space-x-2">
                 <div className="p-2 rounded-xl bg-purple-50 text-purple-600 border border-purple-200">
@@ -1964,10 +1964,10 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 5: GÓC CHÚC MỪNG SINH NHẬT & TƯƠNG TÁC VUI */}
       {/* ============================================================= */}
       {activeTab === 'BIRTHDAYS_AND_FUN' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-1.5">
             {/* CỘT 1 & 2: DANH SÁCH SINH NHẬT TRONG THÁNG */}
-            <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+            <div className="lg:col-span-2 bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div className="flex items-center space-x-2">
                   <div className="p-2 rounded-xl bg-pink-50 text-pink-600 border border-pink-200">
@@ -2030,7 +2030,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
 
             {/* CỘT 3: THĂM DÒ Ý KIẾN VUI (QUICK FUN POLL) */}
-            <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+            <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
               <div className="flex items-center space-x-2 border-b border-slate-100 pb-3">
                 <div className="p-2 rounded-xl bg-amber-50 text-amber-600 border border-amber-200">
                   <Vote className="w-5 h-5" />
@@ -2113,9 +2113,9 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 6: KHẢO SÁT CHỈ SỐ HẠNH PHÚC HÀNG NĂM (EHI - BẢO MẬT HR) */}
       {/* ============================================================= */}
       {activeTab === 'HAPPINESS_SURVEY' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Banner thông báo khảo sát & cam kết bảo mật */}
-          <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+          <div className="bg-gradient-to-r from-purple-900 via-indigo-900 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
             <div className="flex items-center space-x-3">
               <div className="p-3 rounded-2xl bg-purple-500/30 border border-purple-400/40 text-amber-300">
                 <Smile className="w-6 h-6" />
@@ -2141,9 +2141,9 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-1.5">
             {/* CỘT 1 (7 CỘT): FORM LÀM KHẢO SÁT DÀNH CHO NHÂN VIÊN */}
-            <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-4">
+            <div className="lg:col-span-7 bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-1.5">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div>
                   <h3 className="text-sm font-bold text-slate-900 flex items-center gap-1.5">
@@ -2313,7 +2313,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                   </div>
                 </form>
               ) : (
-                <div className="p-6 text-center space-y-3 bg-purple-50/70 rounded-2xl border border-purple-200">
+                <div className="p-3 text-center space-y-3 bg-purple-50/70 rounded-2xl border border-purple-200">
                   <div className="w-12 h-12 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
@@ -2332,9 +2332,9 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
             </div>
 
             {/* CỘT 2 (5 CỘT): KẾT QUẢ PHÂN TÍCH CHỈ DÀNH CHO HR / BGĐ */}
-            <div className="lg:col-span-5 space-y-4">
+            <div className="lg:col-span-5 space-y-1.5">
               {/* Thẻ tổng quan chỉ số hạnh phúc */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-3">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
                   <div className="flex items-center space-x-1.5">
                     <BarChart2 className="w-4 h-4 text-indigo-600" />
@@ -2381,7 +2381,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </div>
 
               {/* Bảng xếp hạng hạnh phúc theo phòng ban */}
-              <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-xs space-y-2.5">
+              <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-xs space-y-2.5">
                 <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wide">
                   Chỉ Số Hạnh Phúc Theo Khối / Phân Xưởng:
                 </h4>
@@ -2438,7 +2438,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 setShowUnionAppModal(false);
                 alert('✓ Nộp đơn gia nhập công đoàn thành công! Bạn có thể in đơn giấy ký tên gửi BCH Công Đoàn phê duyệt.');
               }}
-              className="p-4 space-y-3 text-xs"
+              className="p-2 space-y-3 text-xs"
             >
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Họ &amp; Tên Người Lao Động:</label>
@@ -2565,7 +2565,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 setShowBenefitClaimModal(false);
                 alert('✓ Đã nộp đề xuất hưởng chế độ phúc lợi công đoàn! BCH Công Đoàn sẽ thẩm định và duyệt chi.');
               }}
-              className="p-4 space-y-3 text-xs"
+              className="p-2 space-y-3 text-xs"
             >
               <div className="grid grid-cols-2 gap-2">
                 <div>
@@ -2705,7 +2705,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 setShowBenevolentClaimModal(false);
                 alert('✓ Đã tiếp nhận hồ sơ đề xuất cứu trợ Quỹ Tấm Lòng Vàng! Ban Quản Trị Quỹ sẽ thẩm định và giải ngân.');
               }}
-              className="p-4 space-y-3 text-xs max-h-[85vh] overflow-y-auto"
+              className="p-2 space-y-3 text-xs max-h-[85vh] overflow-y-auto"
             >
               {/* Lựa chọn kênh đề xuất */}
               <div className="p-2.5 rounded-xl bg-rose-50 border border-rose-200 space-y-2">
@@ -2873,7 +2873,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
 
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="text-left">
@@ -2906,7 +2906,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 <p>2. Đồng ý để Bộ phận Kế toán / Tiền lương trích 1% tiền lương tháng đóng đoàn phí công đoàn theo luật định.</p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-center pt-4 mt-4 border-t">
+              <div className="grid grid-cols-2 gap-1.5 text-center pt-4 mt-1.5 border-t">
                 <div>
                   <p className="font-bold uppercase text-[11px]">TM. Ban Chấp Hành Công Đoàn</p>
                   <p className="text-[10px] italic text-slate-400 mt-12">(Ký duyệt kết nạp)</p>
@@ -2961,7 +2961,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
 
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="text-left">
@@ -2992,7 +2992,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 <p>Nguồn kinh phí: <b>Quỹ Công Đoàn Cơ Sở</b> (Đã trích trừ trực tiếp vào sổ cái tồn quỹ).</p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 text-center pt-4 mt-4 border-t">
+              <div className="grid grid-cols-3 gap-3 text-center pt-4 mt-1.5 border-t">
                 <div>
                   <p className="font-bold uppercase text-[11px]">Chủ Tịch Công Đoàn</p>
                   <p className="text-[10px] italic text-slate-400 mt-12">(Ký duyệt)</p>
@@ -3051,7 +3051,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
 
               <div className="flex items-center justify-between border-b pb-3">
                 <div className="text-left">
@@ -3084,7 +3084,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                 <p>• Nguồn chi: Trích xuất trực tiếp từ <b>Quỹ Tấm Lòng Vàng Doanh Nghiệp</b>.</p>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 text-center pt-4 mt-4 border-t">
+              <div className="grid grid-cols-3 gap-3 text-center pt-4 mt-1.5 border-t">
                 <div>
                   <p className="font-bold uppercase text-[11px]">Người Đề Xuất / Khai Hộ</p>
                   <p className="text-[10px] italic text-slate-400 mt-12">(Ký tên)</p>

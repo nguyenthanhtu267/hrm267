@@ -888,9 +888,9 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-300">
+    <div className="space-y-1.5 animate-in fade-in duration-300">
       {/* ════════════════════ HEADER BANNER ════════════════════ */}
-      <div className="bg-gradient-to-r from-teal-900 via-emerald-950 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-emerald-900/40">
+      <div className="bg-gradient-to-r from-teal-900 via-emerald-950 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-emerald-900/40">
         <div className="flex items-center space-x-3">
           <div className="p-3 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 shadow-inner">
             <HeartPulse className="w-7 h-7" />
@@ -1077,7 +1077,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 1: TỦ THUỐC & TÚI SƠ CỨU A/B/C ════════════════════ */}
         {activeTab === 'FIRST_AID_KITS' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Thanh công cụ tìm kiếm & lọc */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <div className="relative w-full sm:w-80">
@@ -1212,7 +1212,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 2: NHẬT KÝ KHÁM SƠ CẤP CỨU HẰNG NGÀY ════════════════════ */}
         {activeTab === 'CLINIC_LOGS' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Bộ lọc nhật ký khám */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <div className="relative w-full sm:w-80">
@@ -1339,7 +1339,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 3: HẠN DÙNG THUỐC FEFO & TỒN KHO TỐI THIỂU ════════════════════ */}
         {activeTab === 'EXPIRY_FEFO' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Bộ lọc hạn dùng & tìm kiếm */}
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
               <div className="relative w-full sm:w-80">
@@ -1464,11 +1464,11 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 4: KHÁM SỨC KHỎE ĐỊNH KỲ & BỆNH NGHỀ NGHIỆP ════════════════════ */}
         {activeTab === 'HEALTH_EXAM' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Thông tin khám sức khỏe định kỳ */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-1.5">
               {healthExams.map(exam => (
-                <div key={exam.id} className="bg-white rounded-xl border border-slate-200 p-4 space-y-3 shadow-xs">
+                <div key={exam.id} className="bg-white rounded-xl border border-slate-200 p-2 space-y-3 shadow-xs">
                   <div className="flex items-start justify-between border-b border-slate-100 pb-2.5">
                     <div>
                       <span className="text-[10px] font-bold font-mono px-1.5 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">
@@ -1556,7 +1556,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 5: ĐỘI SƠ CẤP CỨU CƠ SỞ ════════════════════ */}
         {activeTab === 'FIRST_AID_TEAM' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Thẻ quy định Nghị định 44/2016/NĐ-CP */}
             <div className="p-3 bg-rose-50/70 border border-rose-200 rounded-xl flex items-start space-x-3 text-xs text-rose-950">
               <ShieldAlert className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
@@ -1648,11 +1648,11 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
         {/* ════════════════════ TAB 6: BÁO CÁO Y TẾ 360° & XUẤT EXCEL ════════════════════ */}
         {activeTab === 'HEALTH_REPORTS' && (
-          <div className="p-4 space-y-4 animate-in fade-in">
+          <div className="p-2 space-y-1.5 animate-in fade-in">
             {/* Biểu đồ phân tích cơ cấu bệnh tật & chi phí y tế */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
               {/* Mô hình bệnh tật */}
-              <div className="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+              <div className="bg-white rounded-xl border border-slate-200 p-2 space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                   <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider">
                     Cơ Cấu Bệnh Tật Thường Gặp Trong Doanh Nghiệp (YTD 2026)
@@ -1704,7 +1704,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
               </div>
 
               {/* Thống kê tỷ lệ nghỉ ốm & ngân sách thuốc */}
-              <div className="bg-white rounded-xl border border-slate-200 p-4 space-y-3">
+              <div className="bg-white rounded-xl border border-slate-200 p-2 space-y-3">
                 <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                   <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider">
                     Chỉ Số Nghỉ Ốm &amp; Chi Phí Chăm Sóc Sức Khỏe
@@ -1739,7 +1739,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
             </div>
 
             {/* Banner xuất Excel 5 sheet */}
-            <div className="bg-gradient-to-r from-slate-900 to-teal-950 p-4 rounded-xl text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-slate-900 to-teal-950 p-2 rounded-xl text-white flex items-center justify-between">
               <div>
                 <h4 className="font-bold text-sm">Xuất Trọn Bộ Hồ Sơ Y Tế Doanh Nghiệp (Excel 5 Sheet)</h4>
                 <p className="text-xs text-slate-300 mt-0.5">
@@ -1762,9 +1762,9 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
       {/* ════════════════════ MODAL: TIẾP NHẬN CA KHÁM MỚI ════════════════════ */}
       {showAddVisitModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 backdrop-blur-xs p-2 overflow-y-auto animate-in fade-in">
           <div className="bg-white rounded-2xl max-w-xl w-full border border-slate-200 shadow-2xl overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-teal-900 to-emerald-900 p-4 text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-teal-900 to-emerald-900 p-2 text-white flex items-center justify-between">
               <div className="flex items-center space-x-2.5">
                 <Stethoscope className="w-5 h-5 text-emerald-300" />
                 <h3 className="font-bold text-sm">Tiếp Nhận &amp; Khám Sơ Cấp Cứu Mới</h3>
@@ -1778,7 +1778,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleAddNewVisit} className="p-5 space-y-4 text-xs">
+            <form onSubmit={handleAddNewVisit} className="p-2.5 space-y-1.5 text-xs">
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="block font-bold text-slate-700 mb-1">Mã / Tên Cán Bộ Nhân Viên:</label>
@@ -1983,7 +1983,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
 
       {/* ════════════════════ MODAL: IN PHIẾU KHÁM SƠ CỨU / CHUYỂN VIỆN A4 ════════════════════ */}
       {showPrintVisitModal && selectedVisitForPrint && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-4 overflow-y-auto animate-in fade-in">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-xs p-2 overflow-y-auto animate-in fade-in">
           <div className="bg-white rounded-2xl max-w-2xl w-full border border-slate-200 shadow-2xl overflow-hidden my-8">
             <div className="bg-slate-900 p-3.5 text-white flex items-center justify-between no-print">
               <div className="flex items-center space-x-2">
@@ -2010,7 +2010,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
             </div>
 
             {/* Khổ giấy A4 hiển thị */}
-            <div className="p-8 space-y-6 text-slate-900 bg-white font-serif text-xs leading-relaxed printable-a4">
+            <div className="p-8 space-y-3 text-slate-900 bg-white font-serif text-xs leading-relaxed printable-a4">
               {/* Tiêu ngữ */}
               <div className="flex justify-between items-start border-b border-slate-300 pb-4">
                 <div>
@@ -2084,7 +2084,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
               </div>
 
               {/* Ký tên 3 bên */}
-              <div className="pt-6 grid grid-cols-3 gap-4 text-center">
+              <div className="pt-6 grid grid-cols-3 gap-1.5 text-center">
                 <div>
                   <p className="font-bold uppercase">NGƯỜI BỆNH / NHÂN VIÊN</p>
                   <p className="text-[10px] italic text-slate-500">(Ký và ghi rõ họ tên)</p>

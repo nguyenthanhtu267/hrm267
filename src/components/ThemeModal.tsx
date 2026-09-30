@@ -132,7 +132,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
   const displayedPresets = THEME_PRESETS.filter(p => p.group === activeGroup);
 
   const modalContent = (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto animate-in fade-in">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-2 bg-slate-900/60 backdrop-blur-sm overflow-y-auto animate-in fade-in">
       <div 
         className="bg-white dark:bg-slate-900 rounded-2xl max-w-4xl w-full shadow-2xl border border-slate-200 dark:border-slate-800 overflow-hidden flex flex-col max-h-[92vh] my-auto transition-all"
         onClick={(e) => e.stopPropagation()}
@@ -167,7 +167,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
         </div>
 
         {/* Thân Modal */}
-        <div className="p-4 sm:p-5 overflow-y-auto space-y-4 flex-1 text-xs">
+        <div className="p-2 sm:p-2.5 overflow-y-auto space-y-1.5 flex-1 text-xs">
           {/* HÀNG 1: CHẾ ĐỘ ÁNH SÁNG & FONT CHỮ GỌN GÀNG */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {/* Chế độ Ánh Sáng */}
@@ -423,7 +423,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
           </div>
 
           {/* HÀNG 3: TÙY CHỌN ẢNH NỀN CÁ NHÂN & HÌNH MINH HỌA */}
-          <div className="mt-4 p-4 rounded-xl border border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/50 dark:bg-indigo-900/20 flex flex-col md:flex-row items-center gap-5 relative overflow-hidden">
+          <div className="mt-1.5 p-2 rounded-xl border border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/50 dark:bg-indigo-900/20 flex flex-col md:flex-row items-center gap-2 relative overflow-hidden">
             {/* Hình minh họa abstract nền */}
             <div className="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
                <Image className="w-32 h-32 text-indigo-600" />

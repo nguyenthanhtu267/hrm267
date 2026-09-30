@@ -404,9 +404,9 @@ export const PayrollVarianceView: React.FC<PayrollVarianceViewProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* HEADER BÁO CÁO & ĐIỀU KHIỂN */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+      <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs">
         <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
           <div>
             <div className="flex items-center space-x-2">
@@ -530,7 +530,7 @@ export const PayrollVarianceView: React.FC<PayrollVarianceViewProps> = ({
       </div>
 
       {/* KHỐI 2: BÓC TÁCH CHI TIẾT TỪNG THÔNG SỐ BIẾN ĐỘNG */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+      <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
         <div className="flex items-center justify-between pb-2 border-b border-slate-100">
           <div className="flex items-center space-x-2">
             <FileSpreadsheet className="w-4 h-4 text-indigo-600" />
@@ -584,9 +584,9 @@ export const PayrollVarianceView: React.FC<PayrollVarianceViewProps> = ({
       </div>
 
       {/* KHỐI 3 & 4: BIẾN ĐỘNG THEO PHÒNG BAN & NHẬN ĐỊNH CỦA HR */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-1.5">
         {/* Biến động theo phòng ban */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+        <div className="lg:col-span-2 bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-slate-100">
             <h3 className="font-bold text-xs text-slate-900 uppercase flex items-center space-x-1.5">
               <Building2 className="w-4 h-4 text-blue-600" />
@@ -633,7 +633,7 @@ export const PayrollVarianceView: React.FC<PayrollVarianceViewProps> = ({
         </div>
 
         {/* NHẬN ĐỊNH & ĐÁNH GIÁ CỦA PHÒNG NHÂN SỰ */}
-        <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3 flex flex-col justify-between">
+        <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3 flex flex-col justify-between">
           <div>
             <div className="flex items-center space-x-2 pb-2 border-b border-slate-100">
               <Sparkles className="w-4 h-4 text-amber-500" />
@@ -668,7 +668,7 @@ export const PayrollVarianceView: React.FC<PayrollVarianceViewProps> = ({
       </div>
 
       {/* KHỐI 5: BẢNG RÀ SOÁT CHI TIẾT TỪNG NHÂN VIÊN */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+      <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2.5 pb-2 border-b border-slate-100">
           <div className="flex items-center space-x-2">
             <Users className="w-4 h-4 text-indigo-600" />

@@ -1026,14 +1026,14 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ onNavigate }
       {/* MODAL TO BẰNG BẢNG CĂN CỨ PHÁP LÝ (max-w-5xl h-[88vh]) CHÍNH GIỮA MÀN HÌNH */}
       {isOpen && (
         <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
+          className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-3 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
           onClick={(e) => {
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
         >
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-5xl w-full max-h-[88vh] h-[88vh] flex flex-col overflow-hidden animate-in zoom-in-95 m-auto">
             {/* Header */}
-            <div className="px-6 py-4 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white flex items-center justify-between shrink-0">
+            <div className="px-6 py-2 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white flex items-center justify-between shrink-0">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-2xl bg-indigo-500/30 flex items-center justify-center border border-indigo-400/30 shrink-0">
                   <Sparkles className="w-5 h-5 text-indigo-200" />
@@ -1101,7 +1101,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ onNavigate }
 
             {/* Nội dung Tab 1: Tra cứu tính năng phần mềm */}
             {activeTab === 'FEATURES' && (
-              <div className="flex-1 flex flex-col p-5 overflow-hidden">
+              <div className="flex-1 flex flex-col p-2.5 overflow-hidden">
                 <div className="relative mb-3">
                   <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
                   <input
@@ -1158,7 +1158,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ onNavigate }
 
             {/* Nội dung Tab 2: Chat Luật Lao Động & Cố Vấn Pháp Lý */}
             {activeTab === 'LABOR_LAW' && (
-              <div className="flex-1 flex flex-col p-4 overflow-hidden">
+              <div className="flex-1 flex flex-col p-2 overflow-hidden">
                 {/* Lời nhắc bảo mật */}
                 <div className="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[10px] text-slate-600 flex items-center justify-between mb-2">
                   <div className="flex items-center space-x-1.5">
@@ -1266,7 +1266,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({ onNavigate }
 
             {/* Nội dung Tab 3: Hỏi Đáp Bảng Chấm Công & Thông Tin Cá Nhân */}
             {activeTab === 'PERSONAL_PAYROLL_QA' && (
-              <div className="flex-1 flex flex-col p-4 overflow-hidden bg-slate-50/50">
+              <div className="flex-1 flex flex-col p-2 overflow-hidden bg-slate-50/50">
                 {/* Banner phân hệ chuẩn mực */}
                 <div className="mb-2 p-2.5 rounded-xl bg-gradient-to-r from-indigo-50 via-sky-50 to-emerald-50 border border-indigo-200 text-xs flex items-center justify-between">
                   <div className="flex items-center space-x-2">

@@ -404,9 +404,9 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-3">
       {/* Header tiêu đề & hành động */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
         <div>
           <div className="flex items-center space-x-2">
             <Briefcase className="w-5 h-5 text-indigo-600" />
@@ -469,7 +469,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
         <>
       {/* KHU VỰC 1: HỘP CÔNG CỤ AI BÓC TÁCH & ĐỐI SOÁT CV THÔNG MINH */}
       <div className="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-4 px-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-2 px-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div className="flex items-center space-x-2.5">
             <div className="p-2 rounded-xl bg-indigo-500/30 text-indigo-200">
               <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
@@ -504,8 +504,8 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
           </div>
         </div>
 
-        <div className="p-5 space-y-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div className="p-2.5 space-y-1.5">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
             {/* Cột trái: Chọn JD & Dán CV */}
             <div className="lg:col-span-7 space-y-3">
               <div>
@@ -627,7 +627,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
             </div>
 
             {/* Cột phải: Kết quả đánh giá từ AI */}
-            <div className="lg:col-span-5 bg-slate-50 rounded-xl p-4 border border-slate-200 flex flex-col justify-between">
+            <div className="lg:col-span-5 bg-slate-50 rounded-xl p-2 border border-slate-200 flex flex-col justify-between">
               {analysisResult ? (
                 <div className="space-y-3">
                   <div className="flex items-center justify-between pb-2 border-b border-slate-200">
@@ -716,7 +716,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
                   </button>
                 </div>
               ) : (
-                <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3 text-slate-400">
+                <div className="h-full flex flex-col items-center justify-center text-center p-3 space-y-3 text-slate-400">
                   <div className="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center">
                     <Sparkles className="w-6 h-6 text-slate-400" />
                   </div>
@@ -734,7 +734,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
       </div>
 
       {/* KHU VỰC 2: THANH TÌM KIẾM & BỘ LỌC PIPELINE */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-slate-200">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-white p-2 rounded-2xl border border-slate-200">
         <div className="flex items-center space-x-3 flex-1">
           <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -765,11 +765,11 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
       </div>
 
       {/* KHU VỰC 3: KANBAN PIPELINE TUYỂN DỤNG ATS */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-1.5">
         {stages.map((stg) => {
           const list = filteredCandidates.filter(c => c.stage === stg.id);
           return (
-            <div key={stg.id} className="bg-slate-100/80 rounded-2xl p-4 border border-slate-200 flex flex-col min-h-[420px]">
+            <div key={stg.id} className="bg-slate-100/80 rounded-2xl p-2 border border-slate-200 flex flex-col min-h-[420px]">
               <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
                 <span className="font-bold text-xs text-slate-800">{stg.label}</span>
                 <span className="w-5 h-5 rounded-full bg-white text-slate-700 text-[10px] font-bold flex items-center justify-center shadow-sm">
@@ -858,8 +858,8 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
 
       {/* MODAL CHI TIẾT ỨNG VIÊN */}
       {selectedCandidate && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-[10px] font-bold text-indigo-600 uppercase tracking-wider">Chi Tiết Hồ Sơ Ứng Viên</span>
@@ -943,8 +943,8 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
 
       {/* MODAL THƯ VIỆN JOB DESCRIPTIONS (JD) */}
       {showJdLibraryModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-3xl max-h-[90vh] overflow-y-auto p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-3xl max-h-[90vh] overflow-y-auto p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Thư Viện Mô Tả Công Việc Chuẩn</span>
@@ -955,9 +955,9 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
               </button>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               {jobDescriptionsLibrary.map((jd) => (
-                <div key={jd.id} className="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+                <div key={jd.id} className="p-2 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
                   <div className="flex items-center justify-between">
                     <div>
                       <h4 className="font-bold text-sm text-slate-900">{jd.title}</h4>
@@ -1022,8 +1022,8 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
 
       {/* MODAL THƯ MỜI NHẬN VIỆC (OFFER LETTER) */}
       {showOfferModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl max-h-[90vh] overflow-y-auto p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div>
                 <span className="text-xs font-bold text-indigo-600 uppercase tracking-wider">Thư Mời Nhận Việc Điện Tử</span>
@@ -1035,7 +1035,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
               </button>
             </div>
 
-            <div className="p-5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-3 leading-relaxed">
+            <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-3 leading-relaxed">
               <p><b>Kính gửi: Ông/Bà {showOfferModal.fullName},</b></p>
               <p>
                 Đại diện Ban Giám đốc và Phòng Nhân sự An Việt Manufacturing, chúng tôi trân trọng gửi đến bạn thư mời gia nhập công ty với các điều kiện đãi ngộ như sau:
@@ -1113,8 +1113,8 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
 
       {/* MODAL CHUẨN BỊ CƠ SỞ VẬT CHẤT & TIẾP NHẬN ONBOARDING */}
       {showOnboardingModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-xl max-h-[90vh] overflow-y-auto p-6 space-y-4">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-xl max-h-[90vh] overflow-y-auto p-3 space-y-1.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <div className="flex items-center space-x-2.5">
                 <div className="p-2 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-200">
@@ -1146,7 +1146,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
             {(showOnboardingModal.positionApplied.toLowerCase().includes('trưởng') || 
               showOnboardingModal.positionApplied.toLowerCase().includes('giám đốc') || 
               showOnboardingModal.positionApplied.toLowerCase().includes('quản đốc')) ? (
-              <div className="bg-gradient-to-r from-amber-50 via-amber-100/60 to-amber-50 border-2 border-amber-400/80 rounded-2xl p-4 shadow-sm space-y-2">
+              <div className="bg-gradient-to-r from-amber-50 via-amber-100/60 to-amber-50 border-2 border-amber-400/80 rounded-2xl p-2 shadow-sm space-y-2">
                 <div className="flex items-center space-x-2 text-amber-900 font-black text-xs uppercase tracking-wide">
                   <Crown className="w-4 h-4 fill-amber-500 text-amber-600" />
                   <span>CÁN BỘ QUẢN LÝ CẤP CAO • QUY TRÌNH TIẾP ĐÓN TRANG TRỌNG</span>

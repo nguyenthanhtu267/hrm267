@@ -104,11 +104,11 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
 
   return (
     <div 
-      className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-2 sm:p-4 overflow-y-auto animate-in fade-in"
+      className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-2 sm:p-2 overflow-y-auto animate-in fade-in"
       onClick={onClose}
     >
       <div 
-        className="bg-slate-900 text-slate-100 rounded-3xl max-w-5xl w-full p-4 sm:p-6 shadow-2xl border border-slate-700 space-y-4 max-h-[95vh] overflow-y-auto"
+        className="bg-slate-900 text-slate-100 rounded-3xl max-w-5xl w-full p-2 sm:p-3 shadow-2xl border border-slate-700 space-y-1.5 max-h-[95vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         {/* Header Modal */}
@@ -156,7 +156,7 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
         </div>
 
         {/* Khung chính chia 2 cột: Cấu hình phân quyền & Xem trước Thẻ */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2">
           {/* CỘT TRÁI: CẤU HÌNH THẺ TỪ & MÃ QR ZALO */}
           <div className="lg:col-span-5 space-y-3.5 text-xs">
             {/* 1. Cấu hình số điện thoại & chuẩn QR Zalo */}
@@ -420,7 +420,7 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
           </div>
 
           {/* CỘT PHẢI: XEM TRƯỚC THẺ NHÂN VIÊN IN ẤN CHUẨN CR80 */}
-          <div className="lg:col-span-7 flex flex-col items-center justify-center bg-slate-950/60 p-4 sm:p-6 rounded-3xl border border-slate-800">
+          <div className="lg:col-span-7 flex flex-col items-center justify-center bg-slate-950/60 p-2 sm:p-3 rounded-3xl border border-slate-800">
             <div className="w-full flex items-center justify-between mb-3 text-[11px] text-slate-400">
               <span className="font-semibold flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
@@ -432,13 +432,13 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
             </div>
 
             {/* VÙNG IN THẺ (PRINT AREA) */}
-            <div id="printable-employee-badge" className="flex flex-wrap items-center justify-center gap-6">
+            <div id="printable-employee-badge" className="flex flex-wrap items-center justify-center gap-3">
               {/* ======================================================== */}
               {/* MẶT TRƯỚC CỦA THẺ (FRONT BADGE) */}
               {/* ======================================================== */}
               {(cardSide === 'FRONT' || cardSide === 'BOTH') && (
                 <div 
-                  className={`w-[270px] h-[420px] rounded-2xl shadow-2xl p-4 flex flex-col justify-between relative overflow-hidden transition-all text-slate-900 border select-none ${
+                  className={`w-[270px] h-[420px] rounded-2xl shadow-2xl p-2 flex flex-col justify-between relative overflow-hidden transition-all text-slate-900 border select-none ${
                     isExecutive 
                       ? 'bg-gradient-to-b from-amber-50 via-white to-amber-50/80 border-amber-300 ring-2 ring-amber-400/40' 
                       : 'bg-gradient-to-b from-indigo-50/70 via-white to-slate-50 border-indigo-200 ring-1 ring-indigo-300/40'
@@ -519,7 +519,7 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
               {/* ======================================================== */}
               {(cardSide === 'BACK' || cardSide === 'BOTH') && (
                 <div 
-                  className={`w-[270px] h-[420px] rounded-2xl shadow-2xl p-4 flex flex-col justify-between relative overflow-hidden transition-all text-slate-900 border select-none bg-white ${
+                  className={`w-[270px] h-[420px] rounded-2xl shadow-2xl p-2 flex flex-col justify-between relative overflow-hidden transition-all text-slate-900 border select-none bg-white ${
                     isExecutive ? 'border-amber-300 ring-2 ring-amber-400/40' : 'border-indigo-200 ring-1 ring-indigo-300/40'
                   }`}
                 >
@@ -592,7 +592,7 @@ export const SmartEmployeeCardModal: React.FC<SmartEmployeeCardModalProps> = ({
             </div>
 
             {/* Nút bấm kiểm tra quét Zalo & In nhanh */}
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-1.5 flex flex-wrap items-center justify-center gap-3">
               <a
                 href={zaloUrl}
                 target="_blank"

@@ -157,10 +157,10 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
     .map(r => r.badgeConfig);
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
       <div className="bg-white rounded-3xl shadow-2xl max-w-5xl w-full border border-slate-200 overflow-hidden my-6 flex flex-col max-h-[92vh]">
         {/* Header */}
-        <div className="bg-gradient-to-r from-teal-800 via-emerald-800 to-slate-900 text-white p-5 flex justify-between items-center no-print">
+        <div className="bg-gradient-to-r from-teal-800 via-emerald-800 to-slate-900 text-white p-2.5 flex justify-between items-center no-print">
           <div>
             <div className="flex items-center space-x-2">
               <span className="p-1.5 rounded-lg bg-teal-500/20 text-teal-200 border border-teal-500/30">
@@ -242,10 +242,10 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
         </div>
 
         {/* Content Body */}
-        <div className="p-5 flex-1 overflow-y-auto">
+        <div className="p-2.5 flex-1 overflow-y-auto">
           {/* TAB 1: DANH SÁCH YÊU CẦU */}
           {activeTab === 'REQUEST_LIST' && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-teal-50/50 p-3 rounded-2xl border border-teal-100">
                 <div className="flex items-center space-x-2">
                   <span className="text-xs font-bold text-teal-900">
@@ -280,7 +280,7 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
 
               {/* Form tạo đề nghị nhanh */}
               {showNewRequestForm && (
-                <form onSubmit={handleCreateRequest} className="p-4 bg-slate-50 border border-slate-300 rounded-2xl space-y-3 text-xs animate-fade-in">
+                <form onSubmit={handleCreateRequest} className="p-2 bg-slate-50 border border-slate-300 rounded-2xl space-y-3 text-xs animate-fade-in">
                   <h4 className="font-bold text-slate-900 flex items-center gap-1.5 text-sm">
                     <Sparkles className="w-4 h-4 text-teal-600" />
                     <span>Gửi Đề Nghị Cấp Lại Thẻ (Mất / Hỏng / Đổi Chức Danh)</span>
@@ -489,7 +489,7 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
 
           {/* TAB 2: DÀN TRANG IN HÀNG LOẠT KHỔ A4 */}
           {activeTab === 'BATCH_PRINT_A4' && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               <div className="bg-slate-100 p-3.5 rounded-2xl flex items-center justify-between no-print">
                 <div>
                   <h3 className="font-bold text-slate-800 text-xs flex items-center gap-1.5">
@@ -519,14 +519,14 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
               </div>
 
               {/* Khu vực in A4 */}
-              <div id="print-area" className="bg-white p-4 border border-slate-200 rounded-2xl shadow-inner">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-2">
+              <div id="print-area" className="bg-white p-2 border border-slate-200 rounded-2xl shadow-inner">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5 p-2">
                   {badgesToBatchPrint.map((b, idx) => {
                     const qr = qrMap[b.employeeId];
                     return (
                       <div
                         key={idx}
-                        className="border-2 border-dashed border-slate-300 rounded-2xl p-4 bg-gradient-to-br from-white via-slate-50 to-teal-50/30 flex flex-col justify-between"
+                        className="border-2 border-dashed border-slate-300 rounded-2xl p-2 bg-gradient-to-br from-white via-slate-50 to-teal-50/30 flex flex-col justify-between"
                         style={{ minHeight: '190px' }}
                       >
                         {/* Header thẻ */}
@@ -597,7 +597,7 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
 
           {/* TAB 3: XEM TRƯỚC IN THẺ LẺ */}
           {activeTab === 'SINGLE_PREVIEW' && previewBadge && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               <div className="flex items-center justify-between no-print">
                 <button
                   onClick={() => setActiveTab('REQUEST_LIST')}
@@ -614,9 +614,9 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
                 </button>
               </div>
 
-              <div id="print-area" className="flex justify-center p-6 bg-slate-100 rounded-2xl">
+              <div id="print-area" className="flex justify-center p-3 bg-slate-100 rounded-2xl">
                 <div
-                  className="border-2 border-slate-800 rounded-2xl p-5 bg-gradient-to-br from-white via-slate-50 to-teal-50 shadow-2xl flex flex-col justify-between"
+                  className="border-2 border-slate-800 rounded-2xl p-2.5 bg-gradient-to-br from-white via-slate-50 to-teal-50 shadow-2xl flex flex-col justify-between"
                   style={{ width: '340px', minHeight: '210px' }}
                 >
                   {/* Top */}
@@ -683,8 +683,8 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
 
           {/* TAB 4: DANH SÁCH THẺ ĐÃ BÁO MẤT & KHÓA BLACKLIST (AN NINH CỔNG & NHÀ ĂN) */}
           {activeTab === 'BLACKLIST_CARDS' && (
-            <div className="space-y-4">
-              <div className="p-4 bg-rose-50 rounded-2xl border border-rose-200 flex items-center justify-between">
+            <div className="space-y-1.5">
+              <div className="p-2 bg-rose-50 rounded-2xl border border-rose-200 flex items-center justify-between">
                 <div>
                   <h3 className="text-xs font-bold text-rose-950 flex items-center gap-1.5 uppercase tracking-wide">
                     <AlertCircle className="w-4 h-4 text-rose-600" />
@@ -749,7 +749,7 @@ export const SmartBadgeBatchPrintModal: React.FC<SmartBadgeBatchPrintModalProps>
         </div>
 
         {/* Footer */}
-        <div className="bg-slate-50 border-t border-slate-200 p-4 flex justify-between items-center no-print">
+        <div className="bg-slate-50 border-t border-slate-200 p-2 flex justify-between items-center no-print">
           <div className="text-xs text-slate-500">
             Tổng số đề nghị: <b className="text-slate-800">{reissueRequests.length}</b> • Đã chọn: <b className="text-teal-700">{selectedIds.size}</b>
           </div>

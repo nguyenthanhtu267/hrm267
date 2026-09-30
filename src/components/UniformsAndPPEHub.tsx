@@ -602,11 +602,11 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS ĐỒNG PHỤC, BHLĐ & CCDC 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 shadow-md border border-indigo-900/50">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -796,8 +796,8 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 1: CẤP PHÁT ĐỒNG PHỤC THEO SIZE & NIÊN KHÓA
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'UNIFORM_INVENTORY' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -874,7 +874,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 2: TRANG BỊ BHLĐ / PPE THEO TT 25/2013/TT-BLĐTBXH
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'PPE_SAFETY' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* BANNER PHÁP LÝ THÔNG TƯ 25 */}
           <div className="p-3.5 rounded-2xl border border-indigo-200 bg-indigo-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div className="space-y-0.5">
@@ -940,8 +940,8 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 3: CÔNG CỤ DỤNG CỤ (CCDC) & THIẾT BỊ LÀM VIỆC
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'TOOLS_EQUIPMENT' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1003,9 +1003,9 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 4: PHIẾU CẤP PHÁT & THU HỒI BÀN GIAO THÔI VIỆC
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'ISSUANCE_HANDOVER' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* PHẦN 1: CHECKLIST THU HỒI TÀI SẢN KHI THÔI VIỆC */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1059,7 +1059,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           </div>
 
           {/* PHẦN 2: LỊCH SỬ PHIẾU CẤP PHÁT & IN MẪU A4 */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1128,7 +1128,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 5: QUẢN LÝ TỒN KHO AN TOÀN & CẢNH BÁO AI ĐẶT HÀNG
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'SAFETY_STOCK_ALERT' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* CẢNH BÁO TỒN KHO BÁO ĐỘNG */}
           <div className="p-3.5 rounded-2xl border-2 border-rose-300 bg-rose-50/50 space-y-2">
             <div className="flex items-center justify-between">
@@ -1156,7 +1156,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           </div>
 
           {/* BẢNG SO SÁNH TỒN KHO THỰC TẾ VỚI ĐỊNH MỨC AN TOÀN */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1208,8 +1208,8 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
           TAB 6: BÁO CÁO CHI PHÍ & PHÂN BỔ PHÒNG BAN
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'COST_ALLOCATION' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1286,7 +1286,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateIssuance} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCreateIssuance} className="p-2 space-y-3 text-xs">
               <div className="grid grid-cols-2 gap-2.5">
                 <div>
                   <label className="font-bold text-slate-700 block mb-1">Cán Bộ Nhân Viên Nhận:</label>
@@ -1418,7 +1418,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-xs uppercase">{policy.companyName}</p>
                 <h2 className="text-base font-bold uppercase mt-1 text-slate-900">
@@ -1469,7 +1469,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
                 * Cam kết: Người lao động có trách nhiệm bảo quản, sử dụng đúng mục đích công vụ và hoàn trả nguyên vẹn khi chấm dứt hợp đồng lao động theo quy định công ty.
               </p>
 
-              <div className="grid grid-cols-3 gap-2 text-center pt-8 mt-4 border-t text-[10.5px]">
+              <div className="grid grid-cols-3 gap-2 text-center pt-8 mt-1.5 border-t text-[10.5px]">
                 <div>
                   <p className="font-bold uppercase">Người Nhận</p>
                   <p className="italic text-slate-400 mt-10">{selectedRecordForPrint.employeeName}</p>
@@ -1525,7 +1525,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
               </button>
             </div>
 
-            <div className="p-4 space-y-3 text-xs">
+            <div className="p-2 space-y-3 text-xs">
               <p className="text-slate-600">
                 Thông số kích cỡ cơ thể nhân sự được lưu trữ tự động để phục vụ đặt may hàng loạt định kỳ hằng năm:
               </p>

@@ -188,14 +188,14 @@ export const LegalFloatingWidget: React.FC<LegalFloatingWidgetProps> = ({ classN
       {/* Modal To Đặt CHÍNH GIỮA MÀN HÌNH (Centered Modal) Không Bị Treo Lên Trên */}
       {isOpen && typeof document !== 'undefined' && createPortal(
         <div 
-          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-3 bg-slate-900/60 backdrop-blur-sm animate-in fade-in"
           onClick={(e) => {
             if (e.target === e.currentTarget) setIsOpen(false);
           }}
         >
           <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-5xl w-full max-h-[88vh] h-[88vh] flex flex-col overflow-hidden animate-in zoom-in-95 m-auto">
             {/* Header Modal */}
-            <div className="px-6 py-4 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white flex items-center justify-between shrink-0">
+            <div className="px-6 py-2 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white flex items-center justify-between shrink-0">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 rounded-2xl bg-indigo-500/30 flex items-center justify-center border border-indigo-400/30 shrink-0">
                   <Scale className="w-5 h-5 text-indigo-200" />
@@ -263,12 +263,12 @@ export const LegalFloatingWidget: React.FC<LegalFloatingWidgetProps> = ({ classN
             </div>
 
             {/* Danh sách 14 văn bản cuộn độc lập */}
-            <div className="p-6 overflow-y-auto space-y-4 flex-1">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-3 overflow-y-auto space-y-1.5 flex-1">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
                 {filteredDocs.map((doc, idx) => (
                   <div
                     key={idx}
-                    className={`p-4 rounded-2xl border transition-all hover:shadow-md flex flex-col justify-between ${
+                    className={`p-2 rounded-2xl border transition-all hover:shadow-md flex flex-col justify-between ${
                       doc.status === 'UPCOMING'
                         ? 'bg-amber-50/40 border-amber-200 hover:border-amber-400'
                         : 'bg-white border-slate-200 hover:border-indigo-300'

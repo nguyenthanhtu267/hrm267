@@ -906,11 +906,11 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS CHI PHÍ & HẠ TẦNG 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 shadow-md border border-indigo-900/50">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -1098,7 +1098,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 1: ĐỐI SOÁT TIỆN ÍCH ĐIỆN 3 GIÁ EVN, NƯỚC & MẠNG
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'UTILITIES_EXPENSES' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* KHỐI CẢNH BÁO THÔNG MINH AI ANOMALY DETECTION */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             <div className="p-3.5 rounded-2xl border border-amber-300 bg-gradient-to-br from-amber-50 to-white space-y-1.5">
@@ -1160,7 +1160,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           </div>
 
           {/* BỘ MÔ PHỎNG DỊCH CHUYỂN PHỤ TẢI (LOAD SHIFTING SIMULATOR) */}
-          <div className="p-4 rounded-2xl border border-indigo-200 bg-indigo-50/50 space-y-3">
+          <div className="p-2 rounded-2xl border border-indigo-200 bg-indigo-50/50 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
                 <h4 className="text-xs font-black uppercase text-indigo-950 flex items-center gap-1.5">
@@ -1204,7 +1204,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           </div>
 
           {/* DANH SÁCH HÓA ĐƠN TIỆN ÍCH */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1286,9 +1286,9 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 2: KẾ HOẠCH BẢO DƯỠNG NGĂN NGỪA (PM SCHEDULE) & PCCC
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'PREVENTIVE_MAINTENANCE' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* BANNER PHÂN NHÓM & BỘ LỌC */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1460,7 +1460,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 3: MẶT BẰNG, DIỆN TÍCH & HỢP ĐỒNG THUÊ
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'FACILITIES_LEASES' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* KHỐI CHỈ SỐ HIỆU SUẤT KHÔNG GIAN (SPACE KPIS) */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="p-3 rounded-2xl bg-white border border-slate-200 shadow-2xs space-y-1">
@@ -1497,7 +1497,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           </div>
 
           {/* SƠ ĐỒ TỶ LỆ PHÂN BỔ DIỆN TÍCH TRỰC QUAN */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1604,8 +1604,8 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 4: PHIẾU TIẾP NHẬN BÁO HỎNG & SỬA CHỮA (WORK ORDERS)
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'WORK_ORDERS_HELPDESK' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1881,10 +1881,10 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 5: KIỂM SOÁT NĂNG LƯỢNG XANH & CHỐNG LÃNG PHÍ ESG
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'ENERGY_MANAGEMENT_ESG' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 3 THẺ CHỈ SỐ ESG BẢO VỆ MÔI TRƯỜNG */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-amber-50 border border-amber-200 space-y-2 shadow-2xs">
+            <div className="p-2 rounded-2xl bg-gradient-to-br from-amber-50 via-white to-amber-50 border border-amber-200 space-y-2 shadow-2xs">
               <div className="flex items-center justify-between text-amber-900 font-black text-xs uppercase">
                 <span>ĐIỆN MẶT TRỜI MÁI NHÀ (SOLAR ROOFTOP 200kWP)</span>
                 <Sun className="w-4 h-4 text-amber-600" />
@@ -1900,7 +1900,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-200 space-y-2 shadow-2xs">
+            <div className="p-2 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-blue-50 border border-blue-200 space-y-2 shadow-2xs">
               <div className="flex items-center justify-between text-blue-900 font-black text-xs uppercase">
                 <span>THU GOM NƯỚC MƯA &amp; TÁI SỬ DỤNG TƯỚI CÂY</span>
                 <Droplets className="w-4 h-4 text-blue-600" />
@@ -1916,7 +1916,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-emerald-50 border border-emerald-200 space-y-2 shadow-2xs">
+            <div className="p-2 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-emerald-50 border border-emerald-200 space-y-2 shadow-2xs">
               <div className="flex items-center justify-between text-emerald-900 font-black text-xs uppercase">
                 <span>GIẢM PHÁT THẢI KHÍ NHÀ KÍNH (CO2 REDUCTION)</span>
                 <Leaf className="w-4 h-4 text-emerald-600" />
@@ -1934,7 +1934,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           </div>
 
           {/* ĐỒ THỊ BIỂU DIỄN ĐƯỜNG CONG SẢN LƯỢNG ĐIỆN MẶT TRỜI TRONG NGÀY */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h4 className="text-xs font-black uppercase text-slate-900 flex items-center gap-1.5">
@@ -1980,7 +1980,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           </div>
 
           {/* CHECKLIST 8 THÓI QUEN TIẾT KIỆM NĂNG LƯỢNG 5S HÀNH CHÍNH */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h4 className="text-xs font-black uppercase text-slate-900 flex items-center gap-1.5">
@@ -2020,8 +2020,8 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
           TAB 6: KIỂM KÊ TÀI SẢN & KHẤU HAO THIẾT BỊ HẠ TẦNG
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'ASSET_DEPRECIATION' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -2108,7 +2108,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateTicket} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCreateTicket} className="p-2 space-y-3 text-xs">
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Tiêu Đề &amp; Hiện Tượng Sự Cố:</label>
                 <input
@@ -2205,7 +2205,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCompleteTicket} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCompleteTicket} className="p-2 space-y-3 text-xs">
               <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                 <p><b>Sự cố:</b> <span className="font-bold text-slate-900">{selectedTicketForAction.title}</span></p>
                 <p><b>Vị trí:</b> {selectedTicketForAction.locationDetail}</p>
@@ -2299,7 +2299,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <div className="p-4 space-y-3 text-xs">
+            <div className="p-2 space-y-3 text-xs">
               <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1">
                 <p><b>Nhà cung cấp:</b> {showUtilityAuditModal.providerName}</p>
                 <p><b>Mã hóa đơn VAT:</b> <span className="font-mono font-bold text-indigo-700">{showUtilityAuditModal.invoiceCode}</span></p>
@@ -2366,7 +2366,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-xs uppercase">{policy.companyName}</p>
                 <h2 className="text-base font-bold uppercase mt-1 text-slate-900">
@@ -2387,7 +2387,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
                 <p><b>7. Đánh giá chất lượng sau bàn giao:</b> <span className="font-bold text-amber-600">{showPrintTicketModal.satisfactionRating} ⭐ (Hài lòng)</span></p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-center pt-8 mt-6 border-t text-[11px]">
+              <div className="grid grid-cols-2 gap-1.5 text-center pt-8 mt-3 border-t text-[11px]">
                 <div>
                   <p className="font-bold uppercase">Kỹ Thuật Viên Sửa Chữa</p>
                   <p className="italic text-slate-400 mt-12">(Ký và ghi rõ họ tên)</p>
@@ -2439,7 +2439,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <div className="p-4 space-y-3 text-xs">
+            <div className="p-2 space-y-3 text-xs">
               {/* Thẻ tem nhãn thiết kế chuẩn nhãn dán kỹ thuật */}
               <div className="p-3.5 rounded-2xl border-2 border-dashed border-slate-300 bg-slate-50 space-y-2">
                 <div className="flex items-center justify-between border-b border-slate-200 pb-1.5">
@@ -2514,7 +2514,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
               <div className="border-b pb-3 text-center">
                 <p className="font-bold text-[10px] uppercase text-slate-500">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
                 <p className="text-[10px] italic">Độc lập - Tự do - Hạnh phúc</p>
@@ -2533,7 +2533,7 @@ export const OfficeCostsAndInfraHub: React.FC<OfficeCostsAndInfraHubProps> = ({
                 <p><b>6. Thời hạn kiểm định có hiệu lực:</b> Đến ngày <b className="font-mono text-indigo-700">{selectedPmCertificate.safetyCertificateExpiry}</b></p>
               </div>
 
-              <div className="grid grid-cols-2 gap-4 text-center pt-8 mt-6 border-t text-[11px]">
+              <div className="grid grid-cols-2 gap-1.5 text-center pt-8 mt-3 border-t text-[11px]">
                 <div>
                   <p className="font-bold uppercase">Kiểm Định Viên</p>
                   <p className="italic text-slate-400 mt-12">(Ký và đóng dấu kiểm định)</p>

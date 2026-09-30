@@ -293,7 +293,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
   const departments = Array.from(new Set(currentTenantEmployees.map(e => e.departmentName)));
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* Thanh Tiêu đề & Thao tác */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
@@ -591,10 +591,10 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
         const empCommitment = initialTrainingCommitments.find(c => c.employeeId === selectedEmployee.code || c.employeeName === selectedEmployee.fullName);
 
         return (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-4xl max-h-[90vh] overflow-y-auto">
             {/* Header */}
-            <div className="p-5 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
+            <div className="p-2.5 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
               <div className="flex items-center space-x-3">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-800 text-white flex items-center justify-center text-lg font-black shadow-md">
                   {selectedEmployee.fullName.slice(0, 2).toUpperCase()}
@@ -693,16 +693,16 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
             </div>
 
-            <div className="p-6 space-y-5 text-xs">
+            <div className="p-3 space-y-2 text-xs">
               {/* TAB 1: LÝ LỊCH & PHÁP LÝ */}
               {employee360Tab === 'PROFILE' && (
-                <div className="space-y-4 animate-in fade-in">
+                <div className="space-y-1.5 animate-in fade-in">
                   <div>
                     <h4 className="font-bold text-sm text-slate-900 border-b border-slate-100 pb-2 mb-3 flex items-center space-x-2">
                       <UserCheck className="w-4 h-4 text-indigo-600" />
                       <span>Thông Tin Định Danh & Liên Lạc (Chuẩn Poka-Yoke)</span>
                     </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5">
                       <div>
                         <span className="text-slate-400 block">Số điện thoại (10 số):</span>
                         <b className="text-slate-900 font-mono">{selectedEmployee.phone}</b>
@@ -743,7 +743,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
                       <FileText className="w-4 h-4 text-indigo-600" />
                       <span>Hợp Đồng Lao Động & Tuân Thủ Pháp Luật</span>
                     </h4>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-3.5 bg-slate-50 rounded-xl border border-slate-200">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 p-3.5 bg-slate-50 rounded-xl border border-slate-200">
                       <div>
                         <span className="text-slate-400 block">Loại hợp đồng:</span>
                         <b className="text-slate-900">{selectedEmployee.contractType}</b>
@@ -767,7 +767,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
               {/* TAB 2: CHẤM CÔNG & GIỜ LÀM */}
               {employee360Tab === 'ATTENDANCE' && (
-                <div className="space-y-4 animate-in fade-in">
+                <div className="space-y-1.5 animate-in fade-in">
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-3.5">
                     <div className="p-3 bg-slate-50 rounded-xl border border-slate-200">
                       <span className="text-slate-500 text-[11px] block">Ngày công chuẩn tháng:</span>
@@ -800,8 +800,8 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
               {/* TAB 3: LƯƠNG & ĐÃI NGỘ */}
               {employee360Tab === 'PAYSLIP' && (
-                <div className="space-y-4 animate-in fade-in">
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div className="space-y-1.5 animate-in fade-in">
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 p-2 rounded-xl bg-slate-50 border border-slate-200">
                     <div>
                       <span className="text-slate-500 block">Lương cơ bản đóng BHXH:</span>
                       <b className="text-slate-900 text-sm font-mono">{selectedEmployee.baseSalary.toLocaleString('vi-VN')} đ</b>
@@ -838,7 +838,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
               {/* TAB 4: ĐÀO TẠO L&D & CAM KẾT ĐIỀU 62 BLLĐ */}
               {employee360Tab === 'TRAINING' && (
-                <div className="space-y-4 animate-in fade-in">
+                <div className="space-y-1.5 animate-in fade-in">
                   <div className="grid grid-cols-3 gap-3.5">
                     <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200">
                       <span className="text-slate-500 text-[11px] block">Giờ học tích lũy năm 2026:</span>
@@ -861,7 +861,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
                   {/* Cảnh báo cam kết đào tạo Điều 62 BLLĐ */}
                   {empCommitment && empCommitment.status === 'ACTIVE' ? (
-                    <div className="p-4 rounded-xl bg-amber-50 border-2 border-amber-300 space-y-2">
+                    <div className="p-2 rounded-xl bg-amber-50 border-2 border-amber-300 space-y-2">
                       <div className="flex items-center justify-between font-bold text-amber-950">
                         <span className="flex items-center space-x-1.5">
                           <AlertCircle className="w-4 h-4 text-amber-600" />
@@ -888,7 +888,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
               {/* TAB 5: PHÉP NĂM & ĐƠN TỪ */}
               {employee360Tab === 'LEAVE' && (
-                <div className="space-y-4 animate-in fade-in">
+                <div className="space-y-1.5 animate-in fade-in">
                   <div className="grid grid-cols-4 gap-3.5">
                     <div className="p-3 bg-slate-50 rounded-xl border border-slate-200 text-center">
                       <span className="text-slate-500 text-[11px] block">Tiêu chuẩn phép năm:</span>
@@ -918,8 +918,8 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
               {/* TAB 6: THẺ TỪ THÔNG MINH & IN THẺ TRỰC TIẾP */}
               {employee360Tab === 'SMART_BADGE' && (
-                <div className="space-y-4 animate-in fade-in">
-                  <div className="bg-gradient-to-r from-teal-900 to-slate-900 p-4 rounded-2xl text-white flex items-center justify-between">
+                <div className="space-y-1.5 animate-in fade-in">
+                  <div className="bg-gradient-to-r from-teal-900 to-slate-900 p-2 rounded-2xl text-white flex items-center justify-between">
                     <div>
                       <h4 className="font-bold text-sm text-teal-200 flex items-center gap-1.5">
                         <CreditCard className="w-4 h-4 text-teal-400" />
@@ -941,9 +941,9 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
                   </div>
 
                   {/* Bản hiển thị thẻ chuẩn CR-80 */}
-                  <div className="flex justify-center p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                  <div className="flex justify-center p-3 bg-slate-50 rounded-2xl border border-slate-200">
                     <div
-                      className="border-2 border-slate-800 rounded-2xl p-5 bg-gradient-to-br from-white via-slate-50 to-teal-50 shadow-xl flex flex-col justify-between"
+                      className="border-2 border-slate-800 rounded-2xl p-2.5 bg-gradient-to-br from-white via-slate-50 to-teal-50 shadow-xl flex flex-col justify-between"
                       style={{ width: '360px', minHeight: '220px' }}
                     >
                       <div className="flex items-center justify-between border-b pb-1.5">
@@ -1026,7 +1026,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               )}
             </div>
 
-            <div className="p-5 border-t border-slate-100 flex justify-end bg-slate-50/50">
+            <div className="p-2.5 border-t border-slate-100 flex justify-end bg-slate-50/50">
               <button
                 onClick={() => setSelectedEmployee(null)}
                 className="px-5 py-2 bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs rounded-xl cursor-pointer"
@@ -1041,9 +1041,9 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
 
       {/* MODAL THÊM NHÂN VIÊN MỚI - ÁP DỤNG TRIẾT LÝ POKA-YOKE KHÔNG THỂ LÀM SAI */}
       {showAddModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-2 animate-in fade-in">
           <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="p-5 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
+            <div className="p-2.5 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white z-10">
               <div>
                 <div className="flex items-center space-x-2">
                   <h3 className="font-bold text-base text-slate-900">Thêm Hồ Sơ Nhân Sự Mới</h3>
@@ -1060,9 +1060,9 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleAddEmployee} className="p-6 space-y-4 text-xs">
+            <form onSubmit={handleAddEmployee} className="p-3 space-y-1.5 text-xs">
               {/* Họ tên & SĐT */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-1.5">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Họ và tên nhân viên *</label>
                   <input
@@ -1119,7 +1119,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
 
               {/* CCCD & Ngày sinh */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-1.5">
                 {/* CCCD POKA-YOKE: BẮT BUỘC ĐÚNG 12 SỐ */}
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">
@@ -1183,7 +1183,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
 
               {/* Email & MST */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-1.5">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Email công ty / cá nhân</label>
                   <input
@@ -1238,7 +1238,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
 
               {/* Mã BHXH & Tài khoản ngân hàng */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-1.5">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Mã số sổ BHXH (10 số)</label>
                   <input
@@ -1296,7 +1296,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
 
               {/* Phòng ban & Chức vụ */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-1.5">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Phòng ban / Xưởng sản xuất</label>
                   <input
@@ -1318,7 +1318,7 @@ export const EmployeeListView: React.FC<EmployeeListViewProps> = ({
               </div>
 
               {/* Lương & Độc hại */}
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 gap-1.5">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Trạng thái nhân sự</label>
                   <select

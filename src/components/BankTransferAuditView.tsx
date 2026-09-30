@@ -145,7 +145,7 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* 1. Header Banner & Thống kê dòng tiền */}
       <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-xl p-3 text-white shadow-md border border-slate-800">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2">
@@ -480,10 +480,10 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
 
       {/* 4. Modal Bóc Tách Kiểm Tra Ngược (Reverse Audit Explainer) */}
       {activeAuditRecord && (
-        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 z-50 overflow-y-auto">
+        <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2 z-50 overflow-y-auto">
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
-            <div className="p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-t-3xl relative">
+            <div className="p-2.5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-t-3xl relative">
               <button
                 onClick={() => setActiveAuditRecord(null)}
                 className="absolute top-4 right-4 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer"
@@ -519,7 +519,7 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
             </div>
 
             {/* Modal Body */}
-            <div className="p-6 space-y-5 text-xs text-slate-700">
+            <div className="p-3 space-y-2 text-xs text-slate-700">
               <div className="p-3.5 bg-indigo-50/70 border border-indigo-200 rounded-2xl flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                   <Sparkles className="w-4 h-4 text-indigo-600" />
@@ -530,8 +530,8 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
               </div>
 
               {activeAuditRecord.reverseAuditTrail ? (
-                <div className="space-y-4">
-                  <div className="border border-slate-200 rounded-2xl p-4 bg-slate-50/50 space-y-3">
+                <div className="space-y-1.5">
+                  <div className="border border-slate-200 rounded-2xl p-2 bg-slate-50/50 space-y-3">
                     <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2">
                       <TrendingUp className="w-4 h-4 text-indigo-600" />
                       <span>5 Bước Kiểm Tra & Đối Soát Ngược Chi Tiết:</span>
@@ -602,7 +602,7 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
               )}
             </div>
 
-            <div className="p-4 border-t border-slate-100 flex justify-end bg-slate-50 rounded-b-3xl">
+            <div className="p-2 border-t border-slate-100 flex justify-end bg-slate-50 rounded-b-3xl">
               <button
                 onClick={() => setActiveAuditRecord(null)}
                 className="px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold text-xs rounded-xl transition-colors cursor-pointer"

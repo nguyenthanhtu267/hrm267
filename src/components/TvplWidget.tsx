@@ -445,7 +445,7 @@ export const TvplWidget: React.FC = () => {
       <div className="px-2 py-1 bg-white">
         <div className="max-h-[140px] min-h-[110px] overflow-y-auto divide-y divide-slate-100 px-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
           {filteredDocs.length === 0 ? (
-            <div className="py-6 text-center text-xs text-slate-400 italic">
+            <div className="py-3 text-center text-xs text-slate-400 italic">
               Không tìm thấy văn bản phù hợp với từ khóa "${internalSearch}".
             </div>
           ) : (

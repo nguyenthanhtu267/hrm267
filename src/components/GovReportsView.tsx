@@ -668,7 +668,7 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
               <button
                 type="button"
                 onClick={() => toggleGroup(group.id)}
-                className={`w-full p-4 flex items-center justify-between text-left transition-colors cursor-pointer border-b ${
+                className={`w-full p-2 flex items-center justify-between text-left transition-colors cursor-pointer border-b ${
                   isOpen ? group.activeHeaderBg : group.headerBg
                 }`}
               >
@@ -709,7 +709,7 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
               {isOpen && (
                 <div className="animate-in fade-in duration-200">
                   {!hasItems ? (
-                    <div className="p-6 text-center text-xs text-slate-400 italic">
+                    <div className="p-3 text-center text-xs text-slate-400 italic">
                       Không có thủ tục nào thuộc nhóm này theo điều kiện tìm kiếm hoặc bộ lọc hiện tại.
                     </div>
                   ) : (
@@ -1060,8 +1060,8 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
 
       {/* 5. Modal Cập Nhật Đợt Nộp Báo Cáo */}
       {editingReport && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-2xl w-full p-6 space-y-4 max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 bg-slate-950/70 backdrop-blur-xs animate-in fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-2xl w-full p-3 space-y-1.5 max-h-[90vh] overflow-y-auto">
             <div className="flex items-start justify-between pb-3 border-b border-slate-100">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Cập Nhật Hồ Sơ Nộp Báo Cáo</span>
@@ -1076,7 +1076,7 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Tên Đợt Báo Cáo / Kỳ Nộp *</label>
                 <input
@@ -1213,8 +1213,8 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
 
       {/* 6. Modal Chỉnh Sửa Toàn Bộ Thông Tin Của 1 Dòng Thủ Tục (Cách 1) */}
       {editRowReport && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-xs animate-in fade-in">
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-4xl w-full p-6 space-y-4 max-h-[92vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 bg-slate-950/75 backdrop-blur-xs animate-in fade-in">
+          <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 max-w-4xl w-full p-3 space-y-1.5 max-h-[92vh] overflow-y-auto">
             <div className="flex items-start justify-between pb-3 border-b border-slate-100">
               <div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 flex items-center gap-1">
@@ -1237,7 +1237,7 @@ export const GovReportsView: React.FC<GovReportsViewProps> = ({ employees = [], 
               </button>
             </div>
 
-            <form onSubmit={handleSaveEditRow} className="space-y-4 text-xs">
+            <form onSubmit={handleSaveEditRow} className="space-y-1.5 text-xs">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5">
                 {/* 1. Tên hạng mục báo cáo / thủ tục */}
                 <div className="md:col-span-2">

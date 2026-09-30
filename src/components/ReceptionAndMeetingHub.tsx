@@ -922,9 +922,9 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in text-slate-800">
+    <div className="space-y-1.5 animate-in fade-in text-slate-800">
       {/* ════════════════════ BANNER TỔNG QUAN NGOẠI GIAO & PHÒNG HỌP THÔNG MINH ════════════════════ */}
-      <div className="bg-gradient-to-r from-indigo-50 via-white to-blue-50 rounded-2xl p-4 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-100">
+      <div className="bg-gradient-to-r from-indigo-50 via-white to-blue-50 rounded-2xl p-2 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-100">
         <div className="flex items-center space-x-3">
           <div className="p-3 rounded-2xl bg-indigo-100 border border-indigo-200 text-indigo-700">
             <Users className="w-7 h-7" />
@@ -1070,7 +1070,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 1: SƠ ĐỒ & ĐIỀU PHỐI PHÒNG HỌP IOT ════════════════════ */}
       {activeTab === 'ROOM_HUB' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ KPI Chỉ Số Phòng Họp */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
@@ -1155,7 +1155,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
               .map((room) => (
                 <div
                   key={room.id}
-                  className={`rounded-2xl border p-4 transition-all relative flex flex-col justify-between ${
+                  className={`rounded-2xl border p-2 transition-all relative flex flex-col justify-between ${
                     room.status === 'IN_USE'
                       ? 'border-rose-300 bg-rose-50/30 shadow-xs'
                       : room.status === 'MAINTENANCE'
@@ -1307,9 +1307,9 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 2: MA TRẬN TIMELINE KHUNG GIỜ & AI BOOKING ════════════════════ */}
       {activeTab === 'TIMELINE_MATRIX' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Hộp Trợ Lý AI Gợi Ý Phòng Họp */}
-          <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 p-4 rounded-2xl text-white shadow-md border border-indigo-800/40 space-y-3">
+          <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-indigo-950 p-2 rounded-2xl text-white shadow-md border border-indigo-800/40 space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
@@ -1391,7 +1391,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* Ma Trận Lịch Phòng Họp Tương Tác (08:00 - 18:00) */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-3">
               <div>
                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
@@ -1486,9 +1486,9 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 3: ĐÓN TIẾP VIP & TRÌNH TẠO BANNER LED ════════════════════ */}
       {activeTab === 'VIP_DELEGATIONS' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* Thẻ Giới Thiệu Chuyên Nghiệp */}
-          <div className="p-4 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 text-white border border-purple-800/40 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="p-2 rounded-2xl bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 text-white border border-purple-800/40 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div>
               <div className="flex items-center space-x-2">
                 <Award className="w-5 h-5 text-amber-400" />
@@ -1509,9 +1509,9 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* Danh Sách Các Đoàn Khách VIP */}
-          <div className="space-y-4">
+          <div className="space-y-1.5">
             {vipDelegations.map((delegation) => (
-              <div key={delegation.id} className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3.5">
+              <div key={delegation.id} className="p-2 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3.5">
                 {/* Header Đoàn Khách */}
                 <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                   <div>
@@ -1608,7 +1608,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 4: KIỂM SOÁT CỔNG & AN TOÀN HSE ════════════════════ */}
       {activeTab === 'GATE_HSE_CONTROL' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ KPI Kiểm Soát Cổng */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
@@ -1657,7 +1657,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* BẢNG SỔ KIỂM SOÁT CỔNG */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
@@ -1760,7 +1760,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* SỔ KHAI BÁO MẤT THẺ XE & CAMERA AI */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
@@ -1833,8 +1833,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 5: HẬU CẦN TEABREAK & BIÊN BẢN HỌP ════════════════════ */}
       {activeTab === 'MEETING_SERVICES' && (
-        <div className="space-y-4 animate-in fade-in">
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+        <div className="space-y-1.5 animate-in fade-in">
+          <div className="p-2 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
@@ -1847,7 +1847,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
               {scheduledMeetings.map((meeting) => (
                 <div key={meeting.id} className="p-3.5 rounded-xl border border-slate-200 bg-slate-50/60 space-y-2.5 text-xs">
                   <div className="flex items-start justify-between">
@@ -1903,7 +1903,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ PHÂN HỆ 6: KHO QUÀ TẶNG VIP & BÁO CÁO PHÂN TÍCH ════════════════════ */}
       {activeTab === 'BUDGET_GIFTS_ANALYTICS' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ KPI Ngân Sách Tiếp Khách */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-xs">
@@ -1946,7 +1946,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* BẢNG KHO QUÀ TẶNG NGOẠI GIAO VIP */}
-          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-4 space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 shadow-xs p-2 space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="font-bold text-slate-900 text-xs uppercase tracking-wider flex items-center space-x-1.5">
@@ -2004,8 +2004,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 1: ĐẶT PHÒNG HỌP & TIẾP KHÁCH MỚI ════════════════════ */}
       {showBookingModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-xl w-full p-5 shadow-2xl border border-slate-200 space-y-3.5 my-8">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto">
+          <div className="bg-white rounded-2xl max-w-xl w-full p-2.5 shadow-2xl border border-slate-200 space-y-3.5 my-8">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <DoorOpen className="w-5 h-5 text-indigo-600" />
@@ -2200,9 +2200,9 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 2: MÔ PHỎNG TABLET DIGITAL DOOR SIGNAGE ════════════════════ */}
       {showDoorSignageModal && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-md flex items-center justify-center p-2">
           {/* Vỏ máy tính bảng Digital Signage treo tường */}
-          <div className="bg-slate-900 text-white rounded-3xl max-w-2xl w-full p-6 shadow-2xl border-4 border-slate-700 relative overflow-hidden space-y-4">
+          <div className="bg-slate-900 text-white rounded-3xl max-w-2xl w-full p-3 shadow-2xl border-4 border-slate-700 relative overflow-hidden space-y-1.5">
             {/* Thanh camera & đèn báo viền tablet */}
             <div className="flex items-center justify-between border-b border-slate-800 pb-3">
               <div className="flex items-center space-x-2">
@@ -2223,7 +2223,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
             </div>
 
             {/* Thân bảng hiển thị ngoài cửa */}
-            <div className={`p-5 rounded-2xl border ${
+            <div className={`p-2.5 rounded-2xl border ${
               showDoorSignageModal.status === 'IN_USE'
                 ? 'bg-rose-950/40 border-rose-700/60'
                 : 'bg-emerald-950/40 border-emerald-700/60'
@@ -2300,7 +2300,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 3: TRÌNH TẠO BANNER LED CHÀO MỪNG KHÁCH VIP ════════════════════ */}
       {showBannerLedModal && (
-        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-between p-6">
+        <div className="fixed inset-0 z-50 bg-black flex flex-col items-center justify-between p-3">
           {/* Thanh công cụ điều khiển Banner */}
           <div className="w-full flex items-center justify-between pb-4 border-b border-white/10 text-white text-xs">
             <div className="flex items-center space-x-2">
@@ -2325,7 +2325,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
           </div>
 
           {/* Vùng Trình Chiếu Banner LED Chuẩn Ngoại Giao */}
-          <div className={`w-full max-w-5xl rounded-3xl p-10 text-center flex flex-col items-center justify-center space-y-6 shadow-2xl border transition-all ${
+          <div className={`w-full max-w-5xl rounded-3xl p-10 text-center flex flex-col items-center justify-center space-y-3 shadow-2xl border transition-all ${
             showBannerLedModal.bannerTheme === 'RED_GOLD'
               ? 'bg-gradient-to-b from-red-800 via-red-900 to-rose-950 border-amber-400/40 text-amber-200'
               : showBannerLedModal.bannerTheme === 'ROYAL_GOLD'
@@ -2363,8 +2363,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 4: BIÊN BẢN HỌP & GIAO VIỆC ════════════════════ */}
       {showMinutesModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3.5">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3.5">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div className="flex items-center space-x-2">
                 <ClipboardCheck className="w-5 h-5 text-indigo-600" />
@@ -2425,8 +2425,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 5: MÃ QR BÀI THI HSE MOBILE ════════════════════ */}
       {showSafetyQrModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-sm w-full p-5 shadow-2xl border border-slate-200 text-center space-y-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-sm w-full p-2.5 shadow-2xl border border-slate-200 text-center space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-xs font-bold text-slate-900 uppercase">Mã QR Kiểm Tra An Toàn HSE</h3>
               <button onClick={() => setShowSafetyQrModal(false)} className="text-slate-400 hover:text-slate-600 cursor-pointer">
@@ -2436,7 +2436,7 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
             <p className="text-xs text-slate-600">
               Khách dùng điện thoại quét mã QR để xem video an toàn 2 phút và trả lời 5 câu hỏi trắc nghiệm an toàn nhà máy.
             </p>
-            <div className="p-4 bg-slate-50 rounded-2xl border border-slate-200 inline-block mx-auto">
+            <div className="p-2 bg-slate-50 rounded-2xl border border-slate-200 inline-block mx-auto">
               <QrCode className="w-40 h-40 text-slate-900 mx-auto" />
             </div>
             <div className="text-[11px] font-mono font-bold text-indigo-700 bg-indigo-50 py-1 px-2 rounded">
@@ -2457,15 +2457,15 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 6: IN PHIẾU BÀI THI AN TOÀN GIẤY ════════════════════ */}
       {showSafetyPaperModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-5 shadow-2xl border border-slate-200 space-y-3 text-xs">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-lg w-full p-2.5 shadow-2xl border border-slate-200 space-y-3 text-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-xs font-bold text-slate-900 uppercase">Mẫu Phiếu Đề Thi &amp; Cam Kết An Toàn HSE Viết Tay</h3>
               <button onClick={() => setShowSafetyPaperModal(null)} className="text-slate-400 hover:text-slate-600 cursor-pointer">
                 <X className="w-4 h-4" />
               </button>
             </div>
-            <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 space-y-2 leading-relaxed">
+            <div className="p-2 bg-slate-50 rounded-xl border border-slate-200 space-y-2 leading-relaxed">
               <div className="font-bold text-center text-sm text-slate-900 uppercase">
                 BẢN CAM KẾT VÀ BÀI KIỂM TRA NỘI QUY AN TOÀN NHÀ MÁY
               </div>
@@ -2501,8 +2501,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 7: KHÁCH VÀO CỔNG MỚI ════════════════════ */}
       {showGateCheckInModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 space-y-3 text-xs">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-md w-full p-2.5 shadow-2xl border border-slate-200 space-y-3 text-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-xs font-bold text-slate-900 uppercase">Đăng Ký Khách Vào Cổng Bảo Vệ</h3>
               <button onClick={() => setShowGateCheckInModal(false)} className="text-slate-400 hover:text-slate-600 cursor-pointer">
@@ -2552,8 +2552,8 @@ export const ReceptionAndMeetingHub: React.FC<ReceptionAndMeetingHubProps> = ({
 
       {/* ════════════════════ MODAL 8: SOI CAMERA AI OCR BIỂN SỐ ════════════════════ */}
       {showAnprModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 space-y-3 text-xs">
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2">
+          <div className="bg-white rounded-2xl max-w-md w-full p-2.5 shadow-2xl border border-slate-200 space-y-3 text-xs">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <h3 className="text-xs font-bold text-slate-900 uppercase">Đối Chiếu Camera AI ANPR Biển Số Xe</h3>
               <button onClick={() => setShowAnprModal(null)} className="text-slate-400 hover:text-slate-600 cursor-pointer">

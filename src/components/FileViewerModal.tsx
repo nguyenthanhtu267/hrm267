@@ -89,7 +89,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/75 backdrop-blur-xs animate-in fade-in">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-2 bg-slate-950/75 backdrop-blur-xs animate-in fade-in">
       <div 
         className={`bg-white rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden transition-all duration-300 ${
           isFullScreen ? 'w-full h-full rounded-none' : 'w-full max-w-5xl max-h-[92vh] h-[850px]'
@@ -226,17 +226,17 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
         </div>
 
         {/* Thân Cửa Sổ Hiển Thị Nội Dung */}
-        <div className="flex-1 overflow-y-auto bg-slate-100 p-3 sm:p-6 flex flex-col">
+        <div className="flex-1 overflow-y-auto bg-slate-100 p-3 sm:p-3 flex flex-col">
           {activeTab === 'VIEW' && (
             <div className="w-full h-full flex flex-col">
               {/* TRƯỜNG HỢP 1: VĂN BẢN NỘI QUY HOẶC NỘI DUNG TÙY BIẾN */}
               {customContent ? (
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 overflow-y-auto max-w-4xl mx-auto w-full text-slate-800 space-y-4">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-3 sm:p-8 overflow-y-auto max-w-4xl mx-auto w-full text-slate-800 space-y-1.5">
                   <div className="text-center pb-4 border-b border-slate-200">
                     <p className="font-bold text-xs uppercase tracking-widest text-slate-500">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</p>
                     <p className="font-bold text-xs text-slate-500">Độc lập - Tự do - Hạnh phúc</p>
                     <div className="w-24 h-0.5 bg-slate-300 mx-auto mt-2"></div>
-                    <h2 className="text-lg sm:text-xl font-black text-slate-900 mt-4 uppercase">{title}</h2>
+                    <h2 className="text-lg sm:text-xl font-black text-slate-900 mt-1.5 uppercase">{title}</h2>
                     <p className="text-xs text-slate-500 mt-1 font-medium">{subTitle}</p>
                   </div>
                   <div className="prose prose-sm max-w-none whitespace-pre-wrap font-sans leading-relaxed text-slate-700">
@@ -251,7 +251,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
                       Trình duyệt của bạn không hỗ trợ phát video trực tiếp.
                     </video>
                   ) : (
-                    <div className="text-center text-slate-400 p-6">
+                    <div className="text-center text-slate-400 p-3">
                       <Video className="w-16 h-16 mx-auto text-slate-600 mb-3" />
                       <p className="text-sm font-bold text-slate-300">Xem video bằng chứng kiểm tra định kỳ</p>
                       <p className="text-xs text-slate-500 mt-1">Đã lưu trữ link video xác thực công tác ATVSLĐ & PCCC cơ sở</p>
@@ -260,7 +260,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
                 </div>
               ) : fileType === 'EXCEL' ? (
                 /* TRƯỜNG HỢP 3: FILE EXCEL / SPREADSHEET */
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 sm:p-6 w-full h-full flex flex-col">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-2 sm:p-3 w-full h-full flex flex-col">
                   <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-3">
                     <div className="flex items-center space-x-2 text-xs text-slate-600 font-bold">
                       <FileSpreadsheet className="w-4 h-4 text-emerald-600" />
@@ -336,10 +336,10 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
                 </div>
               ) : (
                 /* TRƯỜNG HỢP 4: FILE PDF / WORD THƯỜNG */
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8 max-w-4xl mx-auto w-full overflow-y-auto space-y-6">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-3 sm:p-8 max-w-4xl mx-auto w-full overflow-y-auto space-y-3">
                   {/* Bản hiển thị mẫu xem trước tài liệu pháp lý */}
-                  <div className="border border-slate-200 rounded-xl p-6 bg-slate-50/50">
-                    <div className="flex justify-between items-start pb-4 border-b border-slate-200 mb-4">
+                  <div className="border border-slate-200 rounded-xl p-3 bg-slate-50/50">
+                    <div className="flex justify-between items-start pb-4 border-b border-slate-200 mb-1.5">
                       <div>
                         <p className="text-xs font-bold uppercase text-slate-500">DOANH NGHIỆP: AN VIỆT MANUFACTURING</p>
                         <p className="text-xs text-slate-500">Mã số thuế: 0314897268</p>
@@ -350,7 +350,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
                       </div>
                     </div>
 
-                    <div className="text-center py-4">
+                    <div className="text-center py-2">
                       <h2 className="text-base sm:text-lg font-black text-slate-900 uppercase">{title}</h2>
                       <p className="text-xs font-semibold text-indigo-700 mt-1">{subTitle || 'BẢN LƯU BÁO CÁO CHÍNH THỨC GỬI CƠ QUAN QUẢN LÝ NHÀ NƯỚC'}</p>
                       {metadata?.soCongVan && (
@@ -370,7 +370,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
                       </div>
                     </div>
 
-                    <div className="pt-6 mt-6 border-t border-slate-200 flex justify-between items-center text-xs">
+                    <div className="pt-6 mt-3 border-t border-slate-200 flex justify-between items-center text-xs">
                       <span className="text-slate-400">Hệ thống HRM Soft — Tự động đối soát & lưu vết</span>
                       <div className="text-right">
                         <p className="font-bold text-slate-800">ĐẠI DIỆN DOANH NGHIỆP</p>
@@ -385,13 +385,13 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
 
           {/* TAB 2: THÔNG TIN BIÊN NHẬN CHI TIẾT */}
           {activeTab === 'METADATA' && metadata && (
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 max-w-2xl mx-auto w-full space-y-4">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-3 max-w-2xl mx-auto w-full space-y-1.5">
               <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2 pb-3 border-b border-slate-100">
                 <ShieldCheck className="w-4 h-4 text-emerald-600" />
                 Thông Tin Chi Tiết Đợt Báo Cáo Đã Gửi
               </h4>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs">
                 <div className="p-3 bg-slate-50 rounded-xl border border-slate-100">
                   <span className="text-slate-400 text-[10px] block mb-0.5">Đợt báo cáo:</span>
                   <span className="font-bold text-slate-900">{metadata.dotBaoCao || 'Kỳ định kỳ'}</span>
@@ -432,7 +432,7 @@ export const FileViewerModal: React.FC<FileViewerModalProps> = ({
 
           {/* TAB 3: LIÊN KẾT ĐÁM MÂY */}
           {activeTab === 'LINKS' && (
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 max-w-2xl mx-auto w-full space-y-4">
+            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 p-3 max-w-2xl mx-auto w-full space-y-1.5">
               <h4 className="text-sm font-bold text-slate-900 pb-2 border-b border-slate-100">
                 Đường Dẫn Lưu Trữ Tài Liệu Đám Mây (Không làm nặng web)
               </h4>

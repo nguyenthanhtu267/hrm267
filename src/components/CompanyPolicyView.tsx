@@ -1069,8 +1069,8 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
 
       {/* PHÂN HỆ 2: KHO VĂN BẢN ĐANG HIỆU LỰC (2.1 TOÀN PHẦN • 2.2 MỘT PHẦN) */}
       {activeTab === 'DOCUMENT_REPOSITORY' && (
-        <div className="space-y-6">
-          <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="space-y-3">
+          <div className="bg-white p-2.5 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
             <div>
               <div className="flex items-center space-x-2">
                 <FolderLock className="w-5 h-5 text-emerald-600" />
@@ -1119,7 +1119,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
           </div>
 
           {/* Grid các văn bản đang hiệu lực */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {filteredActiveDocs.map((doc) => {
               const isExcel = doc.fileName.endsWith('.xlsx') || doc.fileName.endsWith('.xls');
               const isPartial = doc.validityScope === 'PARTIAL';
@@ -1127,7 +1127,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
               return (
                 <div 
                   key={doc.id} 
-                  className={`bg-white rounded-2xl border p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4 ${
+                  className={`bg-white rounded-2xl border p-2.5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-1.5 ${
                     isPartial ? 'border-amber-300 ring-1 ring-amber-100' : 'border-slate-200'
                   }`}
                 >
@@ -1309,8 +1309,8 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
 
       {/* PHÂN HỆ 3: KHO VĂN BẢN HẾT HIỆU LỰC HOÀN TOÀN (LƯU TRỮ LỊCH SỬ) */}
       {activeTab === 'EXPIRED_REPOSITORY' && (
-        <div className="space-y-6">
-          <div className="bg-rose-50/70 p-5 rounded-2xl border border-rose-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div className="space-y-3">
+          <div className="bg-rose-50/70 p-2.5 rounded-2xl border border-rose-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-1.5">
             <div>
               <div className="flex items-center space-x-2">
                 <FileX2 className="w-5 h-5 text-rose-600" />
@@ -1329,14 +1329,14 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
           </div>
 
           {/* Grid văn bản hết hiệu lực */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {expiredDocs.map((doc) => {
               const isExcel = doc.fileName.endsWith('.xlsx') || doc.fileName.endsWith('.xls');
 
               return (
                 <div 
                   key={doc.id} 
-                  className="bg-slate-50/90 rounded-2xl border border-slate-300 p-5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-4 relative overflow-hidden"
+                  className="bg-slate-50/90 rounded-2xl border border-slate-300 p-2.5 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between space-y-1.5 relative overflow-hidden"
                 >
                   {/* Con tem Watermark HẾT HIỆU LỰC HOÀN TOÀN */}
                   <div className="absolute top-3 right-[-32px] transform rotate-45 bg-rose-600 text-white text-[9px] font-black tracking-wider px-8 py-0.5 shadow-sm uppercase pointer-events-none">
@@ -1470,8 +1470,8 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
 
       {/* PHÂN HỆ 4: TRỢ LÝ AI RÀ SOÁT XUNG ĐỘT CHÍNH SÁCH (TỪ NHÓM 3 CŨ CHUYỂN SANG NHÓM 4) */}
       {activeTab === 'AI_CONFLICT_ANALYZER' && (
-        <div className="space-y-6">
-          <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-6 rounded-2xl shadow-lg space-y-3">
+        <div className="space-y-3">
+          <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-3 rounded-2xl shadow-lg space-y-3">
             <div className="flex items-center space-x-2">
               <Sparkles className="w-5 h-5 text-indigo-300" />
               <h3 className="font-bold text-base">4. AI Policy Compliance &amp; Conflict Analyzer</h3>
@@ -1502,7 +1502,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
 
           {/* Bảng so sánh kết quả đối chiếu */}
           <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-            <div className="p-4 border-b border-slate-100 flex items-center justify-between">
+            <div className="p-2 border-b border-slate-100 flex items-center justify-between">
               <h4 className="font-bold text-xs text-slate-800 uppercase tracking-wider">
                 Kết Quả Rà Soát Chi Tiết Giữa Văn Bản Và Phần Mềm
               </h4>
@@ -1513,7 +1513,7 @@ export const CompanyPolicyView: React.FC<CompanyPolicyViewProps> = ({
 
             <div className="divide-y divide-slate-100 text-xs">
               {conflictItems.map((item) => (
-                <div key={item.id} className="p-4.5 hover:bg-slate-50/70 transition-colors space-y-2">
+                <div key={item.id} className="p-2.5 hover:bg-slate-50/70 transition-colors space-y-2">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
                     <div className="flex items-center space-x-2">
                       {item.isConflict ? (

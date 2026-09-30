@@ -398,11 +398,11 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-2 sm:p-4 animate-in fade-in">
+    <div className="fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-xs flex items-center justify-center p-2 sm:p-2 animate-in fade-in">
       <div className="bg-white rounded-3xl shadow-2xl border border-slate-200 w-full max-w-4xl max-h-[94vh] flex flex-col overflow-hidden relative">
         
         {/* Header */}
-        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-4 sm:p-5 flex items-center justify-between border-b border-indigo-900">
+        <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-2 sm:p-2.5 flex items-center justify-between border-b border-indigo-900">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg text-white">
               <MessageSquare className="w-5 h-5" />
@@ -475,11 +475,11 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
         </div>
 
         {/* Content Body */}
-        <div className="p-4 sm:p-5 flex-1 overflow-y-auto space-y-4">
+        <div className="p-2 sm:p-2.5 flex-1 overflow-y-auto space-y-1.5">
           
           {/* TAB 1: TIN NHẮN TRỰC TIẾP & NHÓM */}
           {activeTab === 'DIRECT' && (
-            <div className="space-y-4">
+            <div className="space-y-1.5">
               
               {/* THANH CÔNG CỤ LỌC THÔNG MINH: ALL | STARRED | ACTIVE | RESOLVED */}
               <div className="p-3 bg-indigo-50/70 border border-indigo-200 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
@@ -550,7 +550,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                   return (
                     <div 
                       key={msg.id} 
-                      className={'p-4 transition-colors relative group ' + (
+                      className={'p-2 transition-colors relative group ' + (
                         msg.status === 'RESOLVED'
                           ? 'bg-slate-50/70 opacity-75'
                           : msg.isReminder 
@@ -728,7 +728,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
               </div>
 
               {/* ===================== Ô SOẠN TIN NHẮN AN TOÀN (POKA-YOKE) ===================== */}
-              <form onSubmit={handleInitiateSend} className="p-4 bg-slate-50 rounded-2xl border-2 border-indigo-100 space-y-3.5">
+              <form onSubmit={handleInitiateSend} className="p-2 bg-slate-50 rounded-2xl border-2 border-indigo-100 space-y-3.5">
                 
                 {/* THANH CHUYỂN ĐỔI: GỬI CÁ NHÂN (1-ON-1) HOẶC GỬI NHÓM */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-200">
@@ -903,7 +903,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                               ))}
 
                               {filteredEmployeesList.length === 0 && (
-                                <div className="p-6 text-center text-xs text-slate-400 italic">
+                                <div className="p-3 text-center text-xs text-slate-400 italic">
                                   Không tìm thấy nhân viên nào khớp với từ khóa "{empSearchQuery}".
                                 </div>
                               )}
@@ -987,8 +987,8 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
 
           {/* TAB 2: PHÁT TIN CHỈ ĐẠO (BROADCAST ALL / GROUP) */}
           {activeTab === 'BROADCAST' && (isAdminOrCEO || isHR) && (
-            <div className="space-y-4">
-              <div className="p-4 bg-rose-50 rounded-2xl border border-rose-200">
+            <div className="space-y-1.5">
+              <div className="p-2 bg-rose-50 rounded-2xl border border-rose-200">
                 <h3 className="text-xs font-bold text-rose-950 uppercase tracking-wide flex items-center gap-1.5">
                   <Radio className="w-4 h-4 text-rose-600" />
                   <span>Quyền Quản Trị: Phát Tin Khẩn Cấp &amp; Thông Điệp Điều Hành</span>
@@ -998,7 +998,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                 </p>
               </div>
 
-              <form onSubmit={handleInitiateBroadcast} className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3.5 text-xs">
+              <form onSubmit={handleInitiateBroadcast} className="p-2 bg-slate-50 rounded-2xl border border-slate-200 space-y-3.5 text-xs">
                 <div>
                   <label className="font-bold text-slate-800 block mb-1.5">Phạm vi phát tán thông điệp (Bắt buộc chọn) *</label>
                   <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -1212,7 +1212,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                     })}
 
                   {messages.filter(m => m.recipientType === 'ALL' || (m.recipientType === 'DEPARTMENT' && (m.senderRole === currentRole || isAdminOrCEO))).length === 0 && (
-                    <div className="p-6 text-center text-xs text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
+                    <div className="p-3 text-center text-xs text-slate-400 bg-slate-50 rounded-2xl border border-dashed border-slate-200">
                       Chưa có thông điệp chỉ đạo diện rộng nào được phát tán.
                     </div>
                   )}
@@ -1223,8 +1223,8 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
 
           {/* TAB 3: SỔ NHẮC VIỆC BẤT TỬ (PERSISTENT REMINDERS) */}
           {activeTab === 'REMINDERS' && (
-            <div className="space-y-4">
-              <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-between">
+            <div className="space-y-1.5">
+              <div className="p-2 bg-amber-50 rounded-2xl border border-amber-200 flex items-center justify-between">
                 <div>
                   <h3 className="text-xs font-bold text-amber-950 uppercase tracking-wide flex items-center gap-1.5">
                     <Pin className="w-4 h-4 text-amber-600" />
@@ -1249,7 +1249,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                   return (
                     <div 
                       key={remind.id} 
-                      className="p-4 bg-white rounded-2xl border-2 border-amber-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-amber-300 transition-all"
+                      className="p-2 bg-white rounded-2xl border-2 border-amber-200 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:border-amber-300 transition-all"
                     >
                       <div className="space-y-1.5 flex-1">
                         <div className="flex items-center space-x-2">
@@ -1311,7 +1311,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
         </div>
 
         {/* Footer */}
-        <div className="bg-slate-50 border-t border-slate-200 p-4 flex justify-between items-center text-xs text-slate-500">
+        <div className="bg-slate-50 border-t border-slate-200 p-2 flex justify-between items-center text-xs text-slate-500">
           <div>
             Hệ thống tin nhắn tự động áp dụng chính sách <b>Data Minimization (ISO 27001 &amp; GDPR)</b>
           </div>
@@ -1325,9 +1325,9 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
 
         {/* ===================== POPUP XÁC NHẬN LẦN 2 (DOUBLE CONFIRMATION MODAL) ===================== */}
         {showDoubleConfirmModal && pendingConfirmInfo && (
-          <div className="fixed inset-0 z-60 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-4 animate-in fade-in zoom-in-95">
+          <div className="fixed inset-0 z-60 bg-slate-950/80 backdrop-blur-xs flex items-center justify-center p-2 animate-in fade-in zoom-in-95">
             <div className="bg-white rounded-3xl shadow-2xl border-2 border-rose-500 max-w-lg w-full overflow-hidden">
-              <div className="bg-gradient-to-r from-rose-600 to-red-700 text-white p-4 sm:p-5 flex items-center space-x-3">
+              <div className="bg-gradient-to-r from-rose-600 to-red-700 text-white p-2 sm:p-2.5 flex items-center space-x-3">
                 <div className="w-11 h-11 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
                   <AlertCircle className="w-7 h-7 text-white animate-bounce" />
                 </div>
@@ -1341,7 +1341,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                 </div>
               </div>
 
-              <div className="p-5 space-y-4 text-xs">
+              <div className="p-2.5 space-y-1.5 text-xs">
                 <div className="p-3.5 bg-rose-50 border border-rose-200 rounded-2xl space-y-2">
                   <div className="flex items-center justify-between text-rose-900 font-extrabold text-xs">
                     <span>📢 NHÓM TIẾP NHẬN TIN:</span>
@@ -1372,7 +1372,7 @@ export const InternalMessengerModal: React.FC<InternalMessengerModalProps> = ({
                 )}
               </div>
 
-              <div className="p-4 bg-slate-100 border-t border-slate-200 flex items-center justify-end space-x-2.5">
+              <div className="p-2 bg-slate-100 border-t border-slate-200 flex items-center justify-end space-x-2.5">
                 <button
                   type="button"
                   onClick={() => {

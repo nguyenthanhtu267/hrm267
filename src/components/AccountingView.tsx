@@ -609,7 +609,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* Tiêu đề & Chọn kỳ kế toán */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
@@ -870,7 +870,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
 
       {/* TAB 2: BẢNG PHÂN BỔ CHI PHÍ LUÂN CHUYỂN BỘ PHẬN THEO NGÀY CÔNG */}
       {activeTab === 'TRANSFER_ALLOCATION' && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3 p-4">
+        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden space-y-3 p-2">
           <div className="border-b border-slate-100 pb-2">
             <h4 className="font-bold text-sm text-slate-900">Quy Tắc Phân Bổ Chi Phí Luân Chuyển Giữa Kỳ (Theo Ngày Công Thực Tế)</h4>
             <p className="text-xs text-slate-500">
@@ -1007,7 +1007,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* TAB 3: HỢP ĐỒNG DỊCH VỤ DÂN SỰ & THÙ LAO CỘNG TÁC VIÊN */}
       {/* ======================================================== */}
       {activeTab === 'SERVICE_CONTRACTS' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ Tổng Hợp Chỉ Số Thuế & Chi Phí */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
             <div className="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm">
@@ -1042,7 +1042,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
           </div>
 
           {/* Thanh công cụ & Cảnh báo kế toán */}
-          <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="space-y-1">
               <div className="flex items-center space-x-2">
                 <FileCheck className="w-5 h-5 text-indigo-600" />
@@ -1165,7 +1165,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* TAB 4: QUẢN LÝ TIẾP KHÁCH & XỬ LÝ KHÔNG CÓ HÓA ĐƠN */}
       {/* ======================================================== */}
       {activeTab === 'HOSPITALITY_EXPENSES' && (
-        <div className="space-y-4 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* 4 Thẻ Tổng Hợp Tiếp Khách & Bóc Tách Thuế TNDN */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
             <div className="bg-white p-3.5 rounded-2xl border border-slate-200 shadow-sm">
@@ -1205,7 +1205,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
           </div>
 
           {/* Căn cứ pháp lý & Nút hành động */}
-          <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div className="bg-white p-2 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
             <div className="space-y-1 max-w-2xl">
               <div className="flex items-center space-x-2">
                 <Coffee className="w-5 h-5 text-amber-600" />
@@ -1326,9 +1326,9 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* MODAL 1: TẠO HỢP ĐỒNG DỊCH VỤ DÂN SỰ / THÙ LAO CTV MỚI */}
       {/* ======================================================== */}
       {showNewContractModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full border border-slate-200 overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-indigo-700 to-slate-900 text-white p-5 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-indigo-700 to-slate-900 text-white p-2.5 flex justify-between items-center">
               <div>
                 <h3 className="text-base font-bold flex items-center gap-2">
                   <FileText className="w-5 h-5 text-indigo-300" />
@@ -1347,7 +1347,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
               </button>
             </div>
 
-            <form onSubmit={handleCreateServiceContract} className="p-5 space-y-3.5 text-xs">
+            <form onSubmit={handleCreateServiceContract} className="p-2.5 space-y-3.5 text-xs">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="font-semibold text-slate-700 block mb-1">Họ tên Đối tác / CTV chuyên gia *</label>
@@ -1555,9 +1555,9 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* MODAL 2: CHI TIẾT HỢP ĐỒNG & CHỨNG TỪ KHẤU TRỪ THUẾ */}
       {/* ======================================================== */}
       {selectedContractForDetail && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full border border-slate-200 overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-5 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-2.5 flex justify-between items-center">
               <div>
                 <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider bg-indigo-500/30 text-indigo-200 border border-indigo-500/40">
                   {selectedContractForDetail.contractCode}
@@ -1573,7 +1573,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs">
+            <div className="p-2.5 space-y-1.5 text-xs">
               <div className="grid grid-cols-2 gap-3 p-3.5 bg-slate-50 rounded-xl border border-slate-200">
                 <div>
                   <div className="text-slate-400 text-[10.5px]">Bên Cung Ứng / Chuyên gia thụ hưởng:</div>
@@ -1670,9 +1670,9 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* MODAL 3: LẬP PHIẾU TIẾP KHÁCH & QUYẾT TOÁN PHÁP LÝ */}
       {/* ======================================================== */}
       {showNewHospitalityModal && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full border border-slate-200 overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-amber-700 to-slate-900 text-white p-5 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-amber-700 to-slate-900 text-white p-2.5 flex justify-between items-center">
               <div>
                 <h3 className="text-base font-bold flex items-center gap-2">
                   <Coffee className="w-5 h-5 text-amber-300" />
@@ -1691,7 +1691,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
               </button>
             </div>
 
-            <form onSubmit={handleCreateHospitalityExpense} className="p-5 space-y-3.5 text-xs">
+            <form onSubmit={handleCreateHospitalityExpense} className="p-2.5 space-y-3.5 text-xs">
               {/* Chọn tình trạng hóa đơn pháp lý */}
               <div className="p-3.5 bg-amber-50 rounded-xl border border-amber-200">
                 <label className="font-bold text-amber-950 block mb-1.5">
@@ -1933,9 +1933,9 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
       {/* MODAL 4: CHI TIẾT TIẾP KHÁCH & HỒ SƠ CHỈ TIÊU B4 */}
       {/* ======================================================== */}
       {selectedHospitalityForDetail && (
-        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto animate-fade-in">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-2 overflow-y-auto animate-fade-in">
           <div className="bg-white rounded-2xl shadow-2xl max-w-3xl w-full border border-slate-200 overflow-hidden my-8">
-            <div className="bg-gradient-to-r from-amber-800 to-slate-900 text-white p-5 flex justify-between items-center">
+            <div className="bg-gradient-to-r from-amber-800 to-slate-900 text-white p-2.5 flex justify-between items-center">
               <div>
                 <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase tracking-wider bg-amber-500/30 text-amber-200 border border-amber-500/40">
                   {selectedHospitalityForDetail.voucherCode}
@@ -1951,7 +1951,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs">
+            <div className="p-2.5 space-y-1.5 text-xs">
               <div className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 grid grid-cols-2 gap-3">
                 <div>
                   <div className="text-slate-400 text-[10.5px]">Mục đích tiếp đón:</div>
@@ -1971,7 +1971,7 @@ export const AccountingView: React.FC<AccountingViewProps> = ({ policy, currentR
               </div>
 
               {/* Giải pháp pháp lý chi tiết theo văn bản quy phạm pháp luật */}
-              <div className={`p-4 rounded-xl border ${selectedHospitalityForDetail.citNonDeductibleAmount > 0 ? 'bg-amber-50 border-amber-200' : 'bg-emerald-50 border-emerald-200'}`}>
+              <div className={`p-2 rounded-xl border ${selectedHospitalityForDetail.citNonDeductibleAmount > 0 ? 'bg-amber-50 border-amber-200' : 'bg-emerald-50 border-emerald-200'}`}>
                 <div className="font-bold text-slate-900 mb-2 flex items-center gap-2">
                   <ShieldAlert className="w-4 h-4 text-amber-600" />
                   <span>Phân Tích Căn Cứ Pháp Lý Kế Toán &amp; Thuế (Bộ Tài Chính):</span>

@@ -423,9 +423,9 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* HEADER & THỐNG KÊ NHANH */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs">
+      <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs">
         <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
           <div>
             <div className="flex items-center space-x-2">
@@ -495,7 +495,7 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
       </div>
 
       {/* BỘ LỌC & BẢNG THEO DÕI BIẾN ĐỘNG */}
-      <div className="bg-white rounded-xl border border-slate-200 p-4 shadow-xs space-y-3">
+      <div className="bg-white rounded-xl border border-slate-200 p-2 shadow-xs space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2.5 pb-2 border-b border-slate-100">
           <div className="flex flex-wrap items-center gap-2">
             <div className="relative">
@@ -706,7 +706,7 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateProposal} className="p-5 space-y-4 max-h-[80vh] overflow-y-auto">
+            <form onSubmit={handleCreateProposal} className="p-2.5 space-y-1.5 max-h-[80vh] overflow-y-auto">
               {/* Bước chọn nhân sự */}
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
@@ -950,9 +950,9 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
               </button>
             </div>
 
-            <div className="p-5 space-y-5 max-h-[82vh] overflow-y-auto">
+            <div className="p-2.5 space-y-2 max-h-[82vh] overflow-y-auto">
               {/* TIMELINE 5 BƯỚC */}
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
+              <div className="bg-slate-50 p-2 rounded-xl border border-slate-200">
                 <h4 className="text-xs font-bold text-slate-700 uppercase mb-3">Tiến Trình Xử Lý 5 Bước Khép Kín</h4>
                 <div className="grid grid-cols-5 gap-2 text-center relative">
                   {/* Bước 1 */}
@@ -1023,7 +1023,7 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
               </div>
 
               {/* BẢNG THÔNG TIN SO SÁNH */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-1.5">
                 <div className="p-3.5 rounded-xl border border-slate-200 bg-slate-50 space-y-2 text-xs">
                   <h5 className="font-bold text-slate-700 uppercase border-b border-slate-200 pb-1">Dữ Liệu Hiện Tại (Cũ)</h5>
                   <div>
@@ -1194,7 +1194,7 @@ export const PersonnelChangesView: React.FC<PersonnelChangesViewProps> = ({
             </div>
 
             {/* NỘI DUNG VĂN BẢN QUYẾT ĐỊNH */}
-            <div className="p-8 space-y-5 text-slate-900 bg-white font-serif max-h-[80vh] overflow-y-auto print:p-0 print:m-0 print:overflow-visible">
+            <div className="p-8 space-y-2 text-slate-900 bg-white font-serif max-h-[80vh] overflow-y-auto print:p-0 print:m-0 print:overflow-visible">
               <div className="flex justify-between items-start border-b border-slate-200 pb-4 text-xs font-sans">
                 <div>
                   <p className="font-bold text-slate-800 uppercase">{policy.companyName || 'CÔNG TY CỔ PHẦN AN VIỆT MANUFACTURING'}</p>

@@ -795,11 +795,11 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
   };
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-1.5">
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS QUẢN TRỊ VĂN THƯ 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 shadow-md border border-indigo-900/50">
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
@@ -983,7 +983,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 1: KHO LƯU TRỮ SỐ HÓA & SƠ ĐỒ KỆ/HỘP VẬT LÝ (TRỌNG TÂM)
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'ARCHIVE_STORAGE_RACKS' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* BẢNG PHÂN LOẠI THỜI HẠN BẢO QUẢN PHÁP LÝ */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
             <div className="p-3 rounded-xl bg-gradient-to-br from-indigo-50 to-white border border-indigo-200 shadow-2xs space-y-1">
@@ -1024,7 +1024,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           </div>
 
           {/* SƠ ĐỒ KHO & MA TRẬN KỆ / HỘP VẬT LÝ */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 border-b border-slate-100 pb-2.5">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1156,7 +1156,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           </div>
 
           {/* SỔ THEO DÕI MƯỢN TRẢ HỒ SƠ GỐC (CHECK-IN / CHECK-OUT) */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1226,8 +1226,8 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 2: CÔNG VĂN ĐẾN, BÚT PHÊ LÃNH ĐẠO & ĐIỀU PHỐI SLA
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'DOC_INCOMING_WORKFLOW' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1315,8 +1315,8 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 3: CÔNG VĂN ĐI & VẬN ĐƠN BƯU ĐIỆN (VNPOST/VIETTELPOST)
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'DOC_OUTGOING_DISPATCH' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1383,8 +1383,8 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 4: QUYẾT ĐỊNH, QUY CHẾ & VĂN BẢN QUẢN TRỊ NỘI BỘ
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'INTERNAL_POLICIES' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1450,9 +1450,9 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 5: SỔ QUẢN LÝ CON DẤU PHÁP NHÂN & CHỮ KÝ SỐ TOKEN CA
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'SEAL_AND_TOKEN_LOGS' && (
-        <div className="space-y-4">
+        <div className="space-y-1.5">
           {/* QUẢN LÝ TOKEN CHỮ KÝ SỐ DOANH NGHIỆP */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1485,7 +1485,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           </div>
 
           {/* NHẬT KÝ MƯỢN & ĐÓNG DẤU PHÁP NHÂN */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider flex items-center gap-1.5">
@@ -1538,8 +1538,8 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
           TAB 6: BÁO CÁO THỐNG KÊ VĂN THƯ & CHUẨN NGHỊ ĐỊNH 30/2020
       ════════════════════════════════════════════════════════════ */}
       {activeSubTab === 'CLERICAL_ANALYTICS' && (
-        <div className="space-y-4">
-          <div className="bg-white rounded-2xl border border-slate-200 p-4 shadow-2xs space-y-3">
+        <div className="space-y-1.5">
+          <div className="bg-white rounded-2xl border border-slate-200 p-2 shadow-2xs space-y-3">
             <div className="flex items-center justify-between border-b border-slate-100 pb-2">
               <div>
                 <h3 className="text-xs font-black uppercase text-slate-900 tracking-wider">
@@ -1596,7 +1596,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleSaveDirective} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleSaveDirective} className="p-2 space-y-3 text-xs">
               <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
                 <p><b>Số đến:</b> <span className="font-mono font-bold text-indigo-700">{selectedDocForDirective.incomingNumber}</span> • <b>Số hiệu:</b> {selectedDocForDirective.originalDocNumber}</p>
                 <p><b>Cơ quan gửi:</b> <span className="font-bold text-slate-800">{selectedDocForDirective.senderOrganization}</span></p>
@@ -1680,7 +1680,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
               </button>
             </div>
 
-            <form onSubmit={handleCreateBorrowLog} className="p-4 space-y-3 text-xs">
+            <form onSubmit={handleCreateBorrowLog} className="p-2 space-y-3 text-xs">
               <div>
                 <label className="font-bold text-slate-700 block mb-1">Tên Tài Liệu Cụ Thể Trong Hộp Cần Mượn:</label>
                 <input
@@ -1776,8 +1776,8 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto space-y-4 text-xs font-serif leading-relaxed text-slate-900 bg-white">
-              <div className="border-4 border-slate-900 p-4 rounded-xl text-center space-y-2">
+            <div className="p-3 overflow-y-auto space-y-1.5 text-xs font-serif leading-relaxed text-slate-900 bg-white">
+              <div className="border-4 border-slate-900 p-2 rounded-xl text-center space-y-2">
                 <p className="font-bold text-xs uppercase">{policy.companyName}</p>
                 <h2 className="text-lg font-black font-mono text-indigo-900">{showPrintModal.code}</h2>
                 <h3 className="font-bold text-sm text-slate-800 uppercase">{showPrintModal.title}</h3>

@@ -46,7 +46,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4 relative overflow-hidden font-sans selection:bg-indigo-200">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-2 relative overflow-hidden font-sans selection:bg-indigo-200">
       {/* 🌟 Nền Họa Tiết Vector Sáng & Hiện Đại */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Blob gradients */}
@@ -84,8 +84,8 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
             </p>
           </div>
 
-          <div className="space-y-5 relative z-10 mt-12">
-            <div className="p-5 bg-white/80 backdrop-blur-md rounded-2xl border border-indigo-100 shadow-sm">
+          <div className="space-y-2 relative z-10 mt-12">
+            <div className="p-2.5 bg-white/80 backdrop-blur-md rounded-2xl border border-indigo-100 shadow-sm">
               <h3 className="text-[13px] font-black text-slate-800 uppercase tracking-wider flex items-center space-x-2 mb-3">
                 <KeyRound className="w-4 h-4 text-emerald-500" />
                 <span>Tài Khoản Demo Trải Nghiệm</span>
@@ -116,16 +116,16 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
           <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-transparent pointer-events-none"></div>
           
           <div className="relative z-10 text-center mb-10">
-            <div className="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-4 border border-indigo-100 shadow-sm">
+            <div className="w-16 h-16 bg-indigo-50 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-1.5 border border-indigo-100 shadow-sm">
               <User className="w-7 h-7" />
             </div>
             <h2 className="text-[32px] font-black text-slate-900 tracking-tight leading-tight">Chào mừng<br/>quay trở lại!</h2>
             <p className="text-[15px] text-slate-500 mt-2 font-medium">Truy cập không gian làm việc số của bạn</p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6 relative z-10 w-full max-w-sm mx-auto">
+          <form onSubmit={handleLogin} className="space-y-3 relative z-10 w-full max-w-sm mx-auto">
             {/* Hộp Thông tin Nhanh */}
-            <div className="p-4 bg-indigo-50/80 backdrop-blur-sm border border-indigo-100 rounded-2xl text-center shadow-xs">
+            <div className="p-2 bg-indigo-50/80 backdrop-blur-sm border border-indigo-100 rounded-2xl text-center shadow-xs">
               <p className="text-indigo-900 font-bold text-sm">Đăng nhập bằng 1 chạm</p>
               <p className="text-indigo-600 text-xs mt-1 font-medium">Tài khoản mặc định: Giám Đốc Nhân Sự</p>
               <p className="text-slate-500 text-[11px] mt-1.5 flex items-center justify-center gap-1">
@@ -144,7 +144,7 @@ export const LoginView: React.FC<LoginViewProps> = ({ employees, onLogin }) => {
               id="login-btn"
               type="submit"
               disabled={isLoading}
-              className="w-full mt-2 bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4.5 rounded-2xl shadow-lg hover:shadow-indigo-500/25 transition-all flex justify-center items-center group relative overflow-hidden disabled:opacity-70 disabled:cursor-wait border border-transparent hover:border-indigo-500"
+              className="w-full mt-2 bg-slate-900 hover:bg-indigo-600 text-white font-bold py-2.5 rounded-2xl shadow-lg hover:shadow-indigo-500/25 transition-all flex justify-center items-center group relative overflow-hidden disabled:opacity-70 disabled:cursor-wait border border-transparent hover:border-indigo-500"
             >
               {isLoading ? (
                 <div className="w-6 h-6 border-[3px] border-white/20 border-t-white rounded-full animate-spin"></div>

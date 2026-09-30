@@ -909,7 +909,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* ════════════════════ MODAL / BOTTOM SHEET TIỆN ÍCH & QUẢN TRỊ TRÊN MOBILE ════════════════════ */}
       {showMobileSystemSheet && (
         <div 
-          className="fixed inset-0 z-[9999] bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-4 animate-in fade-in"
+          className="fixed inset-0 z-[9999] bg-slate-900/60 backdrop-blur-xs flex items-end sm:items-center justify-center p-0 sm:p-2 animate-in fade-in"
           onClick={(e) => {
             if (e.target === e.currentTarget) setShowMobileSystemSheet(false);
           }}
@@ -941,7 +941,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </div>
 
             {/* Body Bottom Sheet */}
-            <div className="p-4 space-y-3.5 overflow-y-auto max-h-[calc(90vh-115px)] text-left">
+            <div className="p-2 space-y-3.5 overflow-y-auto max-h-[calc(90vh-115px)] text-left">
               {/* 1. Doanh Nghiệp */}
               <div className="p-3 rounded-2xl bg-slate-50 border border-slate-200 space-y-1.5">
                 <label className="flex items-center space-x-1.5 text-[11px] font-bold text-slate-600 uppercase tracking-wider">
