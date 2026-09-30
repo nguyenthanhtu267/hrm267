@@ -13,7 +13,9 @@ import {
   Waves,
   Leaf,
   Building2,
-  CheckCircle2
+  CheckCircle2,
+  Image,
+  UploadCloud
 } from 'lucide-react';
 import {
   themeService,
@@ -391,6 +393,40 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
                 );
               })}
             </div>
+          </div>
+
+          {/* HÀNG 3: TÙY CHỌN ẢNH NỀN CÁ NHÂN & HÌNH MINH HỌA */}
+          <div className="mt-4 p-4 rounded-xl border border-dashed border-indigo-300 dark:border-indigo-800 bg-indigo-50/50 dark:bg-indigo-900/20 flex flex-col md:flex-row items-center gap-5 relative overflow-hidden">
+            {/* Hình minh họa abstract nền */}
+            <div className="absolute -right-4 -bottom-4 opacity-10 pointer-events-none">
+               <Image className="w-32 h-32 text-indigo-600" />
+            </div>
+
+            <div className="flex-1 relative z-10">
+              <h4 className="font-bold text-slate-800 dark:text-slate-200 text-xs flex items-center gap-1.5">
+                <Image className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+                6. Hình Nền Tùy Chỉnh Theo Ý Thích (Custom Wallpaper)
+              </h4>
+              <p className="text-[11px] text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+                Bạn muốn một không gian làm việc mang đậm dấu ấn cá nhân hoặc hình ảnh của công ty? Hãy tải lên bức ảnh yêu thích của bạn để làm hình nền thay cho các mẫu có sẵn.
+              </p>
+              
+              <div className="mt-3 flex items-center gap-3">
+                {/* Khung minh họa nhỏ */}
+                <div className="w-16 h-10 rounded border border-indigo-200 bg-white/60 dark:bg-slate-800/60 overflow-hidden shadow-xs relative flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-emerald-50 dark:from-indigo-900/40 dark:to-emerald-900/40 opacity-80" />
+                  <Image className="w-4 h-4 text-indigo-300 dark:text-indigo-600 relative z-10" />
+                </div>
+                <div className="text-[10px] text-indigo-600/70 dark:text-indigo-400/70 font-medium italic">
+                  * Khuyến nghị ảnh phong cảnh ngang (tỷ lệ 16:9)
+                </div>
+              </div>
+            </div>
+
+            <button type="button" className="shrink-0 px-4 py-2 bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg shadow-sm hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors text-[11px] flex items-center gap-2 relative z-10">
+              <UploadCloud className="w-4 h-4" />
+              Tải Ảnh Lên (Max 5MB)
+            </button>
           </div>
         </div>
 
