@@ -88,7 +88,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
   );
 
   return (
-    <div className="mb-6 animate-in fade-in slide-in-from-top-2 duration-500">
+    <div className="mb-2 animate-in fade-in slide-in-from-top-2 duration-500">
       {tabBanners[currentTab] || defaultBanner}
     </div>
   );

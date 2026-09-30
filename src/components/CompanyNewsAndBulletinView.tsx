@@ -745,7 +745,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
   };
 
   return (
-    <div className="space-y-4 animate-in fade-in duration-200">
+    <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* 1. HEADER BANNER PHÂN HỆ */}
       <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 rounded-2xl p-4 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div>
@@ -926,7 +926,7 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
       {/* TAB 1: BẢN TIN & THÔNG CÁO DOANH NGHIỆP */}
       {/* ============================================================= */}
       {activeTab === 'OFFICIAL_NEWS' && (
-        <div className="space-y-3.5 animate-in fade-in">
+        <div className="space-y-1.5 animate-in fade-in">
           {/* KHUNG CỐ ĐỊNH ĐẦU TIÊN: ĐĂNG KÝ PHẦN ĂN CA & THẺ LẤY CƠM (E-MEAL PASS) */}
           <div 
             onClick={onOpenMealPassModal}
