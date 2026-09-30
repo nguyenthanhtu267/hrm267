@@ -15,7 +15,8 @@ import {
   Building2,
   CheckCircle2,
   Image,
-  UploadCloud
+  UploadCloud,
+  Trash2
 } from 'lucide-react';
 import {
   themeService,
@@ -44,6 +45,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
   
   // Tab phân nhóm: CORE (Doanh nghiệp) | VECTOR (Vector/Line/Sóng) | NATURE (Thiên nhiên mờ)
   const [activeGroup, setActiveGroup] = useState<ThemeGroup>('CORE');
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -99,6 +101,31 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
   const handleCancel = () => {
     themeService.applyToDOM(currentConfig);
     onClose();
+  };
+
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 5 * 1024 * 1024) {
+        alert('File vượt quá giới hạn 5MB.');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const base64Str = reader.result as string;
+        const updated: ThemeConfig = { ...previewConfig, customWallpaper: base64Str };
+        setPreviewConfig(updated);
+        themeService.applyToDOM(updated);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleRemoveWallpaper = () => {
+    const updated: ThemeConfig = { ...previewConfig, customWallpaper: null };
+    setPreviewConfig(updated);
+    themeService.applyToDOM(updated);
+    if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
   // Lọc 5 presets theo từng nhóm
@@ -413,9 +440,16 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
               
               <div className="mt-3 flex items-center gap-3">
                 {/* Khung minh họa nhỏ */}
-                <div className="w-16 h-10 rounded border border-indigo-200 bg-white/60 dark:bg-slate-800/60 overflow-hidden shadow-xs relative flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-emerald-50 dark:from-indigo-900/40 dark:to-emerald-900/40 opacity-80" />
-                  <Image className="w-4 h-4 text-indigo-300 dark:text-indigo-600 relative z-10" />
+                <div 
+                  className="w-16 h-10 rounded border border-indigo-200 bg-white/60 dark:bg-slate-800/60 overflow-hidden shadow-xs relative flex items-center justify-center bg-cover bg-center"
+                  style={previewConfig.customWallpaper ? { backgroundImage: `url(${previewConfig.customWallpaper})` } : {}}
+                >
+                  {!previewConfig.customWallpaper && (
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-emerald-50 dark:from-indigo-900/40 dark:to-emerald-900/40 opacity-80" />
+                      <Image className="w-4 h-4 text-indigo-300 dark:text-indigo-600 relative z-10" />
+                    </>
+                  )}
                 </div>
                 <div className="text-[10px] text-indigo-600/70 dark:text-indigo-400/70 font-medium italic">
                   * Khuyến nghị ảnh phong cảnh ngang (tỷ lệ 16:9)
@@ -423,10 +457,34 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
               </div>
             </div>
 
-            <button type="button" className="shrink-0 px-4 py-2 bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg shadow-sm hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors text-[11px] flex items-center gap-2 relative z-10">
-              <UploadCloud className="w-4 h-4" />
-              Tải Ảnh Lên (Max 5MB)
-            </button>
+            <div className="flex flex-col gap-2 shrink-0 relative z-10">
+              <input 
+                type="file" 
+                ref={fileInputRef} 
+                onChange={handleFileUpload} 
+                accept="image/png, image/jpeg, image/webp" 
+                className="hidden" 
+              />
+              <button 
+                type="button" 
+                onClick={() => fileInputRef.current?.click()}
+                className="px-4 py-2 bg-white dark:bg-slate-800 border border-indigo-200 dark:border-indigo-700 text-indigo-600 dark:text-indigo-400 font-bold rounded-lg shadow-sm hover:bg-indigo-50 dark:hover:bg-slate-700 transition-colors text-[11px] flex items-center gap-2 justify-center"
+              >
+                <UploadCloud className="w-4 h-4" />
+                {previewConfig.customWallpaper ? 'Đổi Ảnh Khác' : 'Tải Ảnh Lên (Max 5MB)'}
+              </button>
+              
+              {previewConfig.customWallpaper && (
+                <button 
+                  type="button" 
+                  onClick={handleRemoveWallpaper}
+                  className="px-4 py-2 bg-rose-50 dark:bg-rose-900/30 border border-rose-200 dark:border-rose-800 text-rose-600 dark:text-rose-400 font-bold rounded-lg shadow-sm hover:bg-rose-100 dark:hover:bg-rose-900/50 transition-colors text-[11px] flex items-center gap-2 justify-center"
+                >
+                  <Trash2 className="w-4 h-4" />
+                  Gỡ Hình Nền
+                </button>
+              )}
+            </div>
           </div>
         </div>
 

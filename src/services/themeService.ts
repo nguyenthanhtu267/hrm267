@@ -43,6 +43,7 @@ export interface ThemeConfig {
   font: FontFamilyId;
   fontSize: number;
   autoRotate: boolean;
+  customWallpaper?: string | null;
 }
 
 export interface ThemePresetInfo {
@@ -270,7 +271,8 @@ const STORAGE_KEYS = {
   MODE: 'omnihrm_color_mode_v2',
   FONT: 'omnihrm_theme_font_v2',
   FONT_SIZE: 'omnihrm_theme_font_size_v2',
-  AUTO_ROTATE: 'omnihrm_theme_auto_rotate_v2'
+  AUTO_ROTATE: 'omnihrm_theme_auto_rotate_v2',
+  CUSTOM_WALLPAPER: 'omnihrm_theme_custom_wallpaper'
 };
 
 export const themeService = {
@@ -280,13 +282,15 @@ export const themeService = {
     const savedFont = (localStorage.getItem(STORAGE_KEYS.FONT) as FontFamilyId) || 'DEFAULT';
     const savedFontSize = parseInt(localStorage.getItem(STORAGE_KEYS.FONT_SIZE) || '100', 10); // Mặc định 100%
     const savedAutoRotate = localStorage.getItem(STORAGE_KEYS.AUTO_ROTATE) === 'true';
+    const savedCustomWallpaper = localStorage.getItem(STORAGE_KEYS.CUSTOM_WALLPAPER);
 
     return {
       preset: savedPreset,
       mode: savedMode,
       font: savedFont,
       fontSize: savedFontSize,
-      autoRotate: savedAutoRotate
+      autoRotate: savedAutoRotate,
+      customWallpaper: savedCustomWallpaper
     };
   },
 
@@ -297,6 +301,11 @@ export const themeService = {
       localStorage.setItem(STORAGE_KEYS.FONT, config.font);
       localStorage.setItem(STORAGE_KEYS.FONT_SIZE, config.fontSize.toString());
       localStorage.setItem(STORAGE_KEYS.AUTO_ROTATE, config.autoRotate.toString());
+      if (config.customWallpaper) {
+        localStorage.setItem(STORAGE_KEYS.CUSTOM_WALLPAPER, config.customWallpaper);
+      } else {
+        localStorage.removeItem(STORAGE_KEYS.CUSTOM_WALLPAPER);
+      }
       this.applyToDOM(config);
     } catch (e) {
       console.warn('Cannot save theme to localStorage:', e);
@@ -328,6 +337,19 @@ export const themeService = {
     }
 
     root.setAttribute('data-preset', config.preset);
+
+    // Xử lý Custom Wallpaper (Ghi đè hình nền lên body)
+    if (config.customWallpaper) {
+      document.body.style.backgroundImage = `url(${config.customWallpaper})`;
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center';
+      document.body.style.backgroundAttachment = 'fixed';
+    } else {
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundSize = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundAttachment = '';
+    }
 
     // 3. Áp dụng Font chữ toàn cục
     const currentFont = FONT_OPTIONS.find(f => f.id === config.font) || FONT_OPTIONS[0];

@@ -195,7 +195,7 @@ export const App: React.FC = () => {
   }
 
   return (
-    <div className="h-screen bg-slate-50 flex flex-col font-sans overflow-hidden">
+    <div className="h-screen bg-transparent flex flex-col font-sans overflow-hidden">
       {/* Thanh Header Điều Hướng Trên Cùng */}
       <Navbar
         currentRole={currentRole}
