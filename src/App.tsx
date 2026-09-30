@@ -43,7 +43,9 @@ import { fetchEmployeesFromSupabase, insertEmployeeToSupabase } from './services
 import { CompanyPolicy, Employee, AttendanceRecord, WorkflowRequest, OffboardingRecord, FeedbackItem, UserRole, PayrollRecord, PersonnelChange, DailyWorkReportItem } from './types/hrm';
 
 export const App: React.FC = () => {
-  const [currentRole, setCurrentRole] = useState<UserRole>('HR_MANAGER');
+  const [currentRole, setCurrentRole] = useState<UserRole>(() => {
+    return (localStorage.getItem('hrm_current_role') as UserRole) || 'HR_MANAGER';
+  });
   const [currentTenantId, setCurrentTenantId] = useState<string>('TENANT-ASIAFOODS');
   const [activeTab, setActiveTab] = useState<NavTab>('COMPANY_NOTICES');
   const [isFeedbackOpen, setIsFeedbackOpen] = useState<boolean>(false);
@@ -51,7 +53,17 @@ export const App: React.FC = () => {
   const [showMealPassModal, setShowMealPassModal] = useState<boolean>(false);
   const [currentLanguage, setCurrentLanguage] = useState<AppLanguage>(() => languageService.getLanguage());
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(() => {
+    return localStorage.getItem('hrm_is_logged_in') === 'true';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('hrm_current_role', currentRole);
+  }, [currentRole]);
+
+  useEffect(() => {
+    localStorage.setItem('hrm_is_logged_in', isLoggedIn.toString());
+  }, [isLoggedIn]);
 
   useEffect(() => {
     const handleLangChange = (e: any) => {
