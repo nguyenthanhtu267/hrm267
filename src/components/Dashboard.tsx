@@ -25,6 +25,7 @@ import {
 import { Employee, AttendanceRecord, WorkflowRequest, CompanyPolicy, UserRole } from '../types/hrm';
 import { NavTab } from './Sidebar';
 import { TvplWidget } from './TvplWidget';
+import { BannerAd } from './BannerAd';
 
 interface DashboardProps {
   employees: Employee[];
@@ -173,6 +174,20 @@ export const Dashboard: React.FC<DashboardProps> = ({
             )}
           </button>
         </div>
+      </div>
+
+      {/* Banner Quảng Cáo (Horizontal) */}
+      <div className="mb-4">
+        <BannerAd
+          id="dashboard-banner-1"
+          variant="horizontal"
+          badge="CHỈ 3 NGÀY"
+          title="Giảm 50% gói tin nổi bật"
+          subtitle="Tin của bạn lên đầu trang tìm kiếm trong 7 ngày, tiếp cận hàng ngàn ứng viên."
+          ctaText="Nhận ưu đãi"
+          href={policy.promoBannerLink || "https://tuyendungvieclam.vercel.app/"}
+          bgClass="bg-gradient-to-r from-rose-900 to-red-900 border border-rose-500/30"
+        />
       </div>
 
       {/* 4 Thẻ KPI chính luôn hiển thị thu gọn */}
@@ -356,6 +371,20 @@ export const Dashboard: React.FC<DashboardProps> = ({
                 <span>Độc hại: <b className="text-amber-600">{toxicEmployees.toLocaleString('vi-VN')}</b> NLĐ</span>
                 <span className="text-emerald-600 font-medium">100% tuân thủ</span>
               </div>
+            </div>
+
+            {/* Banner Quảng Cáo (Square) */}
+            <div className="mt-2">
+              <BannerAd
+                id="dashboard-banner-2"
+                variant="square"
+                badge="ĐỘC QUYỀN VIP"
+                title="Quản lý suất ăn AI"
+                subtitle="Chấm ăn tự động bằng nhận diện khuôn mặt, chống thất thoát. Trải nghiệm miễn phí 30 ngày."
+                ctaText="Kích hoạt ngay"
+                href={policy.promoBannerLink || "https://tuyendungvieclam.vercel.app/"}
+                bgClass="bg-gradient-to-br from-indigo-900 to-purple-900 border border-indigo-500/30"
+              />
             </div>
 
             {/* BẢNG 3: Phân Bổ Nhân Lực Theo Phòng Ban */}

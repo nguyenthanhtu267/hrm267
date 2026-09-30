@@ -4,6 +4,7 @@ import { jobDescriptionsLibrary } from '../services/jobDescriptionsLibrary';
 import { SalaryDealCalculatorModal } from './SalaryDealCalculatorModal';
 import { comprehensiveCandidates } from '../services/largeDatasetGenerator';
 import { BannerCampaignView } from './BannerCampaignView';
+import { BannerAd } from './BannerAd';
 import { 
   Briefcase,
   Laptop,
@@ -466,6 +467,20 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
       {activeTab === 'CAMPAIGNS' && <BannerCampaignView policy={policy} onSavePolicy={onSavePolicy} />}
       {activeTab === 'PIPELINE' && (
         <>
+          {/* Banner Ad Horizontal */}
+          <div className="my-4">
+            <BannerAd
+              id="banner-ats-1"
+              variant="horizontal"
+              badge="DÀNH CHO NHÀ TUYỂN DỤNG"
+              title="Đăng tin tuyển dụng MIỄN PHÍ"
+              subtitle="Tiếp cận hàng ngàn ứng viên phù hợp, tin được duyệt nhanh, ưu tiên hiển thị."
+              ctaText="Đăng tin ngay"
+              href={policy.promoBannerLink || "https://tuyendungvieclam.vercel.app/"}
+              bgClass="bg-gradient-to-r from-[#3b2b2b] to-[#1e1414] border border-[#ff6a00]/30"
+            />
+          </div>
+
       {/* KHU VỰC 1: HỘP CÔNG CỤ AI BÓC TÁCH & ĐỐI SOÁT CV THÔNG MINH */}
       <div className="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">
         <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-4 px-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
