@@ -41,7 +41,7 @@ export interface ThemeConfig {
   preset: ThemePreset;
   mode: ColorMode;
   font: FontFamilyId;
-  fontSize: 'NORMAL' | 'LARGE' | 'MAX';
+  fontSize: number;
   autoRotate: boolean;
 }
 
@@ -278,7 +278,7 @@ export const themeService = {
     const savedPreset = (localStorage.getItem(STORAGE_KEYS.PRESET) as ThemePreset) || 'CORPORATE_INDIGO';
     const savedMode = (localStorage.getItem(STORAGE_KEYS.MODE) as ColorMode) || 'LIGHT'; // Ưu tiên sáng theo yêu cầu
     const savedFont = (localStorage.getItem(STORAGE_KEYS.FONT) as FontFamilyId) || 'DEFAULT';
-    const savedFontSize = (localStorage.getItem(STORAGE_KEYS.FONT_SIZE) as 'NORMAL' | 'LARGE' | 'MAX') || 'LARGE'; // Mặc định to
+    const savedFontSize = parseInt(localStorage.getItem(STORAGE_KEYS.FONT_SIZE) || '100', 10); // Mặc định 100%
     const savedAutoRotate = localStorage.getItem(STORAGE_KEYS.AUTO_ROTATE) === 'true';
 
     return {
@@ -295,7 +295,7 @@ export const themeService = {
       localStorage.setItem(STORAGE_KEYS.PRESET, config.preset);
       localStorage.setItem(STORAGE_KEYS.MODE, config.mode);
       localStorage.setItem(STORAGE_KEYS.FONT, config.font);
-      localStorage.setItem(STORAGE_KEYS.FONT_SIZE, config.fontSize);
+      localStorage.setItem(STORAGE_KEYS.FONT_SIZE, config.fontSize.toString());
       localStorage.setItem(STORAGE_KEYS.AUTO_ROTATE, config.autoRotate.toString());
       this.applyToDOM(config);
     } catch (e) {
@@ -335,13 +335,7 @@ export const themeService = {
     document.body.style.fontFamily = currentFont.fontFamily;
 
     // 4. Áp dụng Font Size (Thu phóng giao diện)
-    if (config.fontSize === 'MAX') {
-      root.style.fontSize = '125%';
-    } else if (config.fontSize === 'LARGE') {
-      root.style.fontSize = '112.5%';
-    } else {
-      root.style.fontSize = '100%';
-    }
+    root.style.fontSize = `${config.fontSize}%`;
   },
 
   initListener(onThemeChange: () => void): () => void {

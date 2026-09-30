@@ -76,7 +76,7 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
     themeService.applyToDOM(updated);
   };
 
-  const handleSelectFontSize = (size: 'NORMAL' | 'LARGE' | 'MAX') => {
+  const handleSelectFontSize = (size: number) => {
     const updated: ThemeConfig = { ...previewConfig, fontSize: size };
     setPreviewConfig(updated);
     themeService.applyToDOM(updated);
@@ -234,33 +234,31 @@ export const ThemeModal: React.FC<ThemeModalProps> = ({
             </div>
 
             {/* Kích thước chữ (Font Size) */}
-            <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 space-y-2">
+            <div className="p-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 space-y-3">
               <div className="flex items-center justify-between">
                 <span className="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5 text-xs">
                   <Type className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
                   3. Kích Thước Chữ (Độ Thu Phóng)
                 </span>
-                <span className="text-[10px] text-slate-400">Ưu tiên to rõ</span>
+                <span className="text-xs font-black text-indigo-600 dark:text-indigo-400 bg-white dark:bg-slate-800 px-2 py-0.5 rounded shadow-sm border border-slate-200 dark:border-slate-700">
+                  {previewConfig.fontSize}%
+                </span>
               </div>
-              <div className="grid grid-cols-3 gap-2">
-                {[
-                  { id: 'NORMAL', label: 'Bình Thường' },
-                  { id: 'LARGE', label: 'Lớn (Mặc định)' },
-                  { id: 'MAX', label: 'Rất Lớn' }
-                ].map(size => (
-                  <button
-                    key={size.id}
-                    type="button"
-                    onClick={() => handleSelectFontSize(size.id as any)}
-                    className={`py-2 px-2.5 rounded-lg border text-center transition-all cursor-pointer ${
-                      previewConfig.fontSize === size.id
-                        ? 'border-indigo-600 bg-white dark:bg-slate-800 shadow-xs ring-2 ring-indigo-500/20 text-indigo-700 dark:text-indigo-400 font-bold'
-                        : 'border-slate-200 dark:border-slate-700 bg-white/70 dark:bg-slate-800/70 text-slate-600 dark:text-slate-300 hover:border-slate-300'
-                    }`}
-                  >
-                    <span className="text-[11px]">{size.label}</span>
-                  </button>
-                ))}
+              <div className="px-2 pb-1">
+                <input 
+                  type="range" 
+                  min="90" 
+                  max="130" 
+                  step="5"
+                  value={previewConfig.fontSize}
+                  onChange={(e) => handleSelectFontSize(Number(e.target.value))}
+                  className="w-full h-2 bg-slate-200 dark:bg-slate-700 rounded-lg appearance-none cursor-pointer accent-indigo-600"
+                />
+                <div className="flex justify-between mt-2 text-[10px] text-slate-400 font-medium">
+                  <span>90% (Nhỏ)</span>
+                  <span>100% (Mặc định)</span>
+                  <span>130% (Rất Lớn)</span>
+                </div>
               </div>
             </div>
 
