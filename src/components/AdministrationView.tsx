@@ -1582,23 +1582,27 @@ export const AdministrationView: React.FC<AdministrationViewProps> = ({
   return (
     <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* 1. HEADER BANNER THU GỌN: VỪA VẶN TRONG TRANG 1 */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-xl p-3.5 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
-        <div>
-          <div className="flex items-center space-x-2">
-            <Building className="w-5 h-5 text-indigo-400" />
-            <h1 className="text-base sm:text-lg font-bold tracking-tight">
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 border border-indigo-200 rounded-xl p-3.5 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 relative overflow-hidden">
+        {/* Background Overlay Decor */}
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="relative z-10">
+          <div className="flex items-center space-x-2 flex-wrap">
+            <div className="p-1.5 rounded-lg bg-gradient-to-br from-indigo-400 to-blue-500 text-white shadow-sm shrink-0">
+              <Building className="w-4 h-4 text-white" />
+            </div>
+            <h1 className="text-base sm:text-lg font-bold tracking-tight text-indigo-950">
               Quản Trị Hành Chính, Đối Tác Dịch Vụ & An Toàn Lao Động (HSE)
             </h1>
-            <span className="px-2 py-0.2 rounded text-[10px] font-bold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-white/80 text-indigo-700 border border-indigo-200 shadow-sm mt-1 sm:mt-0">
               Vận Hành Thực Tế
             </span>
           </div>
-          <p className="text-[11px] text-indigo-200 mt-0.5">
+          <p className="text-[11px] text-indigo-800/80 mt-1 font-medium ml-8 sm:ml-0">
             Quản lý tập trung: Tiếp khách, phòng họp, VPP, văn thư, xe cộ, nhà ăn, bảo vệ, tạp vụ và kiểm tra an toàn HSE
           </p>
         </div>
 
-        <div className="flex items-center space-x-2 self-start md:self-auto">
+        <div className="flex items-center space-x-2 self-start md:self-auto relative z-10 ml-8 sm:ml-0 mt-1 md:mt-0">
           <button
             onClick={handleExportAdminSummaryExcel}
             className="flex items-center space-x-1 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition-all shadow-xs cursor-pointer"

@@ -799,11 +799,12 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS QUẢN TRỊ VĂN THƯ 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 text-slate-800 rounded-2xl p-2 shadow-sm border border-indigo-200 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-200 pb-3 relative z-10">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
-              <div className="p-2 rounded-xl bg-indigo-600/30 border border-indigo-400/30 text-indigo-300">
+              <div className="p-2 rounded-xl bg-gradient-to-br from-indigo-400 to-blue-500 text-white shadow-sm border-0">
                 <FolderArchive className="w-5 h-5" />
               </div>
               <div>
@@ -815,7 +816,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
                     Nghị Định 30/2020/NĐ-CP &amp; Luật Lưu Trữ
                   </span>
                 </div>
-                <p className="text-[11.5px] text-slate-300">
+                <p className="text-[11.5px] text-indigo-800/80 font-medium">
                   Số hóa hồ sơ, quản lý vị trí kệ hộp vật lý, điều phối bút phê công văn đến và theo dõi vận đơn bưu điện
                 </p>
               </div>
@@ -826,7 +827,7 @@ export const DigitalArchiveHub: React.FC<DigitalArchiveHubProps> = ({
             <button
               type="button"
               onClick={handleExportArchiveExcel}
-              className="px-3 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-bold transition-all flex items-center space-x-1.5 border border-white/15 cursor-pointer shadow-xs"
+              className="px-3 py-1.5 rounded-xl bg-white hover:bg-indigo-50 text-indigo-700 text-xs font-bold transition-all flex items-center space-x-1.5 border border-indigo-200 cursor-pointer shadow-sm"
               title="Xuất toàn bộ sổ văn thư lưu trữ ra Excel"
             >
               <FileSpreadsheet className="w-3.5 h-3.5 text-emerald-400" />

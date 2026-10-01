@@ -1013,7 +1013,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
       {activeTab === 'SALARY_GROUPS_PERFORMANCE' && (
         <div className="space-y-1.5 animate-in fade-in">
           {/* Banner Điều Khiển Tỷ Lệ HQKD Doanh Nghiệp (Dynamic Live Sliders) */}
-          <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white p-2 sm:p-2.5 rounded-2xl shadow-md border border-slate-800 space-y-1.5">
+          <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 text-slate-800 p-2 sm:p-2.5 rounded-2xl shadow-sm border border-indigo-200 space-y-1.5 relative overflow-hidden">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-indigo-900/60 pb-3">
               <div className="flex items-center space-x-2.5">
                 <div className="p-2 rounded-xl bg-indigo-600/40 text-indigo-300 border border-indigo-500/30">
@@ -1398,7 +1398,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({
       {showAddReportModal && (
         <div className="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-xs flex items-center justify-center p-3 overflow-y-auto">
           <div className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-slate-200 overflow-hidden animate-in fade-in zoom-in-95 my-6">
-            <div className="bg-gradient-to-r from-slate-900 to-indigo-950 text-white p-2 flex items-center justify-between">
+            <div className="bg-gradient-to-r from-indigo-50 to-blue-50 text-slate-800 p-2 flex items-center justify-between border-b border-indigo-200 shadow-sm">
               <div className="flex items-center space-x-2">
                 <div className="p-1.5 rounded-lg bg-indigo-600 text-white">
                   <FileText className="w-4 h-4" />

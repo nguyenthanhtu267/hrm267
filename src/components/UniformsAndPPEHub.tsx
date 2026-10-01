@@ -606,8 +606,9 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
       {/* ════════════════════════════════════════════════════════════
           KHỐI 1: HEADER & KPI CARDS ĐỒNG PHỤC, BHLĐ & CCDC 360°
       ════════════════════════════════════════════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-2 shadow-md border border-indigo-900/50">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-800/40 pb-3">
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 text-slate-800 rounded-2xl p-2 shadow-sm border border-indigo-200 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-indigo-200 pb-3 relative z-10">
           <div className="space-y-1">
             <div className="flex items-center space-x-2">
               <div className="p-2.5 rounded-2xl bg-indigo-600/30 border border-indigo-400/30 text-indigo-300">
@@ -622,7 +623,7 @@ export const UniformsAndPPEHub: React.FC<UniformsAndPPEHubProps> = ({
                     Chuẩn TT 25/2013/TT-BLĐTBXH
                   </span>
                 </div>
-                <p className="text-[11.5px] text-slate-300">
+                <p className="text-[11.5px] text-indigo-800/80 font-medium">
                   Ma trận size đồng phục, trang bị bảo hộ cá nhân đạt chuẩn QCVN, quản lý CCDC và thu hồi bàn giao thôi việc
                 </p>
               </div>

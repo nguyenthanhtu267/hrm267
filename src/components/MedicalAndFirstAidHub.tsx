@@ -1739,7 +1739,7 @@ export const MedicalAndFirstAidHub: React.FC<MedicalAndFirstAidHubProps> = ({
             </div>
 
             {/* Banner xuất Excel 5 sheet */}
-            <div className="bg-gradient-to-r from-slate-900 to-teal-950 p-2 rounded-xl text-white flex items-center justify-between">
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 p-2 rounded-xl text-slate-800 flex items-center justify-between border border-emerald-200 shadow-sm">
               <div>
                 <h4 className="font-bold text-sm">Xuất Trọn Bộ Hồ Sơ Y Tế Doanh Nghiệp (Excel 5 Sheet)</h4>
                 <p className="text-xs text-slate-300 mt-0.5">
