@@ -394,14 +394,26 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
     setAnalysisResult(null);
   };
 
-  // Lọc danh sách ứng viên trong pipeline
-  const filteredCandidates = candidates.filter(cand => {
-    const matchSearch = cand.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        cand.positionApplied.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                        cand.phone.includes(searchTerm);
-    const matchDept = filterDepartment === 'ALL' || cand.departmentName === filterDepartment;
-    return matchSearch && matchDept;
-  });
+  // 1. Tối ưu hóa mảng Candidates với useMemo để tránh Re-render và tính toán lại toàn bộ mảng mỗi khi gõ phím
+  const filteredCandidates = React.useMemo(() => {
+    return candidates.filter(cand => {
+      const matchSearch = cand.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          cand.positionApplied.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                          cand.phone.includes(searchTerm);
+      const matchDept = filterDepartment === 'ALL' || cand.departmentName === filterDepartment;
+      return matchSearch && matchDept;
+    });
+  }, [candidates, searchTerm, filterDepartment]);
+
+  // 2. Tối ưu Kanban Board: Phân nhóm 1 lần với độ phức tạp O(N), tránh vòng lặp lồng O(N*M)
+  const groupedCandidates = React.useMemo(() => {
+    const groups: Record<string, typeof candidates> = {};
+    stages.forEach(stg => { groups[stg.id] = []; });
+    filteredCandidates.forEach(cand => {
+      if (groups[cand.stage]) groups[cand.stage].push(cand);
+    });
+    return groups;
+  }, [filteredCandidates]);
 
   return (
     <div className="space-y-3">
@@ -768,7 +780,7 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
       {/* KHU VỰC 3: KANBAN PIPELINE TUYỂN DỤNG ATS */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-1.5">
         {stages.map((stg) => {
-          const list = filteredCandidates.filter(c => c.stage === stg.id);
+          const list = groupedCandidates[stg.id] || [];
           return (
             <div key={stg.id} className="bg-slate-100/80 rounded-2xl p-2 border border-slate-200 flex flex-col min-h-[420px]">
               <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-3">
