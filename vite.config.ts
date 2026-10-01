@@ -8,6 +8,18 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          supabase: ['@supabase/supabase-js'],
+          icons: ['lucide-react'],
+          excel: ['xlsx']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 });
-

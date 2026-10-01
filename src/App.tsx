@@ -1,33 +1,33 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Navbar } from './components/Navbar';
 import { Sidebar, NavTab } from './components/Sidebar';
-import { Dashboard } from './components/Dashboard';
-import { CompanyPolicyView } from './components/CompanyPolicyView';
-import { ChecklistView } from './components/ChecklistView';
-import { EmployeeListView } from './components/EmployeeListView';
-import { EmployeeContractView } from './components/EmployeeContractView';
-import { PersonnelChangesView } from './components/PersonnelChangesView';
+const Dashboard = React.lazy(() => import('./components/Dashboard').then(m => ({ default: m.Dashboard })));
+const CompanyPolicyView = React.lazy(() => import('./components/CompanyPolicyView').then(m => ({ default: m.CompanyPolicyView })));
+const ChecklistView = React.lazy(() => import('./components/ChecklistView').then(m => ({ default: m.ChecklistView })));
+const EmployeeListView = React.lazy(() => import('./components/EmployeeListView').then(m => ({ default: m.EmployeeListView })));
+const EmployeeContractView = React.lazy(() => import('./components/EmployeeContractView').then(m => ({ default: m.EmployeeContractView })));
+const PersonnelChangesView = React.lazy(() => import('./components/PersonnelChangesView').then(m => ({ default: m.PersonnelChangesView })));
 
-import { OrgChartView } from './components/OrgChartView';
-import { AttendanceView } from './components/AttendanceView';
-import { LeaveApprovalView } from './components/LeaveApprovalView';
-import { PayrollView } from './components/PayrollView';
-import { OffboardingView } from './components/OffboardingView';
-import { TaxYearlyView } from './components/TaxYearlyView';
-import { GovReportsView } from './components/GovReportsView';
-import { FeedbackListView } from './components/FeedbackListView';
-import { FeedbackModal } from './components/FeedbackModal';
-import { RecruitmentView } from './components/RecruitmentView';
-import { PerformanceView } from './components/PerformanceView';
-import { TrainingView } from './components/TrainingView';
-import { ContractView } from './components/ContractView';
-import { AccountingView } from './components/AccountingView';
-import { BankTransferAuditView } from './components/BankTransferAuditView';
-import { AdministrationView } from './components/AdministrationView';
-import { CompanyNewsAndBulletinView } from './components/CompanyNewsAndBulletinView';
-import { AIAssistantModal } from './components/AIAssistantModal';
-import { InternalMessengerModal } from './components/InternalMessengerModal';
-import { CanteenMealPassModal } from './components/CanteenMealPassModal';
+const OrgChartView = React.lazy(() => import('./components/OrgChartView').then(m => ({ default: m.OrgChartView })));
+const AttendanceView = React.lazy(() => import('./components/AttendanceView').then(m => ({ default: m.AttendanceView })));
+const LeaveApprovalView = React.lazy(() => import('./components/LeaveApprovalView').then(m => ({ default: m.LeaveApprovalView })));
+const PayrollView = React.lazy(() => import('./components/PayrollView').then(m => ({ default: m.PayrollView })));
+const OffboardingView = React.lazy(() => import('./components/OffboardingView').then(m => ({ default: m.OffboardingView })));
+const TaxYearlyView = React.lazy(() => import('./components/TaxYearlyView').then(m => ({ default: m.TaxYearlyView })));
+const GovReportsView = React.lazy(() => import('./components/GovReportsView').then(m => ({ default: m.GovReportsView })));
+const FeedbackListView = React.lazy(() => import('./components/FeedbackListView').then(m => ({ default: m.FeedbackListView })));
+const FeedbackModal = React.lazy(() => import('./components/FeedbackModal').then(m => ({ default: m.FeedbackModal })));
+const RecruitmentView = React.lazy(() => import('./components/RecruitmentView').then(m => ({ default: m.RecruitmentView })));
+const PerformanceView = React.lazy(() => import('./components/PerformanceView').then(m => ({ default: m.PerformanceView })));
+const TrainingView = React.lazy(() => import('./components/TrainingView').then(m => ({ default: m.TrainingView })));
+const ContractView = React.lazy(() => import('./components/ContractView').then(m => ({ default: m.ContractView })));
+const AccountingView = React.lazy(() => import('./components/AccountingView').then(m => ({ default: m.AccountingView })));
+const BankTransferAuditView = React.lazy(() => import('./components/BankTransferAuditView').then(m => ({ default: m.BankTransferAuditView })));
+const AdministrationView = React.lazy(() => import('./components/AdministrationView').then(m => ({ default: m.AdministrationView })));
+const CompanyNewsAndBulletinView = React.lazy(() => import('./components/CompanyNewsAndBulletinView').then(m => ({ default: m.CompanyNewsAndBulletinView })));
+const AIAssistantModal = React.lazy(() => import('./components/AIAssistantModal').then(m => ({ default: m.AIAssistantModal })));
+const InternalMessengerModal = React.lazy(() => import('./components/InternalMessengerModal').then(m => ({ default: m.InternalMessengerModal })));
+const CanteenMealPassModal = React.lazy(() => import('./components/CanteenMealPassModal').then(m => ({ default: m.CanteenMealPassModal })));
 import { GlobalBannerArea } from './components/GlobalBannerArea';
 import { Footer } from './components/Footer';
 import { ErrorBoundary } from './components/ErrorBoundary';
@@ -239,6 +239,8 @@ export const App: React.FC = () => {
             {currentPolicy.promoBannerEnabled !== false && (
               <GlobalBannerArea currentTab={activeTab} policy={currentPolicy} />
             )}
+
+            <React.Suspense fallback={<div className="p-10 flex flex-col items-center justify-center space-y-4"><div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin"></div><div className="text-indigo-800/70 font-semibold animate-pulse text-sm">Đang tải phân hệ...</div></div>}>
 
             {activeTab === 'COMPANY_NOTICES' && (
               <ErrorBoundary fallbackLabel="Thông Báo & Thông Tin Chung">
@@ -470,6 +472,7 @@ export const App: React.FC = () => {
                 />
               </ErrorBoundary>
             )}
+            </React.Suspense>
           </div>
           {/* Chân trang phong cách Dantri tinh gọn */}
           <Footer />
