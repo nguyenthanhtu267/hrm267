@@ -21,7 +21,7 @@ export const BannerAd: React.FC<BannerAdProps> = ({
   subtitle,
   ctaText,
   href,
-  bgClass = 'bg-gradient-to-br from-slate-800 to-slate-900',
+  bgClass = 'bg-gradient-to-br from-blue-50 to-indigo-100 border border-blue-200',
   className = ''
 }) => {
   const [isVisible, setIsVisible] = useState(true);
@@ -33,10 +33,10 @@ export const BannerAd: React.FC<BannerAdProps> = ({
       <div className={`relative w-full rounded-2xl overflow-hidden shadow-lg p-2.5 flex flex-col justify-between min-h-[260px] ${bgClass} ${className}`}>
         {/* Nút đóng & Nhãn QC */}
         <div className="absolute top-3 right-3 flex items-center gap-2 z-20">
-          <span className="text-[9px] font-medium text-white/70 uppercase tracking-wider bg-black/20 px-1.5 py-0.5 rounded">Quảng cáo</span>
+          <span className="text-[9px] font-medium text-slate-500 uppercase tracking-wider bg-white/60 border border-slate-200 px-1.5 py-0.5 rounded">Quảng cáo</span>
           <button 
             onClick={() => setIsVisible(false)}
-            className="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center text-white/70 hover:bg-black/40 hover:text-white transition-colors cursor-pointer"
+            className="w-5 h-5 rounded-full bg-white/60 border border-slate-200 shadow-sm flex items-center justify-center text-slate-600 hover:bg-white hover:text-slate-900 transition-colors cursor-pointer"
           >
             <X className="w-3 h-3" />
           </button>
@@ -47,16 +47,16 @@ export const BannerAd: React.FC<BannerAdProps> = ({
 
         <div className="relative z-10 flex flex-col h-full mt-1.5">
           {badge && (
-            <span className="px-2 py-0.5 rounded bg-white/20 text-white text-[10px] font-bold w-fit mb-3 uppercase tracking-wide backdrop-blur-md border border-white/10">
+            <span className="px-2 py-0.5 rounded bg-white/80 text-blue-700 text-[10px] font-bold w-fit mb-3 uppercase tracking-wide backdrop-blur-md border border-blue-200 shadow-sm">
               {badge}
             </span>
           )}
           
-          <h3 className="text-xl sm:text-2xl font-black text-white leading-tight mb-2 drop-shadow-sm">
+          <h3 className="text-xl sm:text-2xl font-black text-slate-800 leading-tight mb-2">
             {title}
           </h3>
           
-          <p className="text-xs text-white/80 leading-relaxed mb-3 flex-1 drop-shadow-sm">
+          <p className="text-xs text-slate-600 leading-relaxed mb-3 flex-1">
             {subtitle}
           </p>
 
@@ -83,15 +83,15 @@ export const BannerAd: React.FC<BannerAdProps> = ({
       {/* Trái: Nội dung (Badge + Text) */}
       <div className="relative z-10 flex-1 flex flex-col sm:flex-row sm:items-center w-full gap-2 sm:gap-3 pr-4">
         {badge && (
-          <span className="px-2 py-0.5 rounded bg-white/20 text-white text-[10px] font-bold whitespace-nowrap uppercase tracking-wide backdrop-blur-md border border-white/10 shadow-sm shrink-0">
+          <span className="px-2 py-0.5 rounded bg-white/80 text-blue-700 text-[10px] font-bold whitespace-nowrap uppercase tracking-wide backdrop-blur-md border border-blue-200 shadow-sm shrink-0">
             {badge}
           </span>
         )}
         <div className="flex-1 truncate">
-          <h3 className="text-sm font-bold text-white leading-tight drop-shadow-md">
+          <h3 className="text-sm font-bold text-slate-800 leading-tight">
             {title}
           </h3>
-          <p className="text-[11px] text-white/80 drop-shadow-md truncate max-w-[90%]">
+          <p className="text-[11px] text-slate-600 truncate max-w-[90%]">
             {subtitle}
           </p>
         </div>
@@ -110,11 +110,11 @@ export const BannerAd: React.FC<BannerAdProps> = ({
         </a>
 
         {/* Cụm nút đóng gọn gàng */}
-        <div className="flex items-center gap-1.5 border-l border-white/20 pl-4">
-          <span className="text-[9px] font-medium text-white/60 uppercase tracking-wider hidden sm:inline-block">QC</span>
+        <div className="flex items-center gap-1.5 border-l border-slate-300/50 pl-4">
+          <span className="text-[9px] font-medium text-slate-400 uppercase tracking-wider hidden sm:inline-block">QC</span>
           <button 
             onClick={() => setIsVisible(false)}
-            className="w-5 h-5 rounded-full bg-black/20 flex items-center justify-center text-white/70 hover:bg-black/40 hover:text-white transition-colors cursor-pointer"
+            className="w-5 h-5 rounded-full bg-white/60 border border-slate-200 shadow-sm flex items-center justify-center text-slate-500 hover:bg-white hover:text-slate-800 transition-colors cursor-pointer"
           >
             <X className="w-3 h-3" />
           </button>

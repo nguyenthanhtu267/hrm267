@@ -21,26 +21,28 @@ export const FloatingBanner: React.FC<FloatingBannerProps> = ({ policy }) => {
             top: 55%;
             right: 0;
             transform: translateY(-50%);
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+            color: #1e1b4b;
             padding: 12px 6px;
-            border-radius: 8px 0 0 8px;
+            border-radius: 12px 0 0 12px;
             text-decoration: none;
-            box-shadow: -4px 0 15px rgba(0, 0, 0, 0.2);
+            box-shadow: -4px 0 20px rgba(142, 197, 252, 0.4);
             z-index: 9999;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.8);
             border-right: none;
             transition: all 0.3s ease;
             width: 32px;
+            backdrop-filter: blur(10px);
           }
 
           .app-side-widget:hover {
             padding-right: 10px;
-            background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+            background: linear-gradient(135deg, #8ec5fc 0%, #e0c3fc 100%);
+            box-shadow: -6px 0 25px rgba(142, 197, 252, 0.6);
           }
 
           .app-side-widget .app-side-text {

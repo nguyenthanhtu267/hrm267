@@ -20,7 +20,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
         subtitle="Mở khóa toàn bộ tính năng quản trị nhân sự nâng cao, bảo mật 2 lớp và hỗ trợ 24/7."
         ctaText="Xem bảng giá"
         href={policy.promoBannerLink || "#"}
-        bgClass="bg-gradient-to-r from-blue-900 to-indigo-900 border border-blue-500/30"
+        bgClass="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border border-blue-200"
       />
     ),
     'RECRUITMENT': (
@@ -32,7 +32,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
         subtitle="Tiếp cận hàng ngàn ứng viên phù hợp, tin được duyệt nhanh, ưu tiên hiển thị trên top tìm kiếm."
         ctaText="Đăng tin ngay"
         href={policy.promoBannerLink || "#"}
-        bgClass="bg-gradient-to-r from-[#3b2b2b] to-[#1e1414] border border-[#ff6a00]/30"
+        bgClass="bg-gradient-to-r from-orange-50 via-amber-50 to-yellow-50 border border-orange-200"
       />
     ),
     'TRAINING': (
@@ -44,7 +44,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
         subtitle="Tài trợ 100% học phí cho nhân viên xuất sắc. Đăng ký ngay hôm nay để nhận suất."
         ctaText="Đăng ký ngay"
         href={policy.promoBannerLink || "#"}
-        bgClass="bg-gradient-to-r from-emerald-900 to-teal-900 border border-emerald-500/30"
+        bgClass="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border border-emerald-200"
       />
     ),
     'PERFORMANCE': (
@@ -56,7 +56,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
         subtitle="Tự động tổng hợp nhận xét, loại bỏ cảm tính và đề xuất tăng lương chính xác."
         ctaText="Trải nghiệm thử"
         href={policy.promoBannerLink || "#"}
-        bgClass="bg-gradient-to-r from-purple-900 to-fuchsia-900 border border-purple-500/30"
+        bgClass="bg-gradient-to-r from-purple-50 via-fuchsia-50 to-pink-50 border border-purple-200"
       />
     ),
     'ATTENDANCE': (
@@ -68,7 +68,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
         subtitle="Chấm ăn tự động, chống thất thoát. Trải nghiệm miễn phí 30 ngày."
         ctaText="Kích hoạt ngay"
         href={policy.promoBannerLink || "#"}
-        bgClass="bg-gradient-to-r from-rose-900 to-red-900 border border-rose-500/30"
+        bgClass="bg-gradient-to-r from-rose-50 via-red-50 to-orange-50 border border-rose-200"
       />
     )
   };
@@ -83,7 +83,7 @@ export const GlobalBannerArea: React.FC<GlobalBannerAreaProps> = ({ currentTab, 
       subtitle="Chấm công GPS, nhận thông báo lương và duyệt đơn từ mọi lúc mọi nơi."
       ctaText="Tải App ngay"
       href={policy.promoBannerLink || "#"}
-      bgClass="bg-gradient-to-r from-slate-800 to-slate-900 border border-slate-700"
+      bgClass="bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 border border-blue-200"
     />
   );
 

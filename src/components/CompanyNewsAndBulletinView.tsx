@@ -747,22 +747,24 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
   return (
     <div className="space-y-1.5 animate-in fade-in duration-200">
       {/* 1. HEADER BANNER PHÂN HỆ */}
-      <div className="bg-gradient-to-r from-indigo-900 via-purple-900 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-        <div>
+      <div className="bg-gradient-to-r from-violet-50 via-purple-50 to-fuchsia-50 border border-purple-200 rounded-2xl p-2 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3 relative overflow-hidden">
+        {/* Background Overlay Decor */}
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="relative z-10">
           <div className="flex items-center space-x-2">
-            <div className="p-2 rounded-xl bg-amber-400 text-slate-950 font-bold shadow-xs">
+            <div className="p-2 rounded-xl bg-gradient-to-br from-amber-300 to-orange-400 text-white font-bold shadow-sm">
               <Megaphone className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
-                <h1 className="text-base sm:text-lg font-bold tracking-tight">
+                <h1 className="text-base sm:text-lg font-extrabold tracking-tight text-purple-950 drop-shadow-sm">
                   Thông Báo &amp; Thông Tin Chung
                 </h1>
-                <span className="px-2 py-0.2 rounded-full text-[10px] font-bold bg-amber-400/20 text-amber-300 border border-amber-400/30">
-                  Văn Hóa &amp; Gắn Kết Doanh Nghiệp
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-white/80 text-purple-700 border border-purple-200 backdrop-blur-sm shadow-sm uppercase tracking-wide">
+                  Văn Hóa &amp; Gắn Kết
                 </span>
               </div>
-              <p className="text-xs text-purple-200 mt-0.5">
+              <p className="text-xs text-purple-700/80 mt-0.5 font-medium">
                 Bản tin doanh nghiệp, Công đoàn cơ sở, Quỹ tấm lòng vàng, Khen thưởng vinh danh, Hội thao &amp; Chúc mừng sinh nhật
               </p>
             </div>
@@ -770,22 +772,22 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
         </div>
 
         {/* Thống kê nhanh nổi bật */}
-        <div className="flex items-center space-x-2 bg-white/10 p-1.5 rounded-xl border border-white/15 self-start md:self-auto shrink-0 text-xs">
-          <div className="px-3 py-1 bg-white/10 rounded-lg text-center">
-            <p className="text-[10px] text-purple-200 uppercase font-semibold">Sinh Nhật Hôm Nay</p>
-            <p className="text-sm font-bold text-amber-300">
+        <div className="relative z-10 flex items-center space-x-2 bg-white/60 backdrop-blur-md p-1.5 rounded-xl border border-white shadow-sm self-start md:self-auto shrink-0 text-xs">
+          <div className="px-3 py-1 bg-white/80 rounded-lg text-center shadow-sm border border-white">
+            <p className="text-[10px] text-purple-600 uppercase font-bold tracking-wider">Sinh Nhật Hôm Nay</p>
+            <p className="text-sm font-black text-amber-500">
               {augustBirthdays.filter(e => e.isToday).length} Đồng nghiệp 🎉
             </p>
           </div>
-          <div className="px-3 py-1 bg-white/10 rounded-lg text-center">
-            <p className="text-[10px] text-blue-200 uppercase font-semibold">Quỹ Công Đoàn</p>
-            <p className="text-sm font-bold text-cyan-300">
+          <div className="px-3 py-1 bg-white/80 rounded-lg text-center shadow-sm border border-white">
+            <p className="text-[10px] text-blue-600 uppercase font-bold tracking-wider">Quỹ Công Đoàn</p>
+            <p className="text-sm font-black text-blue-600">
               {unionFundBalance.toLocaleString('vi-VN')} đ
             </p>
           </div>
-          <div className="px-3 py-1 bg-white/10 rounded-lg text-center">
-            <p className="text-[10px] text-purple-200 uppercase font-semibold">Quỹ Tấm Lòng Vàng</p>
-            <p className="text-sm font-bold text-emerald-300">
+          <div className="px-3 py-1 bg-white/80 rounded-lg text-center shadow-sm border border-white">
+            <p className="text-[10px] text-emerald-600 uppercase font-bold tracking-wider">Quỹ Tấm Lòng Vàng</p>
+            <p className="text-sm font-black text-emerald-600">
               {benevolentFundBalance.toLocaleString('vi-VN')} đ
             </p>
           </div>
@@ -930,28 +932,28 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
           {/* KHUNG CỐ ĐỊNH ĐẦU TIÊN: ĐĂNG KÝ PHẦN ĂN CA & THẺ LẤY CƠM (E-MEAL PASS) */}
           <div 
             onClick={onOpenMealPassModal}
-            className="group relative overflow-hidden rounded-2xl border-2 border-emerald-500/40 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 p-3 sm:p-3.5 text-white shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer select-none hover:brightness-105 active:scale-[0.99]"
+            className="group relative overflow-hidden rounded-2xl border-2 border-emerald-200 bg-gradient-to-r from-emerald-50 via-teal-50 to-green-50 p-3 sm:p-3.5 text-slate-800 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer select-none hover:brightness-105 active:scale-[0.99]"
             title="Bấm để mở Hệ Thống Đăng Ký Phần Ăn Ca & Thẻ Lấy Cơm Điện Tử (E-Meal Pass)"
           >
             {/* Background Glow */}
-            <div className="absolute -right-8 -top-8 w-36 h-36 bg-white/10 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
+            <div className="absolute -right-8 -top-8 w-36 h-36 bg-white/40 rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform" />
 
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 relative z-10">
               {/* Bên trái: Icon + Tiêu đề */}
               <div className="flex items-center space-x-3">
-                <div className="p-2.5 rounded-xl bg-white/20 text-white shadow-xs shrink-0 flex items-center justify-center">
-                  <Utensils className="w-5 h-5 text-amber-300 animate-bounce" />
+                <div className="p-2.5 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-500 text-white shadow-sm shrink-0 flex items-center justify-center">
+                  <Utensils className="w-5 h-5 text-white animate-bounce" />
                 </div>
                 <div>
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-black text-xs sm:text-sm tracking-wide uppercase text-white">
+                    <span className="font-black text-xs sm:text-sm tracking-wide uppercase text-emerald-950">
                       HỆ THỐNG ĐĂNG KÝ PHẦN ĂN CA &amp; THẺ LẤY CƠM (E-MEAL PASS)
                     </span>
-                    <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-400 text-slate-950 shadow-xs shrink-0">
+                    <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-amber-400 text-amber-950 shadow-xs shrink-0">
                       Mới Nhất
                     </span>
                   </div>
-                  <p className="text-[11px] text-emerald-100 mt-0.5 flex items-center gap-1.5 flex-wrap">
+                  <p className="text-[11px] text-emerald-800/80 mt-0.5 flex items-center gap-1.5 flex-wrap font-medium">
                     <span>Đăng ký suất Chay/Cháo • Tiếp khách • Quét mã QR nhận khay cơm tại máy POS</span>
                   </p>
                 </div>
@@ -965,9 +967,9 @@ export const CompanyNewsAndBulletinView: React.FC<CompanyNewsAndBulletinViewProp
                     e.stopPropagation();
                     if (onOpenMealPassModal) onOpenMealPassModal();
                   }}
-                  className="w-full sm:w-auto h-10 sm:h-11 px-4 rounded-xl bg-white text-emerald-900 font-black text-xs flex items-center justify-center gap-2 shadow-md group-hover:bg-emerald-50 transition-all cursor-pointer whitespace-nowrap"
+                  className="w-full sm:w-auto h-10 sm:h-11 px-4 rounded-xl bg-white text-emerald-700 font-black text-xs flex items-center justify-center gap-2 shadow-sm border border-emerald-100 group-hover:bg-emerald-50 transition-all cursor-pointer whitespace-nowrap hover:border-emerald-300"
                 >
-                  <QrCode className="w-4 h-4 text-emerald-700" />
+                  <QrCode className="w-4 h-4 text-emerald-600" />
                   <span>MỞ THẺ ĂN QR &amp; ĐĂNG KÝ NGAY →</span>
                 </button>
               </div>
