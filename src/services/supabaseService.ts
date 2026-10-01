@@ -46,7 +46,26 @@ export const parseSupabaseEmployee = (row: any): Employee => {
   };
 };
 
-export const fetchEmployeesFromSupabase = async (): Promise<Employee[]> => {
+const CACHE_KEY = 'hrm_employees_cache';
+const CACHE_TTL_MS = 5 * 60 * 1000; // 5 phút
+
+export const fetchEmployeesFromSupabase = async (forceRefresh = false): Promise<Employee[]> => {
+  // 1. Kiểm tra Cache ở Session Storage để giảm tải cho Supabase
+  if (!forceRefresh) {
+    const cachedStr = sessionStorage.getItem(CACHE_KEY);
+    if (cachedStr) {
+      try {
+        const cachedData = JSON.parse(cachedStr);
+        if (cachedData.timestamp && Date.now() - cachedData.timestamp < CACHE_TTL_MS) {
+          return cachedData.data;
+        }
+      } catch (e) {
+        console.warn('Cache parsing error:', e);
+      }
+    }
+  }
+
+  // 2. Tối ưu Fetch: Chỉ select các trường thực sự dùng, thay vì '*'
   let allData: any[] = [];
   let from = 0;
   const step = 1000;
@@ -54,7 +73,7 @@ export const fetchEmployeesFromSupabase = async (): Promise<Employee[]> => {
   while (true) {
     const { data, error } = await supabase
       .from('employees')
-      .select('*')
+      .select('id, code, full_name, gender, dob, phone, email, cccd, address, department_name, position, status, contract_type, base_salary, role')
       .order('created_at', { ascending: false })
       .range(from, from + step - 1);
 
@@ -72,7 +91,15 @@ export const fetchEmployeesFromSupabase = async (): Promise<Employee[]> => {
     from += step;
   }
 
-  return allData.map(parseSupabaseEmployee);
+  const parsedData = allData.map(parseSupabaseEmployee);
+
+  // 3. Lưu Cache lại
+  sessionStorage.setItem(CACHE_KEY, JSON.stringify({
+    timestamp: Date.now(),
+    data: parsedData
+  }));
+
+  return parsedData;
 };
 
 export const insertEmployeeToSupabase = async (emp: Employee): Promise<Employee | null> => {
