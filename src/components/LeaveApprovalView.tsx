@@ -621,45 +621,47 @@ export const LeaveApprovalView: React.FC<LeaveApprovalViewProps> = ({
   return (
     <div className="space-y-1.5 animate-in fade-in text-slate-800">
       {/* ════════════════════ BANNER TỔNG QUAN LUỒNG PHÊ DUYỆT THÔNG MINH ════════════════════ */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-2 text-white shadow-md flex flex-col md:flex-row md:items-center md:justify-between gap-3 border border-indigo-900/30">
-        <div className="flex items-center space-x-3">
-          <div className="p-3 rounded-2xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-300">
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-sky-50 border border-indigo-200 rounded-2xl p-2 text-slate-800 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3 relative overflow-hidden">
+        {/* Background Overlay Decor */}
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="flex items-center space-x-3 relative z-10">
+          <div className="p-3 rounded-2xl bg-gradient-to-br from-indigo-400 to-blue-500 text-white shadow-sm shrink-0">
             <FileCheck className="w-7 h-7" />
           </div>
           <div>
             <div className="flex items-center space-x-2 flex-wrap">
-              <h2 className="text-base sm:text-lg font-black tracking-tight uppercase">
+              <h2 className="text-base sm:text-lg font-black tracking-tight uppercase text-indigo-950 drop-shadow-sm">
                 Hệ Thống Đăng Ký &amp; Phê Duyệt Trực Tuyến Đa Cấp (Smart Workflow Approvals)
               </h2>
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-400 text-slate-950">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-white/80 text-indigo-700 border border-indigo-200 shadow-sm">
                 6 Phân Hệ Nghiệp Vụ
               </span>
             </div>
-            <p className="text-xs text-indigo-200/80 mt-0.5">
+            <p className="text-xs text-indigo-800/80 mt-0.5 font-medium">
               Phê duyệt nghỉ phép BLLĐ 2019, kiểm soát trần OT 40h/tháng, giấy ra cổng QR, tạm ứng lương &amp; quy trình thôi việc số hóa
             </p>
           </div>
         </div>
 
-        <div className="flex items-center space-x-2 flex-wrap gap-y-2">
-          <div className="text-right bg-white/10 px-3 py-1.5 rounded-xl border border-white/15 shrink-0">
-            <span className="text-[10px] text-indigo-200 block uppercase font-bold">Chờ Phê Duyệt:</span>
-            <span className="text-base font-black text-amber-300 font-mono">
+        <div className="flex items-center space-x-2 flex-wrap gap-y-2 relative z-10 bg-white/60 backdrop-blur-md p-1.5 rounded-xl border border-white shadow-sm shrink-0">
+          <div className="text-right bg-white/80 px-3 py-1.5 rounded-lg border border-white shadow-sm shrink-0">
+            <span className="text-[10px] text-amber-600 block uppercase font-bold tracking-wider">Chờ Phê Duyệt:</span>
+            <span className="text-base font-black text-amber-600 font-mono">
               {currentTenantRequests.filter(r => r.status === 'PENDING').length} Đơn
             </span>
           </div>
-          <div className="text-right bg-white/10 px-3 py-1.5 rounded-xl border border-white/15 shrink-0">
-            <span className="text-[10px] text-indigo-200 block uppercase font-bold">Đã Chấp Thuận:</span>
-            <span className="text-base font-black text-emerald-300 font-mono">
+          <div className="text-right bg-white/80 px-3 py-1.5 rounded-lg border border-white shadow-sm shrink-0">
+            <span className="text-[10px] text-emerald-600 block uppercase font-bold tracking-wider">Đã Chấp Thuận:</span>
+            <span className="text-base font-black text-emerald-600 font-mono">
               {currentTenantRequests.filter(r => r.status === 'APPROVED').length} Đơn
             </span>
           </div>
           <button
             onClick={() => setShowCreateModal(true)}
-            className="flex items-center space-x-1.5 px-3.5 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold rounded-xl shadow-md transition-all cursor-pointer"
+            className="flex items-center space-x-1.5 px-3.5 py-2 h-full bg-gradient-to-r from-indigo-500 to-blue-600 hover:from-indigo-600 hover:to-blue-700 text-white text-xs font-bold rounded-xl shadow-md transition-all cursor-pointer border border-indigo-400/50"
           >
             <Plus className="w-4 h-4" />
-            <span>+ Tạo Đơn Mới</span>
+            <span>Tạo Đơn Mới</span>
           </button>
         </div>
       </div>
