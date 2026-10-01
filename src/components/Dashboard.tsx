@@ -121,16 +121,17 @@ export const Dashboard: React.FC<DashboardProps> = ({
 
   return (
     <div className="space-y-3 animate-fade-in-up">
-      <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 rounded-2xl px-5 py-3 text-white shadow-lg hover-lift flex flex-col md:flex-row md:items-center md:justify-between gap-2.5">
-        <div>
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 rounded-2xl px-5 py-3 text-slate-800 shadow-sm border border-indigo-200 hover-lift flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="relative z-10">
           <div className="flex items-center space-x-2">
-            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-indigo-500/30 text-indigo-200 border border-indigo-400/30">
+            <span className="px-2 py-0.5 text-[10px] font-bold rounded-full bg-white text-indigo-700 border border-indigo-200 shadow-sm">
               {policy.industry === 'MANUFACTURING' ? 'Sản Xuất & Nhà Máy' : 'Công Nghệ & Dịch Vụ'}
             </span>
             <span className="text-[11px] text-indigo-300">MST: {policy.taxCode}</span>
           </div>
           <h1 className="text-lg font-bold mt-0.5 tracking-tight">{policy.companyName}</h1>
-          <p className="text-[11px] text-indigo-200 mt-0.5">
+          <p className="text-[11px] text-indigo-800/80 font-medium mt-0.5">
             Chu kỳ lương: {policy.payrollCycleType === 'CYCLE_26_TO_25' ? 'Ngày 26 đến 25 hàng tháng' : 'Mùng 01 đến cuối tháng'} • Căn cứ theo BLLĐ và các văn bản quy phạm pháp luật hiệu lực hiện hành
           </p>
         </div>
@@ -142,7 +143,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${
               activeDashboardTab === 'OVERVIEW'
                 ? 'bg-white text-indigo-900 shadow-sm'
-                : 'text-indigo-200 hover:text-white hover:bg-white/10'
+                : 'text-indigo-600 hover:text-indigo-800 hover:bg-white/50 border border-transparent'
             }`}
           >
             <BarChart3 className="w-3.5 h-3.5" />
@@ -153,7 +154,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${
               activeDashboardTab === 'ANALYTICS'
                 ? 'bg-white text-indigo-900 shadow-sm'
-                : 'text-indigo-200 hover:text-white hover:bg-white/10'
+                : 'text-indigo-600 hover:text-indigo-800 hover:bg-white/50 border border-transparent'
             }`}
           >
             <PieChart className="w-3.5 h-3.5" />
@@ -164,7 +165,7 @@ export const Dashboard: React.FC<DashboardProps> = ({
             className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center space-x-1.5 ${
               activeDashboardTab === 'COMPLIANCE'
                 ? 'bg-white text-indigo-900 shadow-sm'
-                : 'text-indigo-200 hover:text-white hover:bg-white/10'
+                : 'text-indigo-600 hover:text-indigo-800 hover:bg-white/50 border border-transparent'
             }`}
           >
             <ShieldCheck className="w-3.5 h-3.5" />

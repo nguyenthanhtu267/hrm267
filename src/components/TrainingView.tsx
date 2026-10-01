@@ -497,20 +497,21 @@ export const TrainingView: React.FC<TrainingViewProps> = ({ policy, currentRole 
   return (
     <div className="space-y-3">
       {/* HEADER BANNER */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 p-2.5 rounded-2xl text-white shadow-lg">
-        <div className="space-y-1.5">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1.5 bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 p-2.5 rounded-2xl text-slate-800 shadow-sm border border-indigo-200 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="space-y-1.5 relative z-10">
           <div className="flex items-center space-x-2.5">
-            <div className="p-2 bg-white/10 backdrop-blur-md rounded-xl">
-              <GraduationCap className="w-6 h-6 text-amber-300" />
+            <div className="p-2 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-xl shadow-sm border-0">
+              <GraduationCap className="w-6 h-6 text-white" />
             </div>
             <div>
               <h1 className="text-xl font-bold tracking-tight">Hệ Thống Quản Trị Đào Tạo & Phát Triển Năng Lực (L&D)</h1>
-              <span className="text-[11px] text-indigo-200 bg-indigo-500/30 px-2 py-0.5 rounded-full border border-indigo-400/30">
+              <span className="text-[11px] text-indigo-700 bg-white px-2 py-0.5 rounded-full border border-indigo-200 shadow-sm">
                 Chuẩn Mực Quản Trị Nhân Sự Doanh Nghiệp • Tuân Thủ BLLĐ 2019
               </span>
             </div>
           </div>
-          <p className="text-xs text-indigo-200/90 max-w-3xl">
+          <p className="text-xs text-indigo-800/80 font-medium max-w-3xl">
             Quy ước định mức giờ học theo nhóm chức danh • Giám sát tỷ lệ Đào tạo Nội bộ <b>≥ 70%</b> • Quản trị cam kết đào tạo ràng buộc phục vụ theo <b>Điều 62 BLLĐ 2019</b> • Ma trận kỹ năng OJT & Phụ cấp giảng viên nội bộ
           </p>
         </div>

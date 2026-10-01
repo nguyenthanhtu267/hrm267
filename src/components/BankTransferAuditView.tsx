@@ -147,16 +147,17 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
   return (
     <div className="space-y-1.5">
       {/* 1. Header Banner & Thống kê dòng tiền */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-xl p-3 text-white shadow-md border border-slate-800">
-        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2">
+      <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 rounded-xl p-3 text-slate-800 shadow-sm border border-indigo-200 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-2 relative z-10">
           <div>
             <div className="flex items-center space-x-2 text-indigo-400 text-[11px] font-bold uppercase tracking-wider mb-0.5">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
               <span>Kiểm Tra & Chuyển Khoản Ngân Hàng (Bank Transfer Audit)</span>
             </div>
-            <h1 className="text-base font-bold tracking-tight text-white flex items-center gap-2">
+            <h1 className="text-base font-bold tracking-tight text-indigo-950 flex items-center gap-2">
               <span>Lệnh Chi Hộ & Đối Soát Tiền Lương</span>
-              <span className="text-[10px] px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+              <span className="text-[10px] px-2 py-0.2 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-200">
                 Tháng {selectedMonth}
               </span>
             </h1>
@@ -185,8 +186,8 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 mt-2.5 pt-2.5 border-t border-slate-800/80">
           <div className="bg-white/5 rounded-lg p-2 border border-white/10">
             <div className="text-[10px] text-slate-400">Tổng Tiền Chuyển (Net)</div>
-            <div className="text-sm font-bold text-white mt-0.5">
-              {totalTransferAmount.toLocaleString('vi-VN')} <span className="text-[10px] font-normal text-slate-400">đ</span>
+            <div className="text-sm font-bold text-indigo-950 mt-0.5">
+              {totalTransferAmount.toLocaleString('vi-VN')} <span className="text-[10px] font-normal text-slate-500">đ</span>
             </div>
             <div className="text-[9px] text-emerald-400 mt-0.5 flex items-center gap-1">
               <CheckCircle2 className="w-2.5 h-2.5" /> {totalBeneficiaries} người nhận hợp lệ
@@ -205,8 +206,8 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
 
           <div className="bg-white/5 rounded-lg p-2 border border-white/10">
             <div className="text-[10px] text-slate-400">Số Ngân Hàng Chi Trả</div>
-            <div className="text-sm font-bold text-white mt-0.5">
-              {availableBanks.length} <span className="text-[10px] font-normal text-slate-400">ngân hàng</span>
+            <div className="text-sm font-bold text-indigo-950 mt-0.5">
+              {availableBanks.length} <span className="text-[10px] font-normal text-slate-500">ngân hàng</span>
             </div>
             <div className="text-[9px] text-slate-300 mt-0.5 truncate">
               {availableBanks.slice(0, 3).join(', ')}
@@ -483,7 +484,7 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
         <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-2 z-50 overflow-y-auto">
           <div className="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-slate-200 animate-in fade-in zoom-in-95 duration-150">
             {/* Modal Header */}
-            <div className="p-2.5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-t-3xl relative">
+            <div className="p-2.5 bg-gradient-to-r from-indigo-50 to-blue-50 text-slate-800 rounded-t-3xl relative border-b border-indigo-200">
               <button
                 onClick={() => setActiveAuditRecord(null)}
                 className="absolute top-4 right-4 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-slate-300 hover:text-white transition-colors cursor-pointer"
@@ -498,9 +499,9 @@ export const BankTransferAuditView: React.FC<BankTransferAuditViewProps> = ({
 
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
                 <div>
-                  <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-indigo-950 flex items-center gap-2">
                     <span>{activeAuditRecord.employeeName}</span>
-                    <span className="text-xs px-2 py-0.5 rounded-md bg-white/20 font-mono">
+                    <span className="text-xs px-2 py-0.5 rounded-md bg-indigo-100 font-mono text-indigo-700 border border-indigo-200">
                       {activeAuditRecord.employeeCode}
                     </span>
                   </h3>

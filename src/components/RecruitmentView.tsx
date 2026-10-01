@@ -469,10 +469,11 @@ TÓM TẮT HỒ SƠ & QUÁ TRÌNH LÀM VIỆC:
         <>
       {/* KHU VỰC 1: HỘP CÔNG CỤ AI BÓC TÁCH & ĐỐI SOÁT CV THÔNG MINH */}
       <div className="bg-white rounded-2xl border border-indigo-100 shadow-sm overflow-hidden">
-        <div className="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white p-2 px-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
-          <div className="flex items-center space-x-2.5">
-            <div className="p-2 rounded-xl bg-indigo-500/30 text-indigo-200">
-              <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
+        <div className="bg-gradient-to-r from-indigo-50 via-blue-50 to-cyan-50 text-slate-800 p-2 px-6 flex flex-col md:flex-row md:items-center justify-between gap-3 rounded-2xl border border-indigo-200 shadow-sm relative overflow-hidden">
+          <div className="absolute inset-0 opacity-40 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none"></div>
+          <div className="flex items-center space-x-2.5 relative z-10">
+            <div className="p-2 rounded-xl bg-gradient-to-br from-indigo-400 to-blue-500 text-white shadow-sm border-0">
+              <Sparkles className="w-5 h-5 text-white animate-pulse" />
             </div>
             <div>
               <h2 className="text-sm font-bold">Hộp Công Cụ AI Phân Tích & Đối Soát CV Với Thư Viện JD</h2>
